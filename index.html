@@ -1,713 +1,311 @@
-code Html
-play_circledownloadcontent_copy
-expand_less
 <!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PULSE Ems Studio | Casalmaggiore</title>
-    <meta name="description" content="Allenamento EMS Boutique a Casalmaggiore. 20 minuti, su appuntamento, percorso su misura.">
-    
-    <!-- Font: Montserrat (Premium feel) -->
+    <meta name="description" content="Allenamento EMS Boutique a Casalmaggiore. 20 minuti, su appuntamento.">
+
+    <!-- LIBRERIE ESTERNE -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS (Styling) -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <!-- Configurazione colori e stile -->
+    <!-- Configurazione Stile -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        pulse: {
-                            black: '#0a0a0a',
-                            dark: '#121212',
-                            gray: '#1e1e1e',
-                            neon: '#ff007f', // Rosa Neon
-                            neonHover: '#ff4da6',
-                            text: '#f3f4f6'
-                        }
+                        pulse: { black: '#0a0a0a', dark: '#121212', gray: '#1e1e1e', neon: '#ff007f', neonHover: '#ff4da6', text: '#f3f4f6' }
                     },
-                    fontFamily: {
-                        sans: ['Montserrat', 'sans-serif'],
-                    },
-                    boxShadow: {
-                        'neon': '0 0 10px rgba(255, 0, 127, 0.5), 0 0 20px rgba(255, 0, 127, 0.3)',
-                        'neon-hover': '0 0 15px rgba(255, 0, 127, 0.7), 0 0 30px rgba(255, 0, 127, 0.4)',
-                    }
+                    fontFamily: { sans: ['Montserrat', 'sans-serif'] },
+                    boxShadow: { 'neon': '0 0 10px rgba(255, 0, 127, 0.5)', }
                 }
             }
         }
     </script>
 
+    <!-- ====================================================================== -->
+    <!--           🛑 PANNELLO DI CONTROLLO (MODIFICA QUI I DATI) 🛑           -->
+    <!-- ====================================================================== -->
+    <script>
+        const DATI_SITO = {
+            // --- INFO STUDIO ---
+            nomeStudio: "PULSE EMS STUDIO",
+            citta: "Casalmaggiore",
+            indirizzo: "Via Achille Grandi 28, Casalmaggiore",
+            
+            // --- ORARI DI APERTURA ---
+            orariMattina: "10:00 – 14:00",
+            orariPomeriggio: "15:30 – 19:30",
+
+            // --- CONTATTI ---
+            // Inserisci il numero con prefisso 39 davanti (es: 393331234567)
+            // Questo numero verrà usato per TUTTI i tasti "Prenota"
+            numeroWhatsApp: "390000000000", 
+            
+            // Link Google Maps
+            linkMappa: "https://maps.google.com/?q=Via+Achille+Grandi+28,+Casalmaggiore",
+
+            // --- TESTI HOME PAGE ---
+            titoloPrincipale: "Il tuo tempo è prezioso.",
+            sottoTitoloColorato: "Il tuo corpo anche.", 
+            descrizioneBreve: "Allenamento boutique in 20 minuti. Su appuntamento. Percorso su misura."
+        };
+    </script>
+    <!-- ====================================================================== -->
+
     <style>
-        /* Custom Styles & Animations */
-        body {
-            background-color: #0a0a0a;
-            color: #f3f4f6;
-            overflow-x: hidden;
-        }
-        
-        /* Smooth Page Transition */
-        .page-section {
-            display: none;
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-        }
-        .page-section.active {
-            display: block;
-            opacity: 1;
-            animation: fadeIn 0.8s ease-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Neon Text Glow */
-        .text-glow {
-            text-shadow: 0 0 10px rgba(255, 0, 127, 0.6);
-        }
-
-        /* Gradient Text */
-        .gradient-text {
-            background: linear-gradient(90deg, #ffffff, #ff007f);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        /* Nav Link Hover */
-        .nav-link {
-            position: relative;
-        }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -4px;
-            left: 0;
-            background-color: #ff007f;
-            transition: width 0.3s;
-        }
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0a0a0a;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #333;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #ff007f;
-        }
+        body { background-color: #0a0a0a; color: #f3f4f6; overflow-x: hidden; }
+        .page-section { display: none; opacity: 0; transition: opacity 0.4s ease-in-out; }
+        .page-section.active { display: block; opacity: 1; animation: fadeIn 0.6s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .gradient-text { background: linear-gradient(90deg, #ffffff, #ff007f); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0a0a; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #ff007f; }
     </style>
 </head>
 <body class="antialiased">
 
-    <!-- HEADER (Fisso) -->
+    <!-- HEADER -->
     <header class="fixed w-full top-0 z-50 bg-pulse-black/90 backdrop-blur-md border-b border-white/10">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <!-- LOGO -->
             <a href="#" onclick="showPage('home')" class="flex items-center gap-2 group">
-                <!-- Placeholder Logo Img -->
-                <!-- <img src="logo.png" alt="PULSE Logo" class="h-10"> --> 
-                <div class="text-2xl font-bold tracking-widest text-white group-hover:text-pulse-neon transition-colors duration-300">
+                <div class="text-2xl font-bold tracking-widest text-white">
                     PULSE <span class="text-pulse-neon text-sm font-medium tracking-normal">EMS STUDIO</span>
                 </div>
             </a>
-
-            <!-- DESKTOP MENU -->
             <nav class="hidden md:flex items-center gap-8">
-                <a href="#" onclick="showPage('home')" class="nav-link text-sm uppercase tracking-wider hover:text-white transition">Home</a>
-                <a href="#" onclick="showPage('ems')" class="nav-link text-sm uppercase tracking-wider hover:text-white transition">Cos'è EMS</a>
-                <a href="#" onclick="showPage('packages')" class="nav-link text-sm uppercase tracking-wider hover:text-white transition">Pacchetti</a>
-                <a href="#" onclick="showPage('contacts')" class="nav-link text-sm uppercase tracking-wider hover:text-white transition">Contatti</a>
-                <a href="https://prenota-link-placeholder.com" target="_blank" class="px-6 py-2 border border-pulse-neon text-pulse-neon text-sm uppercase font-semibold hover:bg-pulse-neon hover:text-white transition-all duration-300 shadow-neon hover:shadow-neon-hover rounded-sm">
-                    Prenota
+                <a href="#" onclick="showPage('home')" class="text-sm uppercase hover:text-pulse-neon transition font-medium">Home</a>
+                <a href="#" onclick="showPage('ems')" class="text-sm uppercase hover:text-pulse-neon transition font-medium">Cos'è EMS</a>
+                <a href="#" onclick="showPage('packages')" class="text-sm uppercase hover:text-pulse-neon transition font-medium">Pacchetti</a>
+                <a href="#" onclick="showPage('contacts')" class="text-sm uppercase hover:text-pulse-neon transition font-medium">Contatti</a>
+                <a href="#" class="btn-prenota-whatsapp px-6 py-2 border border-pulse-neon text-pulse-neon text-sm uppercase font-bold hover:bg-pulse-neon hover:text-white transition shadow-neon rounded-sm">
+                    Info / Prenota
                 </a>
             </nav>
-
-            <!-- MOBILE MENU BUTTON -->
-            <button id="mobile-menu-btn" class="md:hidden text-2xl text-white focus:outline-none">
-                <i class="fas fa-bars"></i>
-            </button>
+            <button id="mobile-menu-btn" class="md:hidden text-2xl text-white"><i class="fas fa-bars"></i></button>
         </div>
-
-        <!-- MOBILE MENU CONTENT -->
-        <div id="mobile-menu" class="hidden md:hidden absolute w-full bg-pulse-black border-b border-white/10 shadow-xl">
-            <div class="flex flex-col p-4 space-y-4 text-center">
-                <a href="#" onclick="showPage('home'); toggleMobileMenu()" class="text-white hover:text-pulse-neon py-2">Home</a>
-                <a href="#" onclick="showPage('ems'); toggleMobileMenu()" class="text-white hover:text-pulse-neon py-2">Cos'è EMS</a>
-                <a href="#" onclick="showPage('packages'); toggleMobileMenu()" class="text-white hover:text-pulse-neon py-2">Pacchetti</a>
-                <a href="#" onclick="showPage('contacts'); toggleMobileMenu()" class="text-white hover:text-pulse-neon py-2">Contatti</a>
-                <a href="https://prenota-link-placeholder.com" target="_blank" class="text-pulse-neon font-bold py-2">PRENOTA ORA</a>
-            </div>
+        <div id="mobile-menu" class="hidden md:hidden absolute w-full bg-pulse-black border-b border-white/10 shadow-xl text-center py-6 space-y-4">
+            <a href="#" onclick="showPage('home');toggleMobileMenu()" class="block text-white hover:text-pulse-neon font-medium">Home</a>
+            <a href="#" onclick="showPage('ems');toggleMobileMenu()" class="block text-white hover:text-pulse-neon font-medium">Cos'è EMS</a>
+            <a href="#" onclick="showPage('packages');toggleMobileMenu()" class="block text-white hover:text-pulse-neon font-medium">Pacchetti</a>
+            <a href="#" onclick="showPage('contacts');toggleMobileMenu()" class="block text-white hover:text-pulse-neon font-medium">Contatti</a>
+            <a href="#" class="btn-prenota-whatsapp block text-pulse-neon font-bold uppercase tracking-widest mt-4">SCRIVICI SU WHATSAPP</a>
         </div>
     </header>
 
-    <!-- MAIN CONTENT CONTAINER -->
+    <!-- MAIN -->
     <main class="pt-20">
 
-        <!-- ================= PAGE: HOME ================= -->
+        <!-- HOME -->
         <div id="home" class="page-section active">
-            
-            <!-- HERO SECTION -->
             <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
-                <!-- Background Image Placeholder (Darkened) -->
                 <div class="absolute inset-0 z-0 bg-[url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-30"></div>
                 <div class="absolute inset-0 bg-gradient-to-t from-pulse-black via-transparent to-pulse-black/80 z-0"></div>
 
                 <div class="container mx-auto px-4 relative z-10 text-center" data-aos="fade-up">
-                    <div class="mb-6 flex justify-center gap-3 flex-wrap">
-                        <span class="px-3 py-1 bg-white/10 border border-white/20 rounded text-xs uppercase tracking-widest backdrop-blur-sm">20 Minuti</span>
-                        <span class="px-3 py-1 bg-white/10 border border-white/20 rounded text-xs uppercase tracking-widest backdrop-blur-sm">1:1 / 1:2</span>
-                        <span class="px-3 py-1 bg-white/10 border border-white/20 rounded text-xs uppercase tracking-widest backdrop-blur-sm">Casalmaggiore</span>
+                    <div class="mb-6 flex justify-center gap-3">
+                        <span class="px-3 py-1 bg-white/10 border border-white/20 rounded text-xs uppercase backdrop-blur-sm">20 Minuti</span>
+                        <span class="px-3 py-1 bg-white/10 border border-white/20 rounded text-xs uppercase backdrop-blur-sm" id="hero-city">Casalmaggiore</span>
                     </div>
                     <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 leading-tight">
-                        Il tuo tempo è prezioso.<br>
-                        <span class="gradient-text">Il tuo corpo anche.</span>
+                        <span id="hero-title">Il tuo tempo è prezioso.</span><br>
+                        <span class="gradient-text" id="hero-subtitle">Il tuo corpo anche.</span>
                     </h1>
-                    <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto font-light">
-                        Allenamento boutique in 20 minuti. Su appuntamento. Percorso su misura.
-                    </p>
+                    <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto font-light" id="hero-desc">Allenamento boutique in 20 minuti.</p>
                     
-                    <div class="flex flex-col md:flex-row gap-4 justify-center items-center mb-12">
-                        <a href="https://prenota-link-placeholder.com" target="_blank" class="w-full md:w-auto px-8 py-4 bg-pulse-neon text-white font-bold uppercase tracking-wider rounded shadow-neon hover:bg-pulse-neonHover transition-all transform hover:-translate-y-1">
-                            Prenota Ora
+                    <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+                        <a href="#" class="btn-prenota-whatsapp px-8 py-4 bg-pulse-neon text-white font-bold uppercase tracking-wider rounded shadow-neon hover:bg-pulse-neonHover transition transform hover:-translate-y-1">
+                            Prenota una prova
                         </a>
-                        <a href="#about" class="w-full md:w-auto px-8 py-4 border border-white/30 text-white font-semibold uppercase tracking-wider rounded hover:bg-white/10 transition-all">
-                            Scopri di più
-                        </a>
-                    </div>
-
-                    <!-- Micro-Cards -->
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto mt-8 text-sm text-gray-400">
-                        <div class="flex items-center justify-center gap-2">
-                            <i class="fas fa-clock text-pulse-neon"></i> 20 Minuti a sessione
-                        </div>
-                        <div class="flex items-center justify-center gap-2">
-                            <i class="fas fa-gem text-pulse-neon"></i> Studio Boutique Privato
-                        </div>
-                        <div class="flex items-center justify-center gap-2">
-                            <i class="fas fa-chart-line text-pulse-neon"></i> Check-up & Report
-                        </div>
+                        <a href="#" onclick="showPage('ems')" class="px-8 py-4 border border-white/30 text-white font-semibold uppercase tracking-wider rounded hover:bg-white/10 transition">Scopri di più</a>
                     </div>
                 </div>
             </section>
 
-            <!-- CHI SIAMO (Section inside Home) -->
-            <section id="about" class="py-20 bg-pulse-dark">
-                <div class="container mx-auto px-4">
-                    <div class="flex flex-col md:flex-row items-center gap-12">
-                        <div class="md:w-1/2" data-aos="fade-right">
-                            <!-- Placeholder Image -->
-                            <div class="w-full h-[400px] bg-gray-800 rounded-lg overflow-hidden relative border border-white/10">
-                                <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=2070&auto=format&fit=crop" alt="Trainer Pulse" class="w-full h-full object-cover opacity-80">
-                            </div>
-                        </div>
-                        <div class="md:w-1/2" data-aos="fade-left">
-                            <h2 class="text-3xl md:text-4xl font-bold mb-6">Non è solo fitness.<br>È <span class="text-pulse-neon">Attenzione.</span></h2>
-                            <p class="text-gray-300 mb-6 leading-relaxed">
-                                In PULSE non trovi la folla delle palestre commerciali. Trovi uno studio boutique premium, progettato per garantire privacy e concentrazione. 
-                            </p>
-                            
-                            <div class="bg-pulse-black p-6 rounded border border-white/5 mb-8">
-                                <h3 class="text-white font-semibold mb-2">Credenziali Titolare</h3>
-                                <ul class="space-y-2 text-sm text-gray-400">
-                                    <li class="flex items-center gap-2"><i class="fas fa-check text-pulse-neon"></i> EMS Trainer 1° Livello</li>
-                                    <li class="flex items-center gap-2"><i class="fas fa-check text-pulse-neon"></i> EMS Trainer 2° Livello</li>
-                                    <li class="flex items-center gap-2"><i class="fas fa-check text-pulse-neon"></i> Personal Trainer Certificato</li>
-                                </ul>
-                            </div>
-                            
-                            <a href="https://prenota-link-placeholder.com" target="_blank" class="text-pulse-neon font-bold uppercase border-b-2 border-pulse-neon pb-1 hover:text-white hover:border-white transition-all">
-                                Prenota il tuo posto
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- TECNOLOGIA -->
-            <section class="py-20 bg-pulse-black relative">
-                <div class="container mx-auto px-4 text-center">
-                    <h2 class="text-3xl font-bold mb-12" data-aos="fade-up">Tecnologia Leader</h2>
-                    <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                        <!-- Card 1 -->
-                        <div class="bg-pulse-gray p-8 rounded-lg border border-white/5 hover:border-pulse-neon/50 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="100">
-                            <div class="text-4xl text-pulse-neon mb-4 group-hover:scale-110 transition-transform"><i class="fas fa-microchip"></i></div>
-                            <h3 class="text-xl font-bold mb-2">Miha Bodytec Wireless</h3>
-                            <p class="text-gray-400 text-sm">Lo standard gold mondiale per l'EMS. Affidabilità tedesca e precisione nell'impulso.</p>
-                        </div>
-                        <!-- Card 2 -->
-                        <div class="bg-pulse-gray p-8 rounded-lg border border-white/5 hover:border-pulse-neon/50 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="200">
-                            <div class="text-4xl text-pulse-neon mb-4 group-hover:scale-110 transition-transform"><i class="fas fa-wifi"></i></div>
-                            <h3 class="text-xl font-bold mb-2">Move On Technology</h3>
-                            <p class="text-gray-400 text-sm">Totale libertà di movimento. Nessun cavo che ti lega alla macchina, solo comfort e performance.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- COME FUNZIONA (Il Metodo) -->
             <section class="py-20 bg-pulse-dark">
-                <div class="container mx-auto px-4">
-                    <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Il Metodo PULSE</h2>
-                    <div class="grid md:grid-cols-3 gap-8 text-center">
-                        <div class="relative p-6" data-aos="fade-up" data-aos-delay="100">
-                            <div class="text-6xl text-white/5 font-bold absolute top-0 left-1/2 -translate-x-1/2 -z-10">1</div>
-                            <h3 class="text-xl font-bold text-pulse-neon mb-4">Prova + Orientamento</h3>
-                            <p class="text-gray-400 text-sm">Capisci cos'è l'EMS, definisci i tuoi obiettivi e impostiamo il percorso.</p>
-                        </div>
-                        <div class="relative p-6" data-aos="fade-up" data-aos-delay="200">
-                            <div class="text-6xl text-white/5 font-bold absolute top-0 left-1/2 -translate-x-1/2 -z-10">2</div>
-                            <h3 class="text-xl font-bold text-pulse-neon mb-4">Percorso su misura</h3>
-                            <p class="text-gray-400 text-sm">20 minuti intensi. Parametri calibrati su di te. Progressione costante.</p>
-                        </div>
-                        <div class="relative p-6" data-aos="fade-up" data-aos-delay="300">
-                            <div class="text-6xl text-white/5 font-bold absolute top-0 left-1/2 -translate-x-1/2 -z-10">3</div>
-                            <h3 class="text-xl font-bold text-pulse-neon mb-4">Check-up & Report</h3>
-                            <p class="text-gray-400 text-sm">Bioimpedenziometria periodica per misurare i risultati reali.</p>
+                <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2" data-aos="fade-right">
+                        <div class="w-full h-[400px] bg-gray-800 rounded-lg overflow-hidden relative border border-white/10">
+                            <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover opacity-80">
                         </div>
                     </div>
-                </div>
-            </section>
-
-            <!-- ANTEPRIMA PACCHETTI -->
-            <section class="py-20 bg-pulse-black">
-                <div class="container mx-auto px-4 text-center">
-                    <h2 class="text-3xl font-bold mb-4" data-aos="fade-up">Scegli il tuo percorso</h2>
-                    <p class="text-gray-400 mb-12">Soluzioni flessibili per ogni obiettivo.</p>
-                    
-                    <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-10">
-                        <!-- Card Preview -->
-                        <div class="p-6 rounded border border-white/10 hover:border-pulse-neon hover:shadow-neon transition-all duration-300" data-aos="zoom-in" data-aos-delay="100">
-                            <h3 class="text-lg font-bold mb-2">START</h3>
-                            <p class="text-2xl font-bold text-white mb-2">€240</p>
-                            <p class="text-sm text-gray-400">8 Sedute • 2 Mesi</p>
-                        </div>
-                         <!-- Card Preview -->
-                         <div class="p-6 rounded border border-pulse-neon shadow-neon transition-all duration-300 transform scale-105 bg-white/5" data-aos="zoom-in" data-aos-delay="200">
-                            <div class="text-xs uppercase text-pulse-neon font-bold mb-2 tracking-widest">Consigliato</div>
-                            <h3 class="text-lg font-bold mb-2">PRIME</h3>
-                            <p class="text-2xl font-bold text-white mb-2">€330</p>
-                            <p class="text-sm text-gray-400">12 Sedute • 3 Mesi</p>
-                        </div>
-                         <!-- Card Preview -->
-                         <div class="p-6 rounded border border-white/10 hover:border-pulse-neon hover:shadow-neon transition-all duration-300" data-aos="zoom-in" data-aos-delay="300">
-                            <h3 class="text-lg font-bold mb-2">SIGNATURE</h3>
-                            <p class="text-2xl font-bold text-white mb-2">€500</p>
-                            <p class="text-sm text-gray-400">20 Sedute • 5 Mesi</p>
-                        </div>
-                    </div>
-                    
-                    <button onclick="showPage('packages')" class="px-8 py-3 bg-transparent border border-white text-white hover:bg-white hover:text-black transition uppercase tracking-widest text-sm font-semibold">
-                        Vedi dettagli pacchetti
-                    </button>
-                </div>
-            </section>
-
-            <!-- PRIMA PROVA GRATUITA -->
-            <section class="py-20 relative overflow-hidden">
-                <div class="absolute inset-0 bg-gradient-to-r from-pulse-neon/20 to-purple-900/20 z-0"></div>
-                <div class="container mx-auto px-4 relative z-10 text-center" data-aos="fade-up">
-                    <h2 class="text-4xl font-bold mb-4">Prima Prova Gratuita</h2>
-                    <p class="text-xl text-gray-200 mb-2">Prova per capire il metodo e impostare il tuo percorso.</p>
-                    <p class="text-sm text-gray-400 mb-8 italic">*Valida con attivazione del primo abbonamento.</p>
-                    
-                    <a href="https://prenota-link-placeholder.com" target="_blank" class="inline-block px-10 py-4 bg-pulse-neon text-white font-bold uppercase rounded shadow-neon hover:bg-pulse-neonHover transition-transform hover:scale-105">
-                        Prenota la prova
-                    </a>
-                </div>
-            </section>
-
-            <!-- FAQ -->
-            <section class="py-20 bg-pulse-dark">
-                <div class="container mx-auto px-4 max-w-3xl">
-                    <h2 class="text-3xl font-bold text-center mb-12">Domande Frequenti</h2>
-                    <div class="space-y-4">
-                        <!-- FAQ Item 1 -->
-                        <div class="border-b border-white/10 pb-4">
-                            <button class="flex justify-between w-full text-left font-semibold text-lg hover:text-pulse-neon transition focus:outline-none" onclick="toggleFaq(this)">
-                                È doloroso? <i class="fas fa-plus text-xs mt-2"></i>
-                            </button>
-                            <div class="hidden mt-2 text-gray-400 text-sm leading-relaxed">
-                                No. L'intensità è completamente regolabile e personalizzata. Sentirai una contrazione muscolare profonda, ma mai dolore.
-                            </div>
-                        </div>
-                        <!-- FAQ Item 2 -->
-                        <div class="border-b border-white/10 pb-4">
-                            <button class="flex justify-between w-full text-left font-semibold text-lg hover:text-pulse-neon transition focus:outline-none" onclick="toggleFaq(this)">
-                                Quando vedo i risultati? <i class="fas fa-plus text-xs mt-2"></i>
-                            </button>
-                            <div class="hidden mt-2 text-gray-400 text-sm leading-relaxed">
-                                La maggior parte dei clienti avverte una maggiore tonicità già dopo le prime 3-4 sedute. Risultati visibili estetici si notano spesso entro il primo ciclo da 8 sedute, abbinando una corretta alimentazione.
-                            </div>
-                        </div>
-                        <!-- FAQ Item 3 -->
-                        <div class="border-b border-white/10 pb-4">
-                            <button class="flex justify-between w-full text-left font-semibold text-lg hover:text-pulse-neon transition focus:outline-none" onclick="toggleFaq(this)">
-                                Quante volte a settimana? <i class="fas fa-plus text-xs mt-2"></i>
-                            </button>
-                            <div class="hidden mt-2 text-gray-400 text-sm leading-relaxed">
-                                Grazie all'alta intensità, sono sufficienti 1 o 2 sedute a settimana per ottenere risultati eccellenti, permettendo al corpo il giusto recupero.
-                            </div>
+                    <div class="md:w-1/2" data-aos="fade-left">
+                        <h2 class="text-3xl font-bold mb-6">Non è solo fitness.<br>È <span class="text-pulse-neon">Attenzione.</span></h2>
+                        <p class="text-gray-300 mb-6 leading-relaxed">In PULSE non trovi la folla delle palestre commerciali. Trovi uno studio boutique premium, progettato per garantire privacy e concentrazione.</p>
+                        <div class="bg-pulse-black p-6 rounded border border-white/5 mb-8">
+                            <h3 class="text-white font-semibold mb-2">Standard Elevati</h3>
+                            <ul class="space-y-2 text-sm text-gray-400">
+                                <li class="flex items-center gap-2"><i class="fas fa-check text-pulse-neon"></i> EMS Trainer 1° e 2° Livello</li>
+                                <li class="flex items-center gap-2"><i class="fas fa-check text-pulse-neon"></i> Personal Trainer Certificato</li>
+                                <li class="flex items-center gap-2"><i class="fas fa-check text-pulse-neon"></i> Privacy Totale</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </section>
         </div>
 
-        <!-- ================= PAGE: COS'È EMS ================= -->
+        <!-- EMS -->
         <div id="ems" class="page-section pt-10">
             <div class="container mx-auto px-4 py-12">
                 <div class="text-center max-w-3xl mx-auto mb-16">
-                    <h1 class="text-4xl md:text-5xl font-bold mb-6">EMS: Tecnologia, Metodo, Risultati</h1>
-                    <p class="text-lg text-gray-300">
-                        L'ElettroMioStimolazione (EMS) è la soluzione ideale per chi ha poco tempo ma non vuole rinunciare a un corpo tonico e forte.
-                    </p>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6">Tecnologia e Risultati</h1>
+                    <p class="text-lg text-gray-300">L'ElettroMioStimolazione (EMS) attiva oltre 300 muscoli contemporaneamente.</p>
                 </div>
-
-                <!-- 3 Blocchi Valore -->
                 <div class="grid md:grid-cols-3 gap-8 mb-20">
                     <div class="bg-pulse-gray p-8 rounded border-t-4 border-pulse-neon shadow-lg">
-                        <i class="fas fa-hourglass-half text-3xl text-pulse-neon mb-4"></i>
+                        <i class="fas fa-clock text-3xl text-pulse-neon mb-4"></i>
                         <h3 class="text-xl font-bold mb-3">20 Minuti</h3>
-                        <p class="text-gray-400 text-sm">
-                            20 minuti di EMS equivalgono a circa 3-4 ore di allenamento tradizionale in palestra in termini di attivazione muscolare profonda.
-                        </p>
+                        <p class="text-gray-400 text-sm">Equivalgono a circa 4 ore di palestra tradizionale in termini di attivazione muscolare.</p>
                     </div>
                     <div class="bg-pulse-gray p-8 rounded border-t-4 border-pulse-neon shadow-lg">
-                        <i class="fas fa-sliders-h text-3xl text-pulse-neon mb-4"></i>
-                        <h3 class="text-xl font-bold mb-3">Controllo Totale</h3>
-                        <p class="text-gray-400 text-sm">
-                            L'intensità è calibrata su ogni singolo gruppo muscolare. Sicurezza totale per articolazioni e schiena.
-                        </p>
+                        <i class="fas fa-shield-alt text-3xl text-pulse-neon mb-4"></i>
+                        <h3 class="text-xl font-bold mb-3">Sicurezza</h3>
+                        <p class="text-gray-400 text-sm">Zero carico sulle articolazioni. Ideale anche per recupero post-infortunio o mal di schiena.</p>
                     </div>
                     <div class="bg-pulse-gray p-8 rounded border-t-4 border-pulse-neon shadow-lg">
-                        <i class="fas fa-bullseye text-3xl text-pulse-neon mb-4"></i>
-                        <h3 class="text-xl font-bold mb-3">Personalizzazione</h3>
-                        <p class="text-gray-400 text-sm">
-                            Protocolli specifici per dimagrimento, tonificazione, anticellulite o recupero muscolare.
-                        </p>
+                        <i class="fas fa-chart-line text-3xl text-pulse-neon mb-4"></i>
+                        <h3 class="text-xl font-bold mb-3">Risultati</h3>
+                        <p class="text-gray-400 text-sm">Tonificazione visibile, aumento metabolismo basale e riduzione massa grassa.</p>
                     </div>
                 </div>
-
-                <!-- Info Sections -->
-                <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
-                    <div>
-                        <h3 class="text-2xl font-bold mb-4 text-white">Non è doloroso</h3>
-                        <p class="text-gray-400 mb-6">
-                            Dimentica le scosse fastidiose. La tecnologia Miha Bodytec di ultima generazione crea un impulso piacevole che simula la contrazione naturale del muscolo. Tu lavori insieme all'impulso.
-                        </p>
-                        <h3 class="text-2xl font-bold mb-4 text-white">Risultati Misurabili</h3>
-                        <p class="text-gray-400">
-                            Non ci basiamo su sensazioni. Utilizziamo bioimpedenziometria professionale per analizzare massa magra, massa grassa e idratazione, fornendoti report periodici sui tuoi progressi.
-                        </p>
-                    </div>
-                    <div class="bg-white/5 p-8 rounded border border-l-4 border-l-yellow-500 border-white/10">
-                        <h4 class="text-yellow-500 font-bold mb-2 uppercase text-sm tracking-wider">Nota Importante</h4>
-                        <p class="text-sm text-gray-300">
-                            L'EMS è sicuro, ma richiede attenzione in caso di condizioni particolari (gravidanza, pacemaker, epilessia, ernie acute).<br><br>
-                            Prima di iniziare, faremo un'anamnesi completa per garantire la tua totale sicurezza.
-                        </p>
-                    </div>
-                </div>
-
                 <div class="text-center">
-                    <a href="https://prenota-link-placeholder.com" target="_blank" class="inline-block px-10 py-4 bg-pulse-neon text-white font-bold uppercase rounded shadow-neon hover:bg-pulse-neonHover transition-all">
-                        Prenota la tua seduta
-                    </a>
+                    <a href="#" class="btn-prenota-whatsapp inline-block px-10 py-4 bg-pulse-neon text-white font-bold uppercase rounded shadow-neon hover:bg-pulse-neonHover transition">Scrivici per info</a>
                 </div>
             </div>
         </div>
 
-        <!-- ================= PAGE: PACCHETTI ================= -->
+        <!-- PACCHETTI (SENZA PREZZI) -->
         <div id="packages" class="page-section pt-10">
-            <div class="container mx-auto px-4 py-12">
-                <div class="text-center mb-16">
-                    <h1 class="text-4xl font-bold mb-4">Investi su di te</h1>
-                    <p class="text-gray-400">Scegli il pacchetto più adatto ai tuoi obiettivi.</p>
-                </div>
+            <div class="container mx-auto px-4 py-12 text-center">
+                <h1 class="text-4xl font-bold mb-4">Investi su di te</h1>
+                <p class="text-gray-400 mb-12">Percorsi flessibili, risultati concreti.</p>
 
-                <!-- Cards Pricing -->
-                <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-20">
+                <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                     <!-- START -->
-                    <div class="bg-pulse-gray p-8 rounded-lg border border-white/10 flex flex-col hover:border-white/30 transition-all">
-                        <h3 class="text-2xl font-bold text-white mb-2">PULSE START</h3>
-                        <div class="text-4xl font-bold text-pulse-neon mb-1">€240</div>
+                    <div class="bg-pulse-gray p-8 rounded border border-white/10 hover:border-white/30 transition flex flex-col">
+                        <h3 class="text-2xl font-bold text-white mb-2">START</h3>
+                        <div class="text-xl font-bold text-pulse-neon mb-4">Contattaci per info</div>
                         <p class="text-xs text-gray-500 uppercase tracking-widest mb-6">Validità 2 Mesi</p>
-                        
-                        <ul class="space-y-4 mb-8 flex-grow text-sm text-gray-300">
+                        <ul class="space-y-3 mb-8 flex-grow text-sm text-gray-300 text-left">
                             <li class="flex items-center gap-3"><i class="fas fa-check text-pulse-neon"></i> 8 Sedute</li>
                             <li class="flex items-center gap-3"><i class="fas fa-check text-pulse-neon"></i> Check iniziale gratuito</li>
-                            <li class="flex items-center gap-3"><i class="fas fa-check text-pulse-neon"></i> Bioimpedenziometria base</li>
-                            <li class="flex items-center gap-3"><i class="fas fa-check text-pulse-neon"></i> Report iniziale</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check text-pulse-neon"></i> Iscrizione inclusa</li>
                         </ul>
-                        <a href="https://prenota-link-placeholder.com" target="_blank" class="block w-full py-3 text-center border border-white text-white hover:bg-white hover:text-black transition uppercase text-sm font-bold">Prenota</a>
+                        <a href="#" class="btn-prenota-whatsapp block w-full py-3 border border-white text-white hover:bg-white hover:text-black font-bold uppercase">Richiedi Info</a>
                     </div>
-
                     <!-- PRIME -->
-                    <div class="bg-pulse-gray p-8 rounded-lg border-2 border-pulse-neon relative shadow-neon transform md:-translate-y-4 flex flex-col">
+                    <div class="bg-pulse-gray p-8 rounded border-2 border-pulse-neon relative shadow-neon transform md:-translate-y-4 flex flex-col">
                         <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-pulse-neon text-white px-4 py-1 text-xs font-bold uppercase tracking-wider rounded-sm">Consigliato</div>
-                        <h3 class="text-2xl font-bold text-white mb-2">PULSE PRIME</h3>
-                        <div class="text-4xl font-bold text-pulse-neon mb-1">€330</div>
+                        <h3 class="text-2xl font-bold text-white mb-2">PRIME</h3>
+                        <div class="text-xl font-bold text-pulse-neon mb-4">Contattaci per info</div>
                         <p class="text-xs text-gray-500 uppercase tracking-widest mb-6">Validità 3 Mesi</p>
-                        
-                        <ul class="space-y-4 mb-8 flex-grow text-sm text-gray-200">
+                        <ul class="space-y-3 mb-8 flex-grow text-sm text-gray-200 text-left">
                             <li class="flex items-center gap-3"><i class="fas fa-check text-pulse-neon"></i> 12 Sedute</li>
-                            <li class="flex items-center gap-3"><i class="fas fa-check text-pulse-neon"></i> 2 Check-up (ogni 4 settimane)</li>
-                            <li class="flex items-center gap-3"><i class="fas fa-check text-pulse-neon"></i> Monitoraggio progressi</li>
-                            <li class="flex items-center gap-3"><i class="fas fa-check text-pulse-neon"></i> Kit asciugamano incluso</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check text-pulse-neon"></i> 2 Check-up periodici</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check text-pulse-neon"></i> Kit asciugamano</li>
                         </ul>
-                        <a href="https://prenota-link-placeholder.com" target="_blank" class="block w-full py-3 text-center bg-pulse-neon text-white hover:bg-pulse-neonHover transition uppercase text-sm font-bold shadow-neon">Prenota</a>
+                        <a href="#" class="btn-prenota-whatsapp block w-full py-3 bg-pulse-neon text-white hover:bg-pulse-neonHover font-bold uppercase shadow-neon">Richiedi Info</a>
                     </div>
-
                     <!-- SIGNATURE -->
-                    <div class="bg-pulse-gray p-8 rounded-lg border border-white/10 flex flex-col hover:border-white/30 transition-all">
-                        <h3 class="text-2xl font-bold text-white mb-2">PULSE SIGNATURE</h3>
-                        <div class="text-4xl font-bold text-pulse-neon mb-1">€500</div>
+                    <div class="bg-pulse-gray p-8 rounded border border-white/10 hover:border-white/30 transition flex flex-col">
+                        <h3 class="text-2xl font-bold text-white mb-2">SIGNATURE</h3>
+                        <div class="text-xl font-bold text-pulse-neon mb-4">Contattaci per info</div>
                         <p class="text-xs text-gray-500 uppercase tracking-widest mb-6">Validità 5 Mesi</p>
-                        
-                        <ul class="space-y-4 mb-8 flex-grow text-sm text-gray-300">
+                        <ul class="space-y-3 mb-8 flex-grow text-sm text-gray-300 text-left">
                             <li class="flex items-center gap-3"><i class="fas fa-check text-pulse-neon"></i> 20 Sedute</li>
                             <li class="flex items-center gap-3"><i class="fas fa-check text-pulse-neon"></i> 4 Check-up completi</li>
-                            <li class="flex items-center gap-3"><i class="fas fa-check text-pulse-neon"></i> Report avanzato</li>
-                            <li class="flex items-center gap-3"><i class="fas fa-check text-pulse-neon"></i> Flessibilità massima prenotazione</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check text-pulse-neon"></i> Massima flessibilità</li>
                         </ul>
-                        <a href="https://prenota-link-placeholder.com" target="_blank" class="block w-full py-3 text-center border border-white text-white hover:bg-white hover:text-black transition uppercase text-sm font-bold">Prenota</a>
+                        <a href="#" class="btn-prenota-whatsapp block w-full py-3 border border-white text-white hover:bg-white hover:text-black font-bold uppercase">Richiedi Info</a>
                     </div>
-                </div>
-
-                <!-- Comparison Table -->
-                <div class="max-w-4xl mx-auto overflow-x-auto">
-                    <table class="w-full text-left border-collapse">
-                        <thead>
-                            <tr class="border-b border-white/20 text-gray-400 text-sm uppercase">
-                                <th class="py-4 pl-4">Caratteristica</th>
-                                <th class="py-4 px-2 text-center">Start</th>
-                                <th class="py-4 px-2 text-center text-pulse-neon">Prime</th>
-                                <th class="py-4 px-2 text-center">Signature</th>
-                            </tr>
-                        </thead>
-                        <tbody class="text-sm">
-                            <tr class="border-b border-white/5 hover:bg-white/5">
-                                <td class="py-4 pl-4 font-semibold">Sedute</td>
-                                <td class="py-4 text-center">8</td>
-                                <td class="py-4 text-center font-bold text-white">12</td>
-                                <td class="py-4 text-center">20</td>
-                            </tr>
-                            <tr class="border-b border-white/5 hover:bg-white/5">
-                                <td class="py-4 pl-4 font-semibold">Validità</td>
-                                <td class="py-4 text-center">2 Mesi</td>
-                                <td class="py-4 text-center font-bold text-white">3 Mesi</td>
-                                <td class="py-4 text-center">5 Mesi</td>
-                            </tr>
-                            <tr class="border-b border-white/5 hover:bg-white/5">
-                                <td class="py-4 pl-4 font-semibold">Check-up & Report</td>
-                                <td class="py-4 text-center">1 Iniziale</td>
-                                <td class="py-4 text-center font-bold text-white">2 (mensili)</td>
-                                <td class="py-4 text-center">4 (completi)</td>
-                            </tr>
-                            <tr class="border-b border-white/5 hover:bg-white/5">
-                                <td class="py-4 pl-4 font-semibold">Cancellazione</td>
-                                <td class="py-4 text-center text-xs text-gray-500" colspan="3">Fino a 24h prima per tutti i pacchetti</td>
-                            </tr>
-                        </tbody>
-                    </table>
                 </div>
             </div>
         </div>
 
-        <!-- ================= PAGE: CONTATTI ================= -->
+        <!-- CONTATTI -->
         <div id="contacts" class="page-section pt-10">
             <div class="container mx-auto px-4 py-12">
-                <h1 class="text-4xl font-bold mb-12 text-center">Contattaci</h1>
-
+                <h1 class="text-4xl font-bold mb-12 text-center">Contatti</h1>
                 <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-                    <!-- Info Bloc -->
                     <div>
                         <div class="bg-pulse-gray p-8 rounded border-l-4 border-pulse-neon mb-8">
-                            <h3 class="text-xl font-bold mb-6">PULSE Ems Studio</h3>
-                            
-                            <div class="mb-6">
-                                <p class="text-xs text-gray-500 uppercase tracking-widest mb-1">Indirizzo</p>
-                                <p class="text-lg text-white"><i class="fas fa-map-marker-alt text-pulse-neon mr-2"></i> Via Achille Grandi 28, Casalmaggiore</p>
-                            </div>
-                            
-                            <div class="mb-6">
-                                <p class="text-xs text-gray-500 uppercase tracking-widest mb-1">Orari</p>
-                                <p class="text-white">10:00 – 14:00</p>
-                                <p class="text-white">15:30 – 19:30</p>
-                                <p class="text-sm text-pulse-neon mt-2 italic">*Solo su appuntamento</p>
-                            </div>
-
-                            <div>
-                                <p class="text-xs text-gray-500 uppercase tracking-widest mb-1">Policy</p>
-                                <p class="text-sm text-gray-300">Cancellazioni accettate fino al giorno prima dell'appuntamento.</p>
-                            </div>
+                            <h3 class="text-xl font-bold mb-6" id="contact-name">PULSE Ems Studio</h3>
+                            <div class="mb-6"><p class="text-xs text-gray-500 uppercase tracking-widest mb-1">Indirizzo</p><p class="text-lg text-white"><i class="fas fa-map-marker-alt text-pulse-neon mr-2"></i> <span id="contact-address"></span></p></div>
+                            <div class="mb-6"><p class="text-xs text-gray-500 uppercase tracking-widest mb-1">Orari</p><p class="text-white" id="contact-hours-1"></p><p class="text-white" id="contact-hours-2"></p><p class="text-sm text-pulse-neon mt-2 italic">*Solo su appuntamento</p></div>
                         </div>
-
                         <div class="flex flex-col gap-4">
-                            <a href="https://prenota-link-placeholder.com" class="w-full py-4 bg-pulse-neon text-white text-center font-bold uppercase rounded shadow-neon hover:bg-pulse-neonHover transition">
-                                Prenota Online
-                            </a>
-                            <!-- Link WhatsApp: Inserire numero reale al posto di 390000000000 -->
-                            <a href="https://wa.me/390000000000?text=Ciao!%20Vorrei%20informazioni%20su%20PULSE%20EMS%20STUDIO%20e%20prenotare%20una%20prova.%20Il%20mio%20obiettivo%20è:_____." target="_blank" class="w-full py-4 bg-[#25D366] text-white text-center font-bold uppercase rounded hover:opacity-90 transition">
-                                <i class="fab fa-whatsapp mr-2"></i> Scrivici su WhatsApp
-                            </a>
+                            <a href="#" class="btn-prenota-whatsapp w-full py-4 bg-pulse-neon text-white text-center font-bold uppercase rounded shadow-neon hover:bg-pulse-neonHover transition"><i class="fab fa-whatsapp mr-2"></i> Prenota su WhatsApp</a>
                         </div>
                     </div>
-
-                    <!-- Mappa (Placeholder) -->
-                    <div class="h-full min-h-[400px] bg-gray-800 rounded relative overflow-hidden group">
-                        <!-- Immagine statica mappa o iframe reale -->
-                        <div class="absolute inset-0 flex items-center justify-center bg-gray-900">
-                           <p class="text-gray-500 text-center px-4">Qui andrà l'embed di Google Maps.<br>Per ora usa il pulsante sotto.</p>
-                        </div>
-                        
-                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center gap-4">
-                            <a href="https://maps.google.com/?q=Via+Achille+Grandi+28,+Casalmaggiore" target="_blank" class="px-6 py-3 bg-white text-black font-bold uppercase rounded hover:bg-pulse-neon hover:text-white transition">
-                                Apri Mappa
-                            </a>
-                            <a href="https://maps.google.com/?q=Via+Achille+Grandi+28,+Casalmaggiore" target="_blank" class="px-6 py-3 border border-white text-white font-bold uppercase rounded hover:bg-white hover:text-black transition">
-                                Indicazioni
-                            </a>
+                    <!-- Map Placeholder -->
+                    <div class="h-[400px] bg-gray-800 rounded relative overflow-hidden group bg-[url('https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=2074&auto=format&fit=crop')] bg-cover bg-center">
+                        <div class="absolute inset-0 bg-black/60"></div>
+                        <div class="absolute inset-0 flex flex-col items-center justify-center gap-4 z-10">
+                            <p class="text-white font-bold">Vienici a trovare</p>
+                            <a href="#" id="map-btn" target="_blank" class="px-6 py-3 bg-white text-black font-bold uppercase rounded hover:bg-pulse-neon hover:text-white transition">Apri Mappa</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </main>
 
     <!-- FOOTER -->
     <footer class="bg-black border-t border-white/10 pt-16 pb-8 mt-20">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between items-center md:items-start gap-8 text-center md:text-left">
-                <!-- Brand -->
-                <div>
-                    <div class="text-2xl font-bold tracking-widest text-white mb-2">
-                        PULSE <span class="text-pulse-neon text-sm font-medium tracking-normal">EMS STUDIO</span>
-                    </div>
-                    <p class="text-gray-500 text-sm">Il tuo corpo, il tuo tempo, la nostra tecnologia.</p>
-                </div>
-
-                <!-- Links -->
-                <div class="text-gray-400 text-sm space-y-2">
-                    <p>Via Achille Grandi 28, Casalmaggiore</p>
-                    <p class="flex justify-center md:justify-start gap-4 mt-4">
-                        <a href="#" class="hover:text-pulse-neon transition"><i class="fab fa-instagram text-xl"></i></a>
-                        <a href="#" class="hover:text-pulse-neon transition"><i class="fab fa-facebook text-xl"></i></a>
-                    </p>
-                </div>
-            </div>
-            
-            <div class="border-t border-white/5 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600">
-                <p>&copy; 2024 PULSE Ems Studio. All rights reserved.</p>
-                <div class="flex gap-4 mt-4 md:mt-0">
-                    <a href="#" class="hover:text-gray-400">Privacy Policy</a>
-                    <a href="#" class="hover:text-gray-400">Cookie Policy</a>
-                    <span>P.IVA In fase di assegnazione</span>
-                </div>
-            </div>
+        <div class="container mx-auto px-4 text-center md:text-left">
+            <div class="text-2xl font-bold tracking-widest text-white mb-2">PULSE <span class="text-pulse-neon text-sm font-medium tracking-normal">EMS STUDIO</span></div>
+            <p class="text-gray-500 text-sm mb-4">Il tuo corpo, il tuo tempo, la nostra tecnologia.</p>
+            <div class="border-t border-white/5 pt-8 text-xs text-gray-600"><p>&copy; 2024 PULSE Ems Studio. All rights reserved.</p></div>
         </div>
     </footer>
 
-    <!-- PERSISTENT CTAS -->
-    <div class="fixed bottom-6 right-6 z-40 flex flex-col gap-3">
-        <!-- WhatsApp -->
-        <a href="https://wa.me/390000000000?text=Ciao!%20Vorrei%20informazioni." target="_blank" class="w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center text-white text-2xl shadow-lg hover:scale-110 transition-transform">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-        <!-- Prenota Floating (Mobile only often, but good for desktop too here) -->
-        <a href="https://prenota-link-placeholder.com" target="_blank" class="w-14 h-14 bg-pulse-neon rounded-full flex items-center justify-center text-white text-xl shadow-neon hover:scale-110 transition-transform hover:shadow-neon-hover">
-            <i class="fas fa-calendar-check"></i>
-        </a>
+    <!-- FLOAT BUTTON -->
+    <div class="fixed bottom-6 right-6 z-40">
+        <a href="#" id="float-whatsapp" target="_blank" class="w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center text-white text-2xl shadow-lg hover:scale-110 transition-transform"><i class="fab fa-whatsapp"></i></a>
     </div>
 
-    <!-- SCRIPTS -->
+    <!-- LOGICA -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Init Animate On Scroll
-        AOS.init({
-            duration: 800,
-            once: true,
-            offset: 100
+        AOS.init({ duration: 800, once: true, offset: 100 });
+        window.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('hero-title').innerText = DATI_SITO.titoloPrincipale;
+            document.getElementById('hero-subtitle').innerText = DATI_SITO.sottoTitoloColorato;
+            document.getElementById('hero-desc').innerText = DATI_SITO.descrizioneBreve;
+            document.getElementById('hero-city').innerText = DATI_SITO.citta;
+            document.getElementById('contact-name').innerText = DATI_SITO.nomeStudio;
+            document.getElementById('contact-address').innerText = DATI_SITO.indirizzo;
+            document.getElementById('contact-hours-1').innerText = DATI_SITO.orariMattina;
+            document.getElementById('contact-hours-2').innerText = DATI_SITO.orariPomeriggio;
+
+            const waLink = `https://wa.me/${DATI_SITO.numeroWhatsApp}?text=Ciao!%20Vorrei%20informazioni%20sui%20pacchetti%20o%20prenotare%20una%20prova%20presso%20${encodeURIComponent(DATI_SITO.nomeStudio)}.`;
+            document.querySelectorAll('.btn-prenota-whatsapp, #float-whatsapp').forEach(btn => { btn.href = waLink; });
+            document.getElementById('map-btn').href = DATI_SITO.linkMappa;
         });
 
-        // Simple Router / Tab Switcher
         function showPage(pageId) {
-            // Hide all pages
-            const pages = document.querySelectorAll('.page-section');
-            pages.forEach(page => {
-                page.classList.remove('active');
-                setTimeout(() => {
-                    if(!page.classList.contains('active')) page.style.display = 'none';
-                }, 500); // Wait for fade out
+            document.querySelectorAll('.page-section').forEach(p => {
+                p.classList.remove('active');
+                setTimeout(() => { if(!p.classList.contains('active')) p.style.display='none'; }, 400);
             });
-
-            // Show selected page
             const selected = document.getElementById(pageId);
             if (selected) {
-                // Reset scroll to top
                 window.scrollTo({ top: 0, behavior: 'smooth' });
-                
                 selected.style.display = 'block';
-                // Small delay to allow display:block to apply before adding opacity class
-                setTimeout(() => {
-                    selected.classList.add('active');
-                    AOS.refresh(); // Refresh animations for new content
-                }, 50);
+                setTimeout(() => { selected.classList.add('active'); AOS.refresh(); }, 50);
             }
         }
-
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        function toggleMobileMenu() {
-            mobileMenu.classList.toggle('hidden');
-        }
-
-        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
-
-        // FAQ Accordion
-        function toggleFaq(button) {
-            const content = button.nextElementSibling;
-            const icon = button.querySelector('i');
-            
-            if (content.classList.contains('hidden')) {
-                content.classList.remove('hidden');
-                icon.classList.remove('fa-plus');
-                icon.classList.add('fa-minus');
-                button.classList.add('text-pulse-neon');
-            } else {
-                content.classList.add('hidden');
-                icon.classList.remove('fa-minus');
-                icon.classList.add('fa-plus');
-                button.classList.remove('text-pulse-neon');
-            }
-        }
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => { document.getElementById('mobile-menu').classList.toggle('hidden'); });
+        function toggleMobileMenu() { document.getElementById('mobile-menu').classList.add('hidden'); }
     </script>
 </body>
 </html>
