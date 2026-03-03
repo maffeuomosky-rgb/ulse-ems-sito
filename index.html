@@ -70,16 +70,16 @@
       slogan: "PULSE — 20 minuti. Risultati veri.",
       waPrefill: "Ciao! Obiettivo: ____. Disponibilità: ____. Vorrei prenotare la prima prova.",
 
-      // IMMAGINI PLACEHOLDER (sostituiscile con le tue, mantenendo gli stessi id)
+      // IMMAGINI PLACEHOLDER (sostituiscile con le tue)
       images: {
         hero: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2400",
         firstTrial: "https://images.unsplash.com/photo-1599058917212-d750089bc07e?q=80&w=2400",
         whyMiha: "https://images.unsplash.com/photo-1550345332-09e3ac987658?q=80&w=2400",
         target: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=2400",
-        studioGallery1: "https://images.unsplash.com/photo-1521805103424-d8f8430e8933?q=80&w=2400",
-        studioGallery2: "https://images.unsplash.com/photo-1517838277536-f5f99be501ea?q=80&w=2400",
-        studioGallery3: "https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=2400",
-        studioGallery4: "https://images.unsplash.com/photo-1526401281623-6f0d2d3c2a15?q=80&w=2400",
+        galleryA: "https://images.unsplash.com/photo-1521805103424-d8f8430e8933?q=80&w=2400",
+        galleryB: "https://images.unsplash.com/photo-1517838277536-f5f99be501ea?q=80&w=2400",
+        galleryC: "https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=2400",
+        galleryD: "https://images.unsplash.com/photo-1526401281623-6f0d2d3c2a15?q=80&w=2400",
         emsTech: "https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?q=80&w=2400",
         deviceCloseup: "https://images.unsplash.com/photo-1558611848-73f7eb4001a1?q=80&w=2400",
         suitsCloseup: "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?q=80&w=2400",
@@ -97,22 +97,25 @@
     .page-section.active { display: block; opacity: 1; animation: fadeIn 0.8s ease-out; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
 
-    /* Brand */
     .gradient-text { background: linear-gradient(to right, #ffffff, #ff007f); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
     /* Cards */
     .glass-card {
       background: rgba(255, 255, 255, 0.03);
       backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      transition: transform 280ms cubic-bezier(.2,.8,.2,1), box-shadow 280ms cubic-bezier(.2,.8,.2,1), border-color 280ms ease;
+      border: 1px solid rgba(255, 255, 255, 0.055);
+      transition: transform 260ms cubic-bezier(.2,.8,.2,1), box-shadow 260ms cubic-bezier(.2,.8,.2,1), border-color 260ms ease;
       will-change: transform;
     }
-    .glass-card:hover { border-color: rgba(255, 0, 127, 0.45); box-shadow: 0 0 20px rgba(255, 0, 127, 0.14); transform: translateY(-6px) scale(1.01); }
+    .glass-card:hover {
+      border-color: rgba(255, 0, 127, 0.35);
+      box-shadow: 0 0 18px rgba(255, 0, 127, 0.12);
+      transform: translateY(-6px) scale(1.01);
+    }
 
     /* FAQ */
     .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
-    .faq-item.active .faq-answer { max-height: 560px; }
+    .faq-item.active .faq-answer { max-height: 620px; }
     .faq-item.active .faq-icon { transform: rotate(180deg); color: #ff007f; }
 
     /* Scrollbar */
@@ -120,7 +123,7 @@
     ::-webkit-scrollbar-track { background: #050505; }
     ::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
 
-    /* === Modern transitions (premium, not cheesy) ====================== */
+    /* Reveal */
     .reveal {
       opacity: 0;
       transform: translateY(14px);
@@ -136,6 +139,7 @@
     .reveal--right { transform: translateX(18px); }
     .reveal--scale { transform: scale(.985); }
 
+    /* Buttons */
     .btn { transition: transform 220ms cubic-bezier(.2,.8,.2,1), filter 220ms ease, opacity 220ms ease; will-change: transform; }
     .btn:hover { transform: translateY(-2px); filter: brightness(1.07); }
     .btn:active { transform: translateY(0) scale(.99); }
@@ -152,6 +156,7 @@
     }
     .btn--cta:hover::after { transform: translateX(60%) rotate(12deg); }
 
+    /* Sticky header */
     .header { transition: background 260ms ease, backdrop-filter 260ms ease, border-color 260ms ease; }
     .header.is-scrolled {
       background: rgba(0,0,0,.45) !important;
@@ -161,25 +166,22 @@
     }
 
     html { scroll-behavior: smooth; }
-    :target { animation: targetGlow 900ms ease-out 1; }
-    @keyframes targetGlow {
-      0% { outline: 0 solid transparent; }
-      30% { outline: 2px solid rgba(255,255,255,.22); outline-offset: 10px; }
-      100% { outline: 0 solid transparent; outline-offset: 10px; }
+
+    /* Image chrome */
+    .img-frame {
+      border: 1px solid rgba(255,255,255,.07);
+      box-shadow: 0 0 0 1px rgba(255,0,127,.10);
     }
 
-    /* Floating WhatsApp */
+    /* Floating WhatsApp (soft) */
     @keyframes softPulse {
       0%, 100% { transform: translateY(0) scale(1); }
       50% { transform: translateY(-1px) scale(1.03); }
     }
     .float-soft-pulse { animation: softPulse 2.2s ease-in-out infinite; }
 
-    /* Image chrome */
-    .img-frame {
-      border: 1px solid rgba(255,255,255,.08);
-      box-shadow: 0 0 0 1px rgba(255,0,127,.12);
-    }
+    /* Mobile sticky CTA bar spacing */
+    .safe-bottom-pad { padding-bottom: 86px; }
 
     /* Reduced motion */
     @media (prefers-reduced-motion: reduce) {
@@ -196,6 +198,7 @@
 </head>
 
 <body class="antialiased font-sans">
+
   <!-- HEADER -->
   <header class="header fixed w-full top-0 z-50 bg-pulse-black/80 backdrop-blur-lg border-b border-white/5">
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -237,16 +240,17 @@
     </div>
   </header>
 
-  <main>
+  <main class="safe-bottom-pad md:pb-0">
     <!-- ================= HOME PAGE ================= -->
     <div id="home" class="page-section active">
-      <!-- HERO -->
+
+      <!-- HERO (cinematic) -->
       <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 z-0">
           <img id="img-hero" src="" class="w-full h-full object-cover opacity-30" alt="PULSE EMS Studio" />
-          <div class="absolute inset-0 bg-gradient-to-t from-pulse-black via-pulse-black/65 to-transparent"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-pulse-black via-pulse-black/70 to-transparent"></div>
           <div class="absolute inset-0 bg-gradient-to-r from-pulse-black via-transparent to-pulse-black"></div>
-          <div class="absolute inset-0 opacity-[0.08]" style="background-image: radial-gradient(circle at 20% 20%, rgba(255,0,127,.9) 0, transparent 35%), radial-gradient(circle at 80% 30%, rgba(255,255,255,.8) 0, transparent 35%);"></div>
+          <div class="absolute inset-0 opacity-[0.08]" style="background-image: radial-gradient(circle at 22% 18%, rgba(255,0,127,.95) 0, transparent 35%), radial-gradient(circle at 80% 32%, rgba(255,255,255,.8) 0, transparent 35%);"></div>
         </div>
 
         <div class="container mx-auto px-4 relative z-10 pt-20">
@@ -269,7 +273,7 @@
                 Prenota la prima prova
               </a>
               <a href="#" onclick="scrollToId('first-trial')" class="btn min-w-[240px] py-4 border border-white/20 text-white font-bold uppercase tracking-widest text-sm hover:bg-white/5 transition backdrop-blur-sm">
-                Come funziona (in 3 step)
+                Come funziona (3 step)
               </a>
             </div>
 
@@ -285,7 +289,7 @@
         </div>
       </section>
 
-      <!-- PRIMA PROVA (premium conversion block) -->
+      <!-- PRIMA PROVA (iconic + metrics bar) -->
       <section class="py-24 bg-pulse-black border-t border-white/5" id="first-trial">
         <div class="container mx-auto px-6 max-w-6xl">
           <div class="grid lg:grid-cols-2 gap-12 items-center">
@@ -294,7 +298,6 @@
               <h3 class="text-3xl md:text-4xl font-bold text-white">Non è una “prova random”.</h3>
               <p class="text-gray-400 mt-4 leading-relaxed">
                 Facciamo le cose bene: check iniziale, seduta guidata e un piano coerente con il tuo obiettivo.
-                <span class="text-white/70">Durata totale: 40–50 minuti.</span>
               </p>
 
               <div class="mt-8 space-y-4">
@@ -331,43 +334,60 @@
 
             <div class="reveal reveal--right">
               <div class="relative rounded-2xl overflow-hidden img-frame">
-                <img id="img-firstTrial" src="" class="w-full h-[520px] object-cover opacity-90" alt="Prima prova PULSE" />
+                <img id="img-firstTrial" src="" class="w-full h-[520px] object-cover opacity-90" alt="Prima prova PULSE" loading="lazy" />
                 <div class="absolute inset-0 bg-gradient-to-t from-pulse-black via-transparent to-transparent"></div>
-                <div class="absolute bottom-5 left-5 right-5 glass-card p-5 rounded-xl">
-                  <div class="flex items-center justify-between gap-4">
-                    <div>
-                      <p class="text-xs uppercase tracking-widest text-white/60">Standard PULSE</p>
-                      <p class="text-white font-bold">Qualità > quantità</p>
-                      <p class="text-sm text-gray-400">Progressione graduale. Recupero tipico 48–72h.</p>
-                    </div>
-                    <div class="text-pulse-neon text-2xl"><i class="fas fa-shield-heart"></i></div>
+
+                <!-- Editorial caption -->
+                <div class="absolute top-5 left-5 right-5 flex items-center justify-between gap-4">
+                  <div class="glass-card px-4 py-2 rounded-full">
+                    <span class="text-xs uppercase tracking-widest text-white/80">Standard PULSE</span>
+                  </div>
+                  <div class="glass-card px-4 py-2 rounded-full">
+                    <span class="text-xs uppercase tracking-widest text-white/80">Qualità > quantità</span>
                   </div>
                 </div>
               </div>
-              <p class="text-xs text-white/40 mt-3">Foto placeholder: sostituisci con la tua (stesso id).</p>
+
+              <!-- Metrics bar (signature) -->
+              <div class="mt-4 grid grid-cols-3 gap-3">
+                <div class="glass-card p-4 rounded-xl text-center">
+                  <p class="text-[10px] uppercase tracking-widest text-white/50">Durata totale</p>
+                  <p class="text-white font-extrabold text-lg">40–50'</p>
+                </div>
+                <div class="glass-card p-4 rounded-xl text-center">
+                  <p class="text-[10px] uppercase tracking-widest text-white/50">EMS</p>
+                  <p class="text-white font-extrabold text-lg">20'</p>
+                </div>
+                <div class="glass-card p-4 rounded-xl text-center">
+                  <p class="text-[10px] uppercase tracking-widest text-white/50">Recupero tipico</p>
+                  <p class="text-white font-extrabold text-lg">48–72h</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- PERCHÉ MIHA (con foto) -->
+      <!-- WHY MIHA (layout alternato: IMAGE LEFT, CONTENT RIGHT) -->
       <section class="py-24 bg-pulse-dark border-t border-white/5" id="why-miha">
         <div class="container mx-auto px-6 max-w-6xl">
           <div class="text-center mb-16 reveal">
             <h2 class="text-sm font-bold text-pulse-neon uppercase tracking-widest mb-3">Tecnologia Premium</h2>
             <h3 class="text-3xl md:text-4xl font-bold text-white">Perché <span class="text-pulse-neon">Miha Bodytec</span></h3>
             <p class="text-gray-400 mt-4 max-w-3xl mx-auto">
-              La differenza non è solo la macchina: è il mix tra qualità dell’impulso, personalizzazione e metodo 1:1.
+              La differenza non è solo la macchina: è qualità dell’impulso + personalizzazione + metodo 1:1.
             </p>
           </div>
 
           <div class="grid lg:grid-cols-12 gap-10 items-stretch">
             <div class="lg:col-span-5 reveal reveal--left">
-              <div class="relative rounded-2xl overflow-hidden img-frame h-full min-h-[420px]">
-                <img id="img-whyMiha" src="" class="w-full h-full object-cover opacity-90" alt="Tecnologia Miha Bodytec" />
+              <div class="relative rounded-2xl overflow-hidden img-frame h-full min-h-[440px]">
+                <img id="img-whyMiha" src="" class="w-full h-full object-cover opacity-90" alt="Tecnologia Miha Bodytec" loading="lazy" />
                 <div class="absolute inset-0 bg-gradient-to-t from-pulse-black via-transparent to-transparent"></div>
-                <div class="absolute top-5 left-5 glass-card px-4 py-2 rounded-full">
-                  <span class="text-xs uppercase tracking-widest text-white/80">Premium hardware + premium metodo</span>
+                <div class="absolute bottom-5 left-5 right-5 glass-card p-5 rounded-xl">
+                  <p class="text-xs uppercase tracking-widest text-white/60">Focus</p>
+                  <p class="text-white font-bold">Ripetibilità & controllo</p>
+                  <p class="text-sm text-gray-400">Sedute coerenti nel tempo. Progressione tracciata.</p>
                 </div>
               </div>
             </div>
@@ -377,19 +397,17 @@
                 <div class="glass-card p-7 rounded-2xl text-center">
                   <i class="fas fa-wave-square text-4xl text-pulse-neon mb-6"></i>
                   <h4 class="text-lg font-bold mb-3">Impulso di qualità</h4>
-                  <p class="text-sm text-gray-400 leading-relaxed">Seduta più confortevole e ripetibile: qualità alta senza forzare.</p>
+                  <p class="text-sm text-gray-400 leading-relaxed">Seduta più confortevole e “ripetibile”. Niente forzature inutili.</p>
                 </div>
-
                 <div class="glass-card p-7 rounded-2xl text-center">
                   <i class="fas fa-sliders text-4xl text-pulse-neon mb-6"></i>
-                  <h4 class="text-lg font-bold mb-3">Personalizzazione distretto</h4>
-                  <p class="text-sm text-gray-400 leading-relaxed">Intensità regolata per gruppo muscolare: controllo fine e progressione.</p>
+                  <h4 class="text-lg font-bold mb-3">Personalizzazione</h4>
+                  <p class="text-sm text-gray-400 leading-relaxed">Regolazione per distretto: controllo fine e progressione intelligente.</p>
                 </div>
-
                 <div class="glass-card p-7 rounded-2xl text-center">
                   <i class="fas fa-user-check text-4xl text-pulse-neon mb-6"></i>
-                  <h4 class="text-lg font-bold mb-3">Metodo & controllo</h4>
-                  <p class="text-sm text-gray-400 leading-relaxed">Check, recupero, incremento graduale: risultati senza improvvisare.</p>
+                  <h4 class="text-lg font-bold mb-3">Metodo</h4>
+                  <p class="text-sm text-gray-400 leading-relaxed">Check, recupero, incremento graduale. Risultati senza improvvisare.</p>
                 </div>
               </div>
 
@@ -405,7 +423,7 @@
                     <p class="text-gray-400 text-xs">Si sale gradualmente: qualità > ego.</p>
                   </div>
                   <div class="bg-white/5 border border-white/10 rounded-lg p-4">
-                    <p class="text-white font-semibold mb-1">No folla, no caos</p>
+                    <p class="text-white font-semibold mb-1">No folla</p>
                     <p class="text-gray-400 text-xs">Studio riservato, su appuntamento.</p>
                   </div>
                 </div>
@@ -422,7 +440,7 @@
         </div>
       </section>
 
-      <!-- TARGET (con foto di contesto) -->
+      <!-- TARGET (layout alternato: CONTENT LEFT, IMAGE RIGHT) -->
       <section class="py-24 bg-pulse-black border-t border-white/5" id="target">
         <div class="container mx-auto px-6 max-w-6xl">
           <div class="grid lg:grid-cols-12 gap-10 items-center">
@@ -435,19 +453,19 @@
               </p>
 
               <div class="grid sm:grid-cols-2 gap-5">
-                <div class="bg-[#111] p-6 rounded-xl border border-white/10 hover:bg-[#1a1a1a] transition glass-card">
+                <div class="glass-card p-6 rounded-xl">
                   <h4 class="font-bold text-white text-lg mb-2">Poco tempo</h4>
                   <p class="text-xs text-gray-400">Sedute brevi, metodo chiaro, zero dispersione.</p>
                 </div>
-                <div class="bg-[#111] p-6 rounded-xl border border-white/10 hover:bg-[#1a1a1a] transition glass-card">
+                <div class="glass-card p-6 rounded-xl">
                   <h4 class="font-bold text-white text-lg mb-2">Tono & postura</h4>
                   <p class="text-xs text-gray-400">Movimento guidato + progressione coerente.</p>
                 </div>
-                <div class="bg-[#111] p-6 rounded-xl border border-white/10 hover:bg-[#1a1a1a] transition glass-card">
+                <div class="glass-card p-6 rounded-xl">
                   <h4 class="font-bold text-white text-lg mb-2">Privacy</h4>
                   <p class="text-xs text-gray-400">1:1 su appuntamento, studio riservato.</p>
                 </div>
-                <div class="bg-[#111] p-6 rounded-xl border border-white/10 hover:bg-[#1a1a1a] transition glass-card">
+                <div class="glass-card p-6 rounded-xl">
                   <h4 class="font-bold text-white text-lg mb-2">Sportivi</h4>
                   <p class="text-xs text-gray-400">Supporto a forza e qualità del movimento.</p>
                 </div>
@@ -466,72 +484,82 @@
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div class="lg:col-span-6 reveal reveal--right">
-              <div class="relative rounded-2xl overflow-hidden img-frame">
-                <img id="img-target" src="" class="w-full h-[620px] object-cover opacity-90" alt="Target PULSE" />
-                <div class="absolute inset-0 bg-gradient-to-t from-pulse-black via-transparent to-transparent"></div>
-                <div class="absolute bottom-5 left-5 right-5 grid sm:grid-cols-2 gap-3">
-                  <div class="glass-card p-4 rounded-xl">
-                    <p class="text-xs uppercase tracking-widest text-white/60">Approccio</p>
-                    <p class="text-white font-bold">Metodo + coaching</p>
-                    <p class="text-xs text-white/60 mt-1">Sedute strutturate, non improvvisate.</p>
-                  </div>
-                  <div class="glass-card p-4 rounded-xl">
-                    <p class="text-xs uppercase tracking-widest text-white/60">Ambiente</p>
-                    <p class="text-white font-bold">Boutique & riservato</p>
-                    <p class="text-xs text-white/60 mt-1">Qualità percepibile, subito.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="mt-6 text-center">
+              <div class="mt-8">
                 <a href="#" class="btn btn--cta btn-prenota-whatsapp inline-flex items-center gap-3 px-8 py-4 bg-white/5 border border-white/20 text-white font-bold uppercase text-xs tracking-widest hover:bg-pulse-neon hover:border-pulse-neon transition">
                   Dimmi il tuo obiettivo → ti propongo il percorso più sensato
                 </a>
               </div>
             </div>
+
+            <div class="lg:col-span-6 reveal reveal--right">
+              <div class="relative rounded-2xl overflow-hidden img-frame">
+                <img id="img-target" src="" class="w-full h-[640px] object-cover opacity-90" alt="Target PULSE" loading="lazy" />
+                <div class="absolute inset-0 bg-gradient-to-t from-pulse-black via-transparent to-transparent"></div>
+                <div class="absolute bottom-5 left-5 right-5 grid sm:grid-cols-2 gap-3">
+                  <div class="glass-card p-4 rounded-xl">
+                    <p class="text-[10px] uppercase tracking-widest text-white/50">Approccio</p>
+                    <p class="text-white font-extrabold">Metodo + coaching</p>
+                    <p class="text-xs text-white/60 mt-1">Sedute strutturate, non improvvisate.</p>
+                  </div>
+                  <div class="glass-card p-4 rounded-xl">
+                    <p class="text-[10px] uppercase tracking-widest text-white/50">Ambiente</p>
+                    <p class="text-white font-extrabold">Boutique & riservato</p>
+                    <p class="text-xs text-white/60 mt-1">Qualità percepibile, subito.</p>
+                  </div>
+                </div>
+              </div>
+              <p class="text-xs text-white/35 mt-3 text-center">Suggerimento: qui metti una foto “wide” del tuo studio (reale).</p>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- GALLERY (foto per ogni sezione: ora placeholder) -->
+      <!-- GALLERY (signature collage) -->
       <section class="py-24 bg-pulse-dark border-t border-white/5" id="gallery">
         <div class="container mx-auto px-6 max-w-6xl">
           <div class="text-center mb-16 reveal">
             <h2 class="text-sm font-bold text-pulse-neon uppercase tracking-widest mb-2">Studio</h2>
-            <h3 class="text-3xl md:text-4xl font-bold text-white">Un’esperienza boutique, reale</h3>
+            <h3 class="text-3xl md:text-4xl font-bold text-white">La firma visiva di PULSE</h3>
             <p class="text-gray-400 mt-4 max-w-3xl mx-auto">
-              Qui inserirai le tue foto reali (per ogni sezione). Intanto: placeholder per una griglia premium.
+              Usa 6 foto reali coerenti (stessa luce, stessi neri). Meglio poche, ma perfette.
             </p>
           </div>
 
+          <!-- Collage grid -->
           <div class="grid lg:grid-cols-12 gap-6">
+            <!-- BIG -->
             <div class="lg:col-span-7 reveal reveal--left">
-              <div class="relative rounded-2xl overflow-hidden img-frame h-[420px]">
-                <img id="img-gallery-1" src="" class="w-full h-full object-cover opacity-95" alt="Studio gallery 1" />
+              <div class="relative rounded-2xl overflow-hidden img-frame h-[440px]">
+                <img id="img-galleryA" src="" class="w-full h-full object-cover opacity-95" alt="Studio wide" loading="lazy" />
                 <div class="absolute inset-0 bg-gradient-to-t from-pulse-black/90 via-transparent to-transparent"></div>
                 <div class="absolute bottom-5 left-5 right-5 flex flex-wrap gap-2">
-                  <span class="px-3 py-2 rounded-full bg-white/5 border border-white/10 text-xs text-white/80">Neon soft</span>
-                  <span class="px-3 py-2 rounded-full bg-white/5 border border-white/10 text-xs text-white/80">Pulizia</span>
                   <span class="px-3 py-2 rounded-full bg-white/5 border border-white/10 text-xs text-white/80">Privacy</span>
+                  <span class="px-3 py-2 rounded-full bg-white/5 border border-white/10 text-xs text-white/80">Pulizia</span>
+                  <span class="px-3 py-2 rounded-full bg-white/5 border border-white/10 text-xs text-white/80">Neon soft</span>
                 </div>
               </div>
+              <p class="text-xs text-white/45 mt-3">
+                Caption: “Entri, ti alleni, esci. Senza frizioni. Senza caos.”
+              </p>
             </div>
 
+            <!-- RIGHT STACK -->
             <div class="lg:col-span-5 grid grid-cols-2 gap-6 reveal reveal--right">
-              <div class="relative rounded-2xl overflow-hidden img-frame h-[200px]">
-                <img id="img-gallery-2" src="" class="w-full h-full object-cover opacity-95" alt="Studio gallery 2" />
+              <div class="relative rounded-2xl overflow-hidden img-frame h-[210px]">
+                <img id="img-galleryB" src="" class="w-full h-full object-cover opacity-95" alt="Reception" loading="lazy" />
                 <div class="absolute inset-0 bg-gradient-to-t from-pulse-black/70 via-transparent to-transparent"></div>
               </div>
-              <div class="relative rounded-2xl overflow-hidden img-frame h-[200px]">
-                <img id="img-gallery-3" src="" class="w-full h-full object-cover opacity-95" alt="Studio gallery 3" />
+              <div class="relative rounded-2xl overflow-hidden img-frame h-[210px]">
+                <img id="img-galleryC" src="" class="w-full h-full object-cover opacity-95" alt="Device detail" loading="lazy" />
                 <div class="absolute inset-0 bg-gradient-to-t from-pulse-black/70 via-transparent to-transparent"></div>
               </div>
-              <div class="relative rounded-2xl overflow-hidden img-frame h-[200px] col-span-2">
-                <img id="img-gallery-4" src="" class="w-full h-full object-cover opacity-95" alt="Studio gallery 4" />
+              <div class="relative rounded-2xl overflow-hidden img-frame h-[210px] col-span-2">
+                <img id="img-galleryD" src="" class="w-full h-full object-cover opacity-95" alt="Suits / equipment wall" loading="lazy" />
                 <div class="absolute inset-0 bg-gradient-to-t from-pulse-black/70 via-transparent to-transparent"></div>
+                <div class="absolute top-5 left-5 glass-card px-4 py-2 rounded-full">
+                  <span class="text-xs uppercase tracking-widest text-white/80">Dettagli che contano</span>
+                </div>
               </div>
             </div>
           </div>
@@ -544,60 +572,46 @@
         </div>
       </section>
 
-      <!-- SOCIAL PROOF (no reviews yet: premium placeholders + link) -->
+      <!-- SOCIAL PROOF (link only + placeholders) -->
       <section class="py-24 bg-pulse-black border-t border-white/5" id="social-proof">
         <div class="container mx-auto px-6 max-w-6xl">
           <div class="text-center mb-14 reveal">
             <h2 class="text-sm font-bold text-pulse-neon uppercase tracking-widest mb-2">Prova Sociale</h2>
             <h3 class="text-3xl md:text-4xl font-bold text-white">Recensioni & testimonianze</h3>
             <p class="text-gray-400 mt-4 max-w-3xl mx-auto">
-              Non hai ancora recensioni? Nessun problema: intanto il layout è pronto. Appena arrivano, sostituisci i testi placeholder.
+              Layout pronto: quando arrivano le prime recensioni, sostituisci i testi placeholder e aggiungi rating/count.
             </p>
           </div>
 
           <div class="grid md:grid-cols-3 gap-8">
             <div class="glass-card p-8 rounded-2xl reveal">
-              <p class="text-gray-300 text-sm leading-relaxed">
-                “Placeholder testimonial: obiettivo + risultato percepito. Esempio: postura migliorata, sedute brevi, studio super pulito.”
-              </p>
+              <p class="text-gray-300 text-sm leading-relaxed">“Placeholder: obiettivo + risultato percepito. Breve e concreto.”</p>
               <div class="mt-5 flex items-center justify-between">
                 <div>
                   <p class="text-white font-bold text-sm">Nome • 32</p>
-                  <p class="text-xs text-white/60">Obiettivo: tono / postura</p>
+                  <p class="text-xs text-white/60">Tono / postura</p>
                 </div>
-                <div class="text-pulse-neon text-sm">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                </div>
+                <div class="text-pulse-neon text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
               </div>
             </div>
-
             <div class="glass-card p-8 rounded-2xl reveal">
-              <p class="text-gray-300 text-sm leading-relaxed">
-                “Placeholder testimonial: poco tempo, sessioni 1:1, sensazione di lavoro completo. Mantieni sempre credibile e concreto.”
-              </p>
+              <p class="text-gray-300 text-sm leading-relaxed">“Placeholder: poco tempo, sedute 1:1, studio super curato.”</p>
               <div class="mt-5 flex items-center justify-between">
                 <div>
                   <p class="text-white font-bold text-sm">Nome • 41</p>
-                  <p class="text-xs text-white/60">Obiettivo: poco tempo</p>
+                  <p class="text-xs text-white/60">Poco tempo</p>
                 </div>
-                <div class="text-pulse-neon text-sm">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                </div>
+                <div class="text-pulse-neon text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
               </div>
             </div>
-
             <div class="glass-card p-8 rounded-2xl reveal">
-              <p class="text-gray-300 text-sm leading-relaxed">
-                “Placeholder testimonial: sportivo, supporto forza/recupero, coaching preciso. Niente promesse assurde: solo esperienza reale.”
-              </p>
+              <p class="text-gray-300 text-sm leading-relaxed">“Placeholder: sportivo, supporto forza/recupero, coach preciso.”</p>
               <div class="mt-5 flex items-center justify-between">
                 <div>
                   <p class="text-white font-bold text-sm">Nome • 28</p>
-                  <p class="text-xs text-white/60">Obiettivo: sport</p>
+                  <p class="text-xs text-white/60">Sport</p>
                 </div>
-                <div class="text-pulse-neon text-sm">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                </div>
+                <div class="text-pulse-neon text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
               </div>
             </div>
           </div>
@@ -606,7 +620,6 @@
             <a href="#" id="google-reviews-link" target="_blank" class="btn btn--cta inline-flex items-center gap-3 px-8 py-4 bg-white text-black font-bold uppercase text-xs tracking-widest hover:bg-pulse-neon hover:text-white transition shadow-lg">
               <i class="fab fa-google"></i> Apri pagina recensioni Google
             </a>
-            <p class="text-xs text-white/50 mt-3">Collegamento già pronto: quando avrai il link “Reviews”, sostituiscilo nel pannello.</p>
           </div>
         </div>
       </section>
@@ -633,113 +646,123 @@
 
     <!-- ================= PAGE: TECNOLOGIA EMS ================= -->
     <div id="ems" class="page-section pt-24 bg-pulse-black">
-      <div class="container mx-auto px-6 pb-20 max-w-6xl">
-        <div class="text-center mb-16 reveal">
-          <h2 class="text-sm font-bold text-pulse-neon uppercase tracking-widest mb-2">Deep Science</h2>
-          <h1 class="text-4xl md:text-5xl font-bold text-white">Come funziona l’EMS?</h1>
-          <p class="text-gray-400 mt-4 max-w-3xl mx-auto">
-            L’EMS affianca il segnale naturale del corpo con impulsi controllati. In PULSE conta il metodo: parametri calibrati, movimento guidato e progressione.
-          </p>
+      <!-- Split background: left dark, right image -->
+      <section class="relative">
+        <div class="absolute inset-0 hidden lg:block">
+          <div class="absolute inset-y-0 left-0 w-1/2 bg-pulse-black"></div>
+          <div class="absolute inset-y-0 right-0 w-1/2">
+            <div class="absolute inset-0 opacity-25" id="ems-split-bg"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-pulse-black via-pulse-black/70 to-pulse-black/30"></div>
+          </div>
         </div>
 
-        <!-- Tech hero block -->
-        <div class="grid lg:grid-cols-12 gap-10 items-center mb-14">
-          <div class="lg:col-span-7 reveal reveal--left">
-            <div class="relative rounded-2xl overflow-hidden img-frame h-[440px]">
-              <img id="img-emsTech" src="" class="w-full h-full object-cover opacity-90" alt="EMS tecnologia" />
-              <div class="absolute inset-0 bg-gradient-to-t from-pulse-black via-transparent to-transparent"></div>
-              <div class="absolute bottom-5 left-5 right-5 glass-card p-5 rounded-xl">
-                <div class="grid sm:grid-cols-3 gap-3">
-                  <div class="bg-white/5 border border-white/10 rounded-lg p-4">
-                    <p class="text-xs uppercase tracking-widest text-white/60">Coach</p>
-                    <p class="text-white font-bold">1:1</p>
-                  </div>
-                  <div class="bg-white/5 border border-white/10 rounded-lg p-4">
-                    <p class="text-xs uppercase tracking-widest text-white/60">Seduta</p>
-                    <p class="text-white font-bold">20 minuti</p>
-                  </div>
-                  <div class="bg-white/5 border border-white/10 rounded-lg p-4">
-                    <p class="text-xs uppercase tracking-widest text-white/60">Metodo</p>
-                    <p class="text-white font-bold">Progressione</p>
+        <div class="container mx-auto px-6 pb-20 max-w-6xl relative">
+          <div class="text-center mb-16 reveal">
+            <h2 class="text-sm font-bold text-pulse-neon uppercase tracking-widest mb-2">Deep Science</h2>
+            <h1 class="text-4xl md:text-5xl font-bold text-white">Come funziona l’EMS?</h1>
+            <p class="text-gray-400 mt-4 max-w-3xl mx-auto">
+              L’EMS affianca il segnale naturale del corpo con impulsi controllati. In PULSE conta il metodo: parametri calibrati, movimento guidato e progressione.
+            </p>
+          </div>
+
+          <div class="grid lg:grid-cols-12 gap-10 items-center mb-14">
+            <div class="lg:col-span-7 reveal reveal--left">
+              <div class="relative rounded-2xl overflow-hidden img-frame h-[440px]">
+                <img id="img-emsTech" src="" class="w-full h-full object-cover opacity-90" alt="EMS tecnologia" loading="lazy" />
+                <div class="absolute inset-0 bg-gradient-to-t from-pulse-black via-transparent to-transparent"></div>
+                <div class="absolute bottom-5 left-5 right-5 glass-card p-5 rounded-xl">
+                  <div class="grid sm:grid-cols-3 gap-3">
+                    <div class="bg-white/5 border border-white/10 rounded-lg p-4">
+                      <p class="text-[10px] uppercase tracking-widest text-white/50">Coach</p>
+                      <p class="text-white font-extrabold">1:1</p>
+                    </div>
+                    <div class="bg-white/5 border border-white/10 rounded-lg p-4">
+                      <p class="text-[10px] uppercase tracking-widest text-white/50">Seduta</p>
+                      <p class="text-white font-extrabold">20 minuti</p>
+                    </div>
+                    <div class="bg-white/5 border border-white/10 rounded-lg p-4">
+                      <p class="text-[10px] uppercase tracking-widest text-white/50">Metodo</p>
+                      <p class="text-white font-extrabold">Progressione</p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div class="lg:col-span-5 reveal reveal--right">
-            <h3 class="text-2xl font-bold text-white mb-4">Cosa senti durante la seduta</h3>
-            <ul class="text-sm text-gray-300 space-y-3">
-              <li class="flex gap-3"><i class="fas fa-check text-pulse-neon mt-1"></i> Contrazione intensa ma controllata</li>
-              <li class="flex gap-3"><i class="fas fa-check text-pulse-neon mt-1"></i> Coach guida postura, respirazione e movimento</li>
-              <li class="flex gap-3"><i class="fas fa-check text-pulse-neon mt-1"></i> Intensità calibrata e incrementata gradualmente</li>
-            </ul>
+            <div class="lg:col-span-5 reveal reveal--right">
+              <h3 class="text-2xl font-bold text-white mb-4">Cosa senti durante la seduta</h3>
+              <ul class="text-sm text-gray-300 space-y-3">
+                <li class="flex gap-3"><i class="fas fa-check text-pulse-neon mt-1"></i> Contrazione intensa ma controllata</li>
+                <li class="flex gap-3"><i class="fas fa-check text-pulse-neon mt-1"></i> Coach guida postura, respirazione e movimento</li>
+                <li class="flex gap-3"><i class="fas fa-check text-pulse-neon mt-1"></i> Intensità calibrata e incrementata gradualmente</li>
+              </ul>
 
-            <div class="mt-8 glass-card p-6 rounded-xl">
-              <h4 class="text-white font-bold mb-2">Obiettivo → Frequenza consigliata</h4>
-              <div class="text-sm text-gray-300 space-y-2">
-                <div class="flex justify-between gap-4"><span>Tono / postura</span><span class="text-white/70">1x settimana</span></div>
-                <div class="flex justify-between gap-4"><span>Performance sportiva</span><span class="text-white/70">1–2x settimana*</span></div>
-                <div class="flex justify-between gap-4"><span>Ripartenza</span><span class="text-white/70">1x settimana</span></div>
+              <div class="mt-8 glass-card p-6 rounded-xl">
+                <h4 class="text-white font-bold mb-2">Obiettivo → Frequenza consigliata</h4>
+                <div class="text-sm text-gray-300 space-y-2">
+                  <div class="flex justify-between gap-4"><span>Tono / postura</span><span class="text-white/70">1x settimana</span></div>
+                  <div class="flex justify-between gap-4"><span>Performance sportiva</span><span class="text-white/70">1–2x settimana*</span></div>
+                  <div class="flex justify-between gap-4"><span>Ripartenza</span><span class="text-white/70">1x settimana</span></div>
+                </div>
+                <p class="text-xs text-white/50 mt-3">*In base al recupero. Lo definiamo nel check iniziale.</p>
               </div>
-              <p class="text-xs text-white/50 mt-3">*In base al recupero. Lo definiamo nel check iniziale.</p>
-            </div>
 
-            <div class="mt-8">
-              <a href="#" class="btn btn--cta btn-prenota-whatsapp inline-flex items-center gap-3 px-8 py-4 bg-pulse-neon text-white font-bold uppercase text-xs tracking-widest hover:bg-pulse-neonHover transition shadow-neon">
-                Prenota la prima prova
-              </a>
+              <div class="mt-8">
+                <a href="#" class="btn btn--cta btn-prenota-whatsapp inline-flex items-center gap-3 px-8 py-4 bg-pulse-neon text-white font-bold uppercase text-xs tracking-widest hover:bg-pulse-neonHover transition shadow-neon">
+                  Prenota la prima prova
+                </a>
+              </div>
             </div>
           </div>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="glass-card p-10 rounded-2xl relative overflow-hidden group reveal">
+              <div class="absolute top-0 right-0 bg-white/10 p-4 rounded-bl-2xl">
+                <i class="fas fa-microchip text-2xl text-white"></i>
+              </div>
+              <div class="flex items-center gap-4 mb-6">
+                <div class="w-14 h-14 rounded-xl overflow-hidden img-frame">
+                  <img id="img-deviceCloseup" src="" class="w-full h-full object-cover opacity-90" alt="Device closeup" loading="lazy" />
+                </div>
+                <div>
+                  <h3 class="text-2xl font-bold text-white">Hardware premium</h3>
+                  <p class="text-xs text-white/60">Controllo fine dell’impulso</p>
+                </div>
+              </div>
+              <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+                Controllo fine dell’intensità per distretto: seduta più confortevole e misurabile nel tempo.
+              </p>
+              <ul class="text-sm text-gray-300 space-y-2">
+                <li><i class="fas fa-check text-pulse-neon mr-2"></i> Settaggi personalizzati</li>
+                <li><i class="fas fa-check text-pulse-neon mr-2"></i> Progressione tracciata</li>
+              </ul>
+            </div>
+
+            <div class="glass-card p-10 rounded-2xl relative overflow-hidden group reveal">
+              <div class="absolute top-0 right-0 bg-pulse-neon/20 p-4 rounded-bl-2xl">
+                <i class="fas fa-shirt text-2xl text-pulse-neon"></i>
+              </div>
+              <div class="flex items-center gap-4 mb-6">
+                <div class="w-14 h-14 rounded-xl overflow-hidden img-frame">
+                  <img id="img-suitsCloseup" src="" class="w-full h-full object-cover opacity-90" alt="Suits closeup" loading="lazy" />
+                </div>
+                <div>
+                  <h3 class="text-2xl font-bold text-white">Esperienza boutique</h3>
+                  <p class="text-xs text-white/60">Studio riservato • 1:1</p>
+                </div>
+              </div>
+              <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+                Niente folla e niente caos: sessioni su appuntamento, ambiente curato e supporto durante tutta la seduta.
+              </p>
+              <ul class="text-sm text-gray-300 space-y-2">
+                <li><i class="fas fa-check text-pulse-neon mr-2"></i> Preparazione guidata</li>
+                <li><i class="fas fa-check text-pulse-neon mr-2"></i> Comfort e privacy</li>
+              </ul>
+            </div>
+          </div>
+
         </div>
-
-        <!-- Details blocks with closeups -->
-        <div class="grid md:grid-cols-2 gap-8">
-          <div class="glass-card p-10 rounded-2xl relative overflow-hidden group reveal">
-            <div class="absolute top-0 right-0 bg-white/10 p-4 rounded-bl-2xl">
-              <i class="fas fa-microchip text-2xl text-white"></i>
-            </div>
-            <div class="flex items-center gap-4 mb-6">
-              <div class="w-14 h-14 rounded-xl overflow-hidden img-frame">
-                <img id="img-deviceCloseup" src="" class="w-full h-full object-cover opacity-90" alt="Device closeup" />
-              </div>
-              <div>
-                <h3 class="text-2xl font-bold text-white">Hardware premium</h3>
-                <p class="text-xs text-white/60">Controllo fine dell’impulso</p>
-              </div>
-            </div>
-            <p class="text-gray-400 text-sm mb-6 leading-relaxed">
-              Controllo fine dell’intensità per distretto: la seduta diventa più confortevole, ripetibile e misurabile nel tempo.
-            </p>
-            <ul class="text-sm text-gray-300 space-y-2">
-              <li><i class="fas fa-check text-pulse-neon mr-2"></i> Settaggi personalizzati</li>
-              <li><i class="fas fa-check text-pulse-neon mr-2"></i> Progressione tracciata</li>
-            </ul>
-          </div>
-
-          <div class="glass-card p-10 rounded-2xl relative overflow-hidden group reveal">
-            <div class="absolute top-0 right-0 bg-pulse-neon/20 p-4 rounded-bl-2xl">
-              <i class="fas fa-shirt text-2xl text-pulse-neon"></i>
-            </div>
-            <div class="flex items-center gap-4 mb-6">
-              <div class="w-14 h-14 rounded-xl overflow-hidden img-frame">
-                <img id="img-suitsCloseup" src="" class="w-full h-full object-cover opacity-90" alt="Suits closeup" />
-              </div>
-              <div>
-                <h3 class="text-2xl font-bold text-white">Esperienza boutique</h3>
-                <p class="text-xs text-white/60">Studio riservato • 1:1</p>
-              </div>
-            </div>
-            <p class="text-gray-400 text-sm mb-6 leading-relaxed">
-              Niente folla e niente caos: sessioni su appuntamento, ambiente curato e supporto del coach durante tutta la seduta.
-            </p>
-            <ul class="text-sm text-gray-300 space-y-2">
-              <li><i class="fas fa-check text-pulse-neon mr-2"></i> Preparazione guidata</li>
-              <li><i class="fas fa-check text-pulse-neon mr-2"></i> Comfort e privacy</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      </section>
     </div>
 
     <!-- ================= PAGE: PACCHETTI ================= -->
@@ -752,11 +775,10 @@
         </div>
 
         <div class="grid md:grid-cols-3 gap-8 items-start">
-          <!-- START -->
           <div class="glass-card p-8 rounded-2xl relative group hover:border-white/30 transition reveal">
             <h3 class="text-xl font-bold text-white mb-2">START</h3>
-            <div class="text-sm font-semibold text-pulse-neon mb-3 uppercase tracking-wider">Per iniziare bene</div>
-            <p class="text-xs text-gray-400 mb-6">Per capire se fa per te e impostare settaggi e metodo.</p>
+            <div class="text-sm font-semibold text-pulse-neon mb-2 uppercase tracking-wider">Per iniziare bene</div>
+            <p class="text-xs text-gray-400 mb-6">Outcome: settaggi corretti + base solida.</p>
             <ul class="space-y-4 mb-8 text-sm text-gray-400">
               <li class="flex items-center gap-3"><i class="fas fa-check text-white"></i> 8 sedute</li>
               <li class="flex items-center gap-3"><i class="fas fa-check text-white"></i> check iniziale</li>
@@ -767,12 +789,11 @@
             </a>
           </div>
 
-          <!-- PRIME -->
           <div class="relative bg-[#151515] border border-pulse-neon p-10 rounded-2xl shadow-neon-strong transform md:-translate-y-4 z-10 reveal">
             <div class="absolute top-0 right-0 bg-pulse-neon text-white text-[10px] font-bold uppercase px-3 py-1 rounded-bl-lg">Best Seller</div>
             <h3 class="text-2xl font-bold text-white mb-2">PRIME</h3>
-            <div class="text-sm font-semibold text-pulse-neon mb-3 uppercase tracking-wider">Il più scelto</div>
-            <p class="text-xs text-gray-300 mb-8">Per chi vuole un cambiamento visibile: continuità, check e progressione.</p>
+            <div class="text-sm font-semibold text-pulse-neon mb-2 uppercase tracking-wider">Il più scelto</div>
+            <p class="text-xs text-gray-300 mb-8">Outcome: cambiamento visibile con continuità + check.</p>
             <ul class="space-y-5 mb-10 text-sm text-gray-300">
               <li class="flex items-center gap-3"><i class="fas fa-check text-pulse-neon"></i> <strong>12 sedute</strong></li>
               <li class="flex items-center gap-3"><i class="fas fa-check text-pulse-neon"></i> <strong>2 check</strong> (inizio + metà)</li>
@@ -784,11 +805,10 @@
             </a>
           </div>
 
-          <!-- SIGNATURE -->
           <div class="glass-card p-8 rounded-2xl relative group hover:border-white/30 transition reveal">
             <h3 class="text-xl font-bold text-white mb-2">SIGNATURE</h3>
-            <div class="text-sm font-semibold text-pulse-neon mb-3 uppercase tracking-wider">Trasformazione guidata</div>
-            <p class="text-xs text-gray-400 mb-6">Per chi vuole il percorso più lungo e monitorato.</p>
+            <div class="text-sm font-semibold text-pulse-neon mb-2 uppercase tracking-wider">Trasformazione guidata</div>
+            <p class="text-xs text-gray-400 mb-6">Outcome: massimo monitoraggio e continuità.</p>
             <ul class="space-y-4 mb-8 text-sm text-gray-400">
               <li class="flex items-center gap-3"><i class="fas fa-check text-white"></i> 20 sedute</li>
               <li class="flex items-center gap-3"><i class="fas fa-check text-white"></i> report progressi</li>
@@ -800,7 +820,6 @@
           </div>
         </div>
 
-        <!-- Included -->
         <div class="mt-20 text-center">
           <h3 class="text-lg font-bold text-white mb-8 reveal">Esperienza boutique, zero frizioni</h3>
           <div class="flex flex-wrap justify-center gap-8 md:gap-16 reveal">
@@ -895,21 +914,32 @@
 
         <footer class="text-center text-xs text-white/40 mt-10 reveal">
           <p>© <span id="year"></span> <span id="studio-name"></span> • <span id="studio-address-foot"></span></p>
-          <p class="mt-2 text-white/30">P.IVA / Privacy / Cookie (aggiungile quando pronte per essere “top premium”).</p>
+          <p class="mt-2 text-white/30">P.IVA / Privacy / Cookie (aggiungile quando pronte).</p>
         </footer>
       </div>
     </div>
   </main>
 
   <!-- Floating WhatsApp -->
-  <div class="fixed bottom-6 right-6 z-50">
+  <div class="fixed bottom-6 right-6 z-40 hidden md:block">
     <a href="#" id="float-whatsapp" target="_blank" class="float-soft-pulse w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center text-white text-2xl shadow-lg hover:scale-110 transition-transform" aria-label="Chatta su WhatsApp">
       <i class="fab fa-whatsapp"></i>
     </a>
   </div>
 
+  <!-- MOBILE STICKY CTA BAR (signature UX) -->
+  <div class="md:hidden fixed bottom-0 left-0 right-0 z-50 border-t border-white/10 bg-black/80 backdrop-blur-xl">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex gap-3">
+      <a href="#" class="btn btn--cta btn-prenota-whatsapp flex-1 py-3 bg-pulse-neon text-white font-extrabold uppercase tracking-widest text-xs rounded-lg text-center shadow-neon">
+        Prenota prova
+      </a>
+      <a href="#" id="mobile-wa" class="btn flex items-center justify-center w-14 rounded-lg bg-white/5 border border-white/15 text-white text-xl">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+    </div>
+  </div>
+
   <script>
-    // FAQ: premium, credibili, conversion-focused
     const FAQ_DATA = [
       { q: "La prima prova come funziona?", a: "Check iniziale → seduta guidata → piano consigliato. Scrivici obiettivo + disponibilità e ti proponiamo 2 slot." },
       { q: "Quanto dura tutto?", a: "La seduta EMS dura 20 minuti. Considerando check e preparazione, la prima prova richiede circa 40–50 minuti." },
@@ -948,24 +978,32 @@
       const gr = document.getElementById("google-reviews-link");
       if (gr) gr.href = DATI_SITO.linkRecensioniGoogle;
 
-      // Images placeholders (swap with your real photos later)
+      // Mobile WA icon in sticky bar
+      const mobileWA = document.getElementById("mobile-wa");
+      if (mobileWA) mobileWA.href = waLink;
+
+      // Images
       setImg("img-hero", DATI_SITO.images.hero);
       setImg("img-firstTrial", DATI_SITO.images.firstTrial);
       setImg("img-whyMiha", DATI_SITO.images.whyMiha);
       setImg("img-target", DATI_SITO.images.target);
-      setImg("img-gallery-1", DATI_SITO.images.studioGallery1);
-      setImg("img-gallery-2", DATI_SITO.images.studioGallery2);
-      setImg("img-gallery-3", DATI_SITO.images.studioGallery3);
-      setImg("img-gallery-4", DATI_SITO.images.studioGallery4);
+      setImg("img-galleryA", DATI_SITO.images.galleryA);
+      setImg("img-galleryB", DATI_SITO.images.galleryB);
+      setImg("img-galleryC", DATI_SITO.images.galleryC);
+      setImg("img-galleryD", DATI_SITO.images.galleryD);
       setImg("img-emsTech", DATI_SITO.images.emsTech);
       setImg("img-deviceCloseup", DATI_SITO.images.deviceCloseup);
       setImg("img-suitsCloseup", DATI_SITO.images.suitsCloseup);
 
-      // Contacts background image
       const contactsBg = document.getElementById("contacts-bg");
       contactsBg.style.backgroundImage = `url('${DATI_SITO.images.contacts}')`;
 
-      // FAQ
+      const emsBg = document.getElementById("ems-split-bg");
+      if (emsBg) emsBg.style.backgroundImage = `url('${DATI_SITO.images.emsTech}')`;
+      if (emsBg) emsBg.style.backgroundSize = "cover";
+      if (emsBg) emsBg.style.backgroundPosition = "center";
+
+      // FAQ generate + micro-CTA every 3
       const faqContainer = document.getElementById("faq-container");
       FAQ_DATA.forEach((item, idx) => {
         const html = `
@@ -1063,9 +1101,7 @@
     document.getElementById("mobile-menu-btn").addEventListener("click", () => {
       document.getElementById("mobile-menu").classList.toggle("hidden");
     });
-    function toggleMobileMenu() {
-      document.getElementById("mobile-menu").classList.add("hidden");
-    }
+    function toggleMobileMenu() { document.getElementById("mobile-menu").classList.add("hidden"); }
   </script>
 </body>
 </html>
