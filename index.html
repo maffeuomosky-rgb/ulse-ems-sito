@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PULSE EMS Studio | Casalmaggiore</title>
-  <meta name="description" content="Studio boutique EMS a Casalmaggiore. Sessioni 1:1 su appuntamento con tecnologia Miha Bodytec. 20 minuti, metodo, progressione." />
+  <meta name="description" content="Studio boutique EMS a Casalmaggiore. Sessioni su appuntamento (individuali o in coppia). 20 minuti, metodo, progressione." />
 
   <!-- Open Graph -->
   <meta property="og:title" content="PULSE EMS Studio | Casalmaggiore" />
-  <meta property="og:description" content="20 minuti. 1 coach. Un lavoro completo. Studio boutique EMS 1:1 su appuntamento." />
+  <meta property="og:description" content="PULSE — Accendi il cambiamento. EMS boutique su appuntamento: metodo, progressione, attenzione al cliente." />
   <meta property="og:type" content="website" />
 
   <!-- Fonts & Lib -->
@@ -61,14 +61,16 @@
       // Recensioni Google (placeholder: sostituisci col link reale quando lo hai)
       linkRecensioniGoogle: "https://www.google.com/search?q=PULSE+EMS+Studio+Casalmaggiore",
 
-      // Copy
-      badgeTop: "Studio Boutique • 1:1 su appuntamento",
-      titoloPrincipale: "20 minuti. 1 coach.",
-      sottoTitoloColorato: "Un lavoro completo.",
+      // HOME COPY
+      badgeTop: "Studio Boutique • su appuntamento • individuale o in coppia",
+      motto: "PULSE — Accendi il cambiamento.",
+      titoloPrincipale: "La miglior versione di te",
+      sottoTitoloColorato: "in soli 20 minuti.",
       descrizioneBreve:
-        "Sessioni EMS 1:1 su appuntamento. Tecnologia Miha Bodytec. Metodo, progressione e un’esperienza boutique senza caos.",
-      slogan: "PULSE — 20 minuti. Risultati veri.",
-      waPrefill: "Ciao! Obiettivo: ____. Disponibilità: ____. Vorrei prenotare la prima prova.",
+        "EMS boutique su appuntamento, in uno spazio riservato e curato. Sedute individuali o in coppia, con intensità e obiettivi personalizzati. Metodo, progressione e massima attenzione al cliente, per un’esperienza premium e risultati concreti.",
+      microRigaHero: "Check iniziale • seduta guidata • percorso più adatto a te.",
+      slogan: "PULSE — Accendi il cambiamento.",
+      waPrefill: "Ciao! Obiettivo: ____. Disponibilità: ____. Vorrei prenotare la prima prova e ricevere info sui percorsi.",
 
       // IMMAGINI PLACEHOLDER (sostituiscile con le tue)
       images: {
@@ -86,7 +88,7 @@
         deviceCloseup: "https://images.unsplash.com/photo-1558611848-73f7eb4001a1?q=80&w=2400",
         suitsCloseup: "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?q=80&w=2400",
 
-        // Nuove immagini per blocchi esplicativi EMS
+        // EMS blocks
         emsWhat: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=2400",
         emsBenefits: "https://images.unsplash.com/photo-1599058917212-d750089bc07e?q=80&w=2400",
         emsHow: "https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?q=80&w=2400",
@@ -123,7 +125,7 @@
 
     /* FAQ */
     .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
-    .faq-item.active .faq-answer { max-height: 620px; }
+    .faq-item.active .faq-answer { max-height: 900px; }
     .faq-item.active .faq-icon { transform: rotate(180deg); color: #ff007f; }
 
     /* Scrollbar */
@@ -216,13 +218,13 @@
 
       <nav class="hidden md:flex items-center gap-8 reveal reveal--right">
         <a href="#" onclick="showPage('home')" class="text-xs uppercase tracking-widest hover:text-pulse-neon transition">Home</a>
-        <a href="#" onclick="showPage('ems')" class="text-xs uppercase tracking-widest hover:text-pulse-neon transition">Tecnologia</a>
+        <a href="#" onclick="showPage('ems')" class="text-xs uppercase tracking-widest hover:text-pulse-neon transition">EMS</a>
         <a href="#" onclick="showPage('packages')" class="text-xs uppercase tracking-widest hover:text-pulse-neon transition">Percorsi</a>
         <a href="#" onclick="showPage('contacts')" class="text-xs uppercase tracking-widest hover:text-pulse-neon transition">Contatti</a>
         <a href="#" onclick="scrollToId('faq')" class="text-xs uppercase tracking-widest hover:text-pulse-neon transition">FAQ</a>
 
         <div class="hidden lg:block text-[10px] uppercase tracking-widest text-white/50 border border-white/10 px-3 py-2 rounded-full">
-          1:1 • su appuntamento
+          su appuntamento • individuale/coppia
         </div>
 
         <a href="#" class="btn btn--cta btn-prenota-whatsapp px-6 py-2 border border-pulse-neon/50 text-pulse-neon text-xs uppercase font-bold tracking-widest hover:bg-pulse-neon hover:text-white transition shadow-[0_0_10px_rgba(255,0,127,0.18)]">
@@ -236,7 +238,7 @@
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden md:hidden absolute w-full bg-black/95 backdrop-blur-xl border-b border-white/10 text-center py-8 space-y-6">
       <a href="#" onclick="showPage('home');toggleMobileMenu()" class="block text-white text-sm uppercase tracking-widest">Home</a>
-      <a href="#" onclick="showPage('ems');toggleMobileMenu()" class="block text-white text-sm uppercase tracking-widest">Tecnologia</a>
+      <a href="#" onclick="showPage('ems');toggleMobileMenu()" class="block text-white text-sm uppercase tracking-widest">EMS</a>
       <a href="#" onclick="showPage('packages');toggleMobileMenu()" class="block text-white text-sm uppercase tracking-widest">Percorsi</a>
       <a href="#" onclick="showPage('contacts');toggleMobileMenu()" class="block text-white text-sm uppercase tracking-widest">Contatti</a>
       <a href="#" onclick="scrollToId('faq');toggleMobileMenu()" class="block text-white text-sm uppercase tracking-widest">FAQ</a>
@@ -252,7 +254,7 @@
     <!-- ================= HOME PAGE ================= -->
     <div id="home" class="page-section active">
 
-      <!-- HERO (cinematic) -->
+      <!-- HERO -->
       <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 z-0">
           <img id="img-hero" src="" class="w-full h-full object-cover opacity-30" alt="PULSE EMS Studio" />
@@ -268,6 +270,8 @@
               <span class="text-xs font-bold uppercase tracking-widest text-white/70"> • </span>
               <span class="text-xs font-bold uppercase tracking-widest text-white/80" id="hero-badge"></span>
             </div>
+
+            <p class="text-xs uppercase tracking-[0.28em] text-white/70 mb-4 reveal" id="hero-motto"></p>
 
             <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight tracking-tight reveal">
               <span id="hero-title"></span><br />
@@ -285,27 +289,27 @@
               </a>
             </div>
 
-            <p class="text-xs text-white/60 mt-4 reveal">Check iniziale + seduta guidata + piano consigliato.</p>
+            <p class="text-xs text-white/60 mt-4 reveal" id="hero-microriga"></p>
 
             <div class="mt-10 flex flex-wrap items-center justify-center gap-3 text-xs text-white/70 reveal">
-              <span class="px-3 py-2 rounded-full bg-white/5 border border-white/10">Sessioni 1:1 guidate</span>
-              <span class="px-3 py-2 rounded-full bg-white/5 border border-white/10">Miha Bodytec (premium)</span>
-              <span class="px-3 py-2 rounded-full bg-white/5 border border-white/10">Progressione tracciata</span>
-              <span class="px-3 py-2 rounded-full bg-white/5 border border-white/10">Studio riservato</span>
+              <span class="px-3 py-2 rounded-full bg-white/5 border border-white/10">Su appuntamento</span>
+              <span class="px-3 py-2 rounded-full bg-white/5 border border-white/10">Individuale o in coppia</span>
+              <span class="px-3 py-2 rounded-full bg-white/5 border border-white/10">Obiettivi personalizzati</span>
+              <span class="px-3 py-2 rounded-full bg-white/5 border border-white/10">Ambiente riservato</span>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- PRIMA PROVA (iconic + metrics bar) -->
+      <!-- PRIMA PROVA -->
       <section class="py-24 bg-pulse-black border-t border-white/5" id="first-trial">
         <div class="container mx-auto px-6 max-w-6xl">
           <div class="grid lg:grid-cols-2 gap-12 items-center">
             <div class="reveal reveal--left">
               <h2 class="text-sm font-bold text-pulse-neon uppercase tracking-widest mb-2">Prima Prova</h2>
-              <h3 class="text-3xl md:text-4xl font-bold text-white">Non è una “prova random”.</h3>
+              <h3 class="text-3xl md:text-4xl font-bold text-white">L’inizio giusto, con un metodo chiaro.</h3>
               <p class="text-gray-400 mt-4 leading-relaxed">
-                Facciamo le cose bene: check iniziale, seduta guidata e un piano coerente con il tuo obiettivo.
+                La prima prova serve a definire obiettivo, intensità, frequenza e progressione. È il momento in cui trasformiamo l’EMS in un percorso su misura, con impostazioni coerenti e priorità realistiche.
               </p>
 
               <div class="mt-8 space-y-4">
@@ -313,21 +317,21 @@
                   <div class="text-pulse-neon text-xl mt-1"><i class="fas fa-clipboard-check"></i></div>
                   <div>
                     <h4 class="text-white font-bold">1) Check iniziale</h4>
-                    <p class="text-sm text-gray-400 leading-relaxed">Obiettivi, abitudini, eventuali limitazioni. Se serve, parere medico.</p>
+                    <p class="text-sm text-gray-400 leading-relaxed">Obiettivo, abitudini e livello di partenza. Impostiamo un approccio realistico e definiamo cosa aspettarti e come proseguire.</p>
                   </div>
                 </div>
                 <div class="glass-card p-5 rounded-xl flex gap-4 items-start">
                   <div class="text-pulse-neon text-xl mt-1"><i class="fas fa-bolt"></i></div>
                   <div>
                     <h4 class="text-white font-bold">2) Seduta guidata</h4>
-                    <p class="text-sm text-gray-400 leading-relaxed">Contrazione intensa ma controllata. Intensità calibrata distretto per distretto.</p>
+                    <p class="text-sm text-gray-400 leading-relaxed">Impulso controllato + esercizi essenziali e mirati. L’intensità viene regolata per distretto e adattata al tuo livello, in modo progressivo.</p>
                   </div>
                 </div>
                 <div class="glass-card p-5 rounded-xl flex gap-4 items-start">
                   <div class="text-pulse-neon text-xl mt-1"><i class="fas fa-route"></i></div>
                   <div>
-                    <h4 class="text-white font-bold">3) Piano chiaro</h4>
-                    <p class="text-sm text-gray-400 leading-relaxed">Frequenza consigliata, percorso e priorità realistiche.</p>
+                    <h4 class="text-white font-bold">3) Percorso più adatto a te</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">Definiamo la frequenza ideale, la progressione e il percorso più coerente con il tuo obiettivo.</p>
                   </div>
                 </div>
               </div>
@@ -347,10 +351,10 @@
 
                 <div class="absolute top-5 left-5 right-5 flex items-center justify-between gap-4">
                   <div class="glass-card px-4 py-2 rounded-full">
-                    <span class="text-xs uppercase tracking-widest text-white/80">Standard PULSE</span>
+                    <span class="text-xs uppercase tracking-widest text-white/80">Privacy</span>
                   </div>
                   <div class="glass-card px-4 py-2 rounded-full">
-                    <span class="text-xs uppercase tracking-widest text-white/80">Qualità > quantità</span>
+                    <span class="text-xs uppercase tracking-widest text-white/80">Standard PULSE</span>
                   </div>
                 </div>
               </div>
@@ -374,14 +378,14 @@
         </div>
       </section>
 
-      <!-- WHY MIHA -->
+      <!-- PERCHÉ MIHA -->
       <section class="py-24 bg-pulse-dark border-t border-white/5" id="why-miha">
         <div class="container mx-auto px-6 max-w-6xl">
           <div class="text-center mb-16 reveal">
-            <h2 class="text-sm font-bold text-pulse-neon uppercase tracking-widest mb-3">Tecnologia Premium</h2>
-            <h3 class="text-3xl md:text-4xl font-bold text-white">Perché <span class="text-pulse-neon">Miha Bodytec</span></h3>
+            <h2 class="text-sm font-bold text-pulse-neon uppercase tracking-widest mb-3">Tecnologia</h2>
+            <h3 class="text-3xl md:text-4xl font-bold text-white">Miha Bodytec: <span class="text-pulse-neon">leader mondiale</span> dell’EMS</h3>
             <p class="text-gray-400 mt-4 max-w-3xl mx-auto">
-              La differenza non è solo la macchina: è qualità dell’impulso + personalizzazione + metodo 1:1.
+              Miha Bodytec è considerata un riferimento globale nel settore EMS ed è sinonimo di professionalità e qualità. In EMS conta il controllo: regolazioni precise per distretto e impostazioni coerenti nel tempo rendono l’esperienza più confortevole e più “misurabile” nella progressione.
             </p>
           </div>
 
@@ -392,8 +396,8 @@
                 <div class="absolute inset-0 bg-gradient-to-t from-pulse-black via-transparent to-transparent"></div>
                 <div class="absolute bottom-5 left-5 right-5 glass-card p-5 rounded-xl">
                   <p class="text-xs uppercase tracking-widest text-white/60">Focus</p>
-                  <p class="text-white font-bold">Ripetibilità & controllo</p>
-                  <p class="text-sm text-gray-400">Sedute coerenti nel tempo. Progressione tracciata.</p>
+                  <p class="text-white font-bold">Controllo • comfort • continuità</p>
+                  <p class="text-sm text-gray-400">Impostazioni calibrate in base a obiettivi e livello.</p>
                 </div>
               </div>
             </div>
@@ -402,90 +406,73 @@
               <div class="grid md:grid-cols-3 gap-6">
                 <div class="glass-card p-7 rounded-2xl text-center">
                   <i class="fas fa-wave-square text-4xl text-pulse-neon mb-6"></i>
-                  <h4 class="text-lg font-bold mb-3">Impulso di qualità</h4>
-                  <p class="text-sm text-gray-400 leading-relaxed">Seduta più confortevole e “ripetibile”. Niente forzature inutili.</p>
+                  <h4 class="text-lg font-bold mb-3">Impulso stabile</h4>
+                  <p class="text-sm text-gray-400 leading-relaxed">Controllo della sensazione e sedute più ripetibili nel tempo.</p>
                 </div>
                 <div class="glass-card p-7 rounded-2xl text-center">
                   <i class="fas fa-sliders text-4xl text-pulse-neon mb-6"></i>
-                  <h4 class="text-lg font-bold mb-3">Personalizzazione</h4>
-                  <p class="text-sm text-gray-400 leading-relaxed">Regolazione per distretto: controllo fine e progressione intelligente.</p>
+                  <h4 class="text-lg font-bold mb-3">Regolazione per distretto</h4>
+                  <p class="text-sm text-gray-400 leading-relaxed">Intensità diversa per ogni area: personalizzazione reale in base all’obiettivo.</p>
                 </div>
                 <div class="glass-card p-7 rounded-2xl text-center">
-                  <i class="fas fa-user-check text-4xl text-pulse-neon mb-6"></i>
-                  <h4 class="text-lg font-bold mb-3">Metodo</h4>
-                  <p class="text-sm text-gray-400 leading-relaxed">Check, recupero, incremento graduale. Risultati senza improvvisare.</p>
+                  <i class="fas fa-shield-heart text-4xl text-pulse-neon mb-6"></i>
+                  <h4 class="text-lg font-bold mb-3">Approccio graduale</h4>
+                  <p class="text-sm text-gray-400 leading-relaxed">Progressione per step e recupero adeguato.</p>
                 </div>
               </div>
 
               <div class="mt-8 glass-card p-7 rounded-2xl">
-                <h4 class="text-white font-bold mb-3">Cosa NON facciamo</h4>
+                <h4 class="text-white font-bold mb-3">Standard PULSE</h4>
                 <div class="grid md:grid-cols-3 gap-4 text-sm">
                   <div class="bg-white/5 border border-white/10 rounded-lg p-4">
-                    <p class="text-white font-semibold mb-1">No sedute casuali</p>
-                    <p class="text-gray-400 text-xs">Ogni sessione ha uno scopo e una progressione.</p>
+                    <p class="text-white font-semibold mb-1">Sedute su appuntamento</p>
+                    <p class="text-gray-400 text-xs">Ambiente ordinato e riservato.</p>
                   </div>
                   <div class="bg-white/5 border border-white/10 rounded-lg p-4">
-                    <p class="text-white font-semibold mb-1">No intensità “sparata”</p>
-                    <p class="text-gray-400 text-xs">Si sale gradualmente: qualità > ego.</p>
+                    <p class="text-white font-semibold mb-1">Personalizzazione obiettivo</p>
+                    <p class="text-gray-400 text-xs">Impostazioni calibrate in base al profilo.</p>
                   </div>
                   <div class="bg-white/5 border border-white/10 rounded-lg p-4">
-                    <p class="text-white font-semibold mb-1">No folla</p>
-                    <p class="text-gray-400 text-xs">Studio riservato, su appuntamento.</p>
+                    <p class="text-white font-semibold mb-1">Progressione</p>
+                    <p class="text-gray-400 text-xs">Si cresce per step, con continuità.</p>
                   </div>
                 </div>
               </div>
 
               <div class="mt-8 flex gap-4 flex-col sm:flex-row items-center">
                 <a href="#" class="btn btn--cta btn-prenota-whatsapp inline-flex items-center justify-center gap-3 px-8 py-4 bg-pulse-neon text-white font-bold uppercase text-xs tracking-widest hover:bg-pulse-neonHover transition shadow-neon w-full sm:w-auto">
-                  <i class="fas fa-message"></i> Chiedi il percorso più adatto
+                  <i class="fas fa-message"></i> Richiedi informazioni
                 </a>
-                <p class="text-xs text-white/60">Dimmi obiettivo + livello → ti rispondiamo con una proposta sensata.</p>
+                <p class="text-xs text-white/60">Scrivi obiettivo + disponibilità → risposta rapida.</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- TARGET -->
+      <!-- PER CHI È (TESTO LUNGO, NO CARD) -->
       <section class="py-24 bg-pulse-black border-t border-white/5" id="target">
         <div class="container mx-auto px-6 max-w-6xl">
           <div class="grid lg:grid-cols-12 gap-10 items-center">
             <div class="lg:col-span-6 reveal reveal--left">
               <h2 class="text-sm font-bold text-pulse-neon uppercase tracking-widest mb-2">Per chi è</h2>
-              <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">PULSE è ideale per</h3>
+              <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">Per chi sceglie qualità. E la pretende.</h3>
+
+              <p class="text-gray-400 leading-relaxed mb-6">
+                PULSE è pensato per chi vuole un servizio di livello superiore: ambiente riservato, appuntamenti puntuali e un metodo chiaro. È la scelta ideale se hai poco tempo ma non vuoi soluzioni standard: qui ogni seduta è guidata con cura e ogni percorso è costruito sui tuoi obiettivi.
+              </p>
               <p class="text-gray-400 leading-relaxed mb-8">
-                Se cerchi qualità e privacy, sei nel posto giusto. Se cerchi allenamento di gruppo low cost,
-                <span class="text-white/70">non siamo lo studio giusto.</span>
+                Che tu voglia tonificare, aumentare massa, dimagrire o lavorare su postura e aspetto cutaneo, l’approccio resta lo stesso: personalizzazione, progressione e continuità. Non proponiamo un’esperienza “uguale per tutti”: impostiamo un percorso strutturato, aggiornato nel tempo, con intensità e parametri adattati alla tua risposta.
               </p>
 
-              <div class="grid sm:grid-cols-2 gap-5">
-                <div class="glass-card p-6 rounded-xl">
-                  <h4 class="font-bold text-white text-lg mb-2">Poco tempo</h4>
-                  <p class="text-xs text-gray-400">Sedute brevi, metodo chiaro, zero dispersione.</p>
-                </div>
-                <div class="glass-card p-6 rounded-xl">
-                  <h4 class="font-bold text-white text-lg mb-2">Tono & postura</h4>
-                  <p class="text-xs text-gray-400">Movimento guidato + progressione coerente.</p>
-                </div>
-                <div class="glass-card p-6 rounded-xl">
-                  <h4 class="font-bold text-white text-lg mb-2">Privacy</h4>
-                  <p class="text-xs text-gray-400">1:1 su appuntamento, studio riservato.</p>
-                </div>
-                <div class="glass-card p-6 rounded-xl">
-                  <h4 class="font-bold text-white text-lg mb-2">Sportivi</h4>
-                  <p class="text-xs text-gray-400">Supporto a forza e qualità del movimento.</p>
-                </div>
-              </div>
-
-              <div class="mt-8 glass-card p-6 rounded-2xl">
+              <div class="mt-2 glass-card p-6 rounded-2xl">
                 <div class="flex items-start gap-4">
                   <div class="text-pulse-neon text-xl mt-1"><i class="fas fa-circle-info"></i></div>
                   <div>
-                    <h4 class="text-white font-bold">Idoneità & Sicurezza</h4>
+                    <h4 class="text-white font-bold">Attenzione al cliente</h4>
                     <p class="text-gray-400 text-sm leading-relaxed mt-1">
-                      Check iniziale, progressione graduale, recupero tipico 48–72h.
-                      EMS non indicata in alcuni casi (es. pacemaker, gravidanza, epilessia, condizioni acute).
-                      In caso di dubbi: parere medico.
+                      Check iniziale, progressione graduale e recupero adeguato. L’EMS non è indicata in alcuni casi (es. pacemaker, gravidanza, epilessia, condizioni acute).
+                      In caso di dubbi, è necessario il parere medico.
                     </p>
                   </div>
                 </div>
@@ -493,43 +480,40 @@
 
               <div class="mt-8">
                 <a href="#" class="btn btn--cta btn-prenota-whatsapp inline-flex items-center gap-3 px-8 py-4 bg-white/5 border border-white/20 text-white font-bold uppercase text-xs tracking-widest hover:bg-pulse-neon hover:border-pulse-neon transition">
-                  Dimmi il tuo obiettivo → ti propongo il percorso più sensato
+                  Parlaci del tuo obiettivo
                 </a>
               </div>
             </div>
 
             <div class="lg:col-span-6 reveal reveal--right">
               <div class="relative rounded-2xl overflow-hidden img-frame">
-                <img id="img-target" src="" class="w-full h-[640px] object-cover opacity-90" alt="Target PULSE" loading="lazy" />
+                <img id="img-target" src="" class="w-full h-[640px] object-cover opacity-90" alt="PULSE Studio" loading="lazy" />
                 <div class="absolute inset-0 bg-gradient-to-t from-pulse-black via-transparent to-transparent"></div>
                 <div class="absolute bottom-5 left-5 right-5 grid sm:grid-cols-2 gap-3">
                   <div class="glass-card p-4 rounded-xl">
-                    <p class="text-[10px] uppercase tracking-widest text-white/50">Approccio</p>
-                    <p class="text-white font-extrabold">Metodo + coaching</p>
-                    <p class="text-xs text-white/60 mt-1">Sedute strutturate, non improvvisate.</p>
+                    <p class="text-[10px] uppercase tracking-widest text-white/50">Sessioni</p>
+                    <p class="text-white font-extrabold">Individuale o coppia</p>
+                    <p class="text-xs text-white/60 mt-1">Stesso metodo, impostazioni personalizzate.</p>
                   </div>
                   <div class="glass-card p-4 rounded-xl">
                     <p class="text-[10px] uppercase tracking-widest text-white/50">Ambiente</p>
-                    <p class="text-white font-extrabold">Boutique & riservato</p>
-                    <p class="text-xs text-white/60 mt-1">Qualità percepibile, subito.</p>
+                    <p class="text-white font-extrabold">Riservato</p>
+                    <p class="text-xs text-white/60 mt-1">Ordine e attenzione al dettaglio.</p>
                   </div>
                 </div>
               </div>
-              <p class="text-xs text-white/35 mt-3 text-center">Suggerimento: qui metti una foto “wide” del tuo studio (reale).</p>
+              <p class="text-xs text-white/35 mt-3 text-center">Suggerimento: inserisci qui una foto reale “wide” dello studio.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- GALLERY (signature collage) -->
+      <!-- GALLERY (NO PARAGRAFO, CAPTION 3 PAROLE) -->
       <section class="py-24 bg-pulse-dark border-t border-white/5" id="gallery">
         <div class="container mx-auto px-6 max-w-6xl">
           <div class="text-center mb-16 reveal">
             <h2 class="text-sm font-bold text-pulse-neon uppercase tracking-widest mb-2">Studio</h2>
-            <h3 class="text-3xl md:text-4xl font-bold text-white">La firma visiva di PULSE</h3>
-            <p class="text-gray-400 mt-4 max-w-3xl mx-auto">
-              Usa 6 foto reali coerenti (stessa luce, stessi neri). Meglio poche, ma perfette.
-            </p>
+            <h3 class="text-3xl md:text-4xl font-bold text-white">Dettagli da boutique</h3>
           </div>
 
           <div class="grid lg:grid-cols-12 gap-6">
@@ -539,11 +523,11 @@
                 <div class="absolute inset-0 bg-gradient-to-t from-pulse-black/90 via-transparent to-transparent"></div>
                 <div class="absolute bottom-5 left-5 right-5 flex flex-wrap gap-2">
                   <span class="px-3 py-2 rounded-full bg-white/5 border border-white/10 text-xs text-white/80">Privacy</span>
-                  <span class="px-3 py-2 rounded-full bg-white/5 border border-white/10 text-xs text-white/80">Pulizia</span>
-                  <span class="px-3 py-2 rounded-full bg-white/5 border border-white/10 text-xs text-white/80">Neon soft</span>
+                  <span class="px-3 py-2 rounded-full bg-white/5 border border-white/10 text-xs text-white/80">Cura</span>
+                  <span class="px-3 py-2 rounded-full bg-white/5 border border-white/10 text-xs text-white/80">Premium</span>
                 </div>
               </div>
-              <p class="text-xs text-white/45 mt-3">Caption: “Entri, ti alleni, esci. Senza frizioni. Senza caos.”</p>
+              <p class="text-xs text-white/45 mt-3">Privato. Curato. Premium.</p>
             </div>
 
             <div class="lg:col-span-5 grid grid-cols-2 gap-6 reveal reveal--right">
@@ -559,7 +543,7 @@
                 <img id="img-galleryD" src="" class="w-full h-full object-cover opacity-95" alt="Equipment wall" loading="lazy" />
                 <div class="absolute inset-0 bg-gradient-to-t from-pulse-black/70 via-transparent to-transparent"></div>
                 <div class="absolute top-5 left-5 glass-card px-4 py-2 rounded-full">
-                  <span class="text-xs uppercase tracking-widest text-white/80">Dettagli che contano</span>
+                  <span class="text-xs uppercase tracking-widest text-white/80">Ordine & cura</span>
                 </div>
               </div>
             </div>
@@ -573,51 +557,18 @@
         </div>
       </section>
 
-      <!-- SOCIAL PROOF -->
+      <!-- RECENSIONI -->
       <section class="py-24 bg-pulse-black border-t border-white/5" id="social-proof">
         <div class="container mx-auto px-6 max-w-6xl">
           <div class="text-center mb-14 reveal">
-            <h2 class="text-sm font-bold text-pulse-neon uppercase tracking-widest mb-2">Prova Sociale</h2>
-            <h3 class="text-3xl md:text-4xl font-bold text-white">Recensioni & testimonianze</h3>
+            <h2 class="text-sm font-bold text-pulse-neon uppercase tracking-widest mb-2">Recensioni</h2>
+            <h3 class="text-3xl md:text-4xl font-bold text-white">Quando arrivano, qui fanno la differenza.</h3>
             <p class="text-gray-400 mt-4 max-w-3xl mx-auto">
-              Layout pronto: quando arrivano le prime recensioni, sostituisci i testi placeholder e aggiungi rating/count.
+              Il collegamento è già pronto. Appena avrai le prime recensioni, inseriremo valutazione, numero totale e citazioni reali per rendere la scelta ancora più semplice e trasparente.
             </p>
           </div>
 
-          <div class="grid md:grid-cols-3 gap-8">
-            <div class="glass-card p-8 rounded-2xl reveal">
-              <p class="text-gray-300 text-sm leading-relaxed">“Placeholder: obiettivo + risultato percepito. Breve e concreto.”</p>
-              <div class="mt-5 flex items-center justify-between">
-                <div>
-                  <p class="text-white font-bold text-sm">Nome • 32</p>
-                  <p class="text-xs text-white/60">Tono / postura</p>
-                </div>
-                <div class="text-pulse-neon text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-              </div>
-            </div>
-            <div class="glass-card p-8 rounded-2xl reveal">
-              <p class="text-gray-300 text-sm leading-relaxed">“Placeholder: poco tempo, sedute 1:1, studio super curato.”</p>
-              <div class="mt-5 flex items-center justify-between">
-                <div>
-                  <p class="text-white font-bold text-sm">Nome • 41</p>
-                  <p class="text-xs text-white/60">Poco tempo</p>
-                </div>
-                <div class="text-pulse-neon text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-              </div>
-            </div>
-            <div class="glass-card p-8 rounded-2xl reveal">
-              <p class="text-gray-300 text-sm leading-relaxed">“Placeholder: sportivo, supporto forza/recupero, coach preciso.”</p>
-              <div class="mt-5 flex items-center justify-between">
-                <div>
-                  <p class="text-white font-bold text-sm">Nome • 28</p>
-                  <p class="text-xs text-white/60">Sport</p>
-                </div>
-                <div class="text-pulse-neon text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="text-center mt-12 reveal">
+          <div class="text-center mt-6 reveal">
             <a href="#" id="google-reviews-link" target="_blank" class="btn btn--cta inline-flex items-center gap-3 px-8 py-4 bg-white text-black font-bold uppercase text-xs tracking-widest hover:bg-pulse-neon hover:text-white transition shadow-lg">
               <i class="fab fa-google"></i> Apri pagina recensioni Google
             </a>
@@ -631,21 +582,21 @@
           <div class="text-center mb-16 reveal">
             <h2 class="text-sm font-bold text-pulse-neon uppercase tracking-widest mb-2">Hai dubbi?</h2>
             <h3 class="text-3xl md:text-4xl font-bold text-white">FAQ</h3>
-            <p class="text-gray-400 mt-4">Risposte chiare. Zero fuffa.</p>
+            <p class="text-gray-400 mt-4">Risposte chiare, concrete, e trasparenti.</p>
           </div>
 
           <div class="space-y-4 reveal" id="faq-container"></div>
 
           <div class="text-center mt-12 reveal">
             <a href="#" class="btn btn--cta btn-prenota-whatsapp inline-block px-8 py-3 bg-white/5 border border-white/20 text-white text-sm font-bold uppercase rounded hover:bg-pulse-neon hover:border-pulse-neon transition">
-              Hai un caso specifico? Scrivici su WhatsApp
+              Scrivici su WhatsApp
             </a>
           </div>
         </div>
       </section>
     </div>
 
-    <!-- ================= PAGE: TECNOLOGIA EMS (INTEGRATA) ================= -->
+    <!-- ================= PAGE: EMS ================= -->
     <div id="ems" class="page-section pt-24 bg-pulse-black">
       <section class="relative">
         <!-- Split background -->
@@ -659,33 +610,32 @@
 
         <div class="container mx-auto px-6 pb-20 max-w-6xl relative">
           <div class="text-center mb-16 reveal">
-            <h2 class="text-sm font-bold text-pulse-neon uppercase tracking-widest mb-2">Deep Science</h2>
-            <h1 class="text-4xl md:text-5xl font-bold text-white">Cos’è l’EMS e come funziona in PULSE</h1>
+            <h2 class="text-sm font-bold text-pulse-neon uppercase tracking-widest mb-2">EMS</h2>
+            <h1 class="text-4xl md:text-5xl font-bold text-white">Una tecnologia. Un metodo. Un percorso.</h1>
             <p class="text-gray-400 mt-4 max-w-3xl mx-auto">
-              L’EMS (Elettro-Mio-Stimolazione) affianca il segnale naturale del corpo con impulsi controllati.
-              In PULSE la differenza la fa il metodo: parametri calibrati, movimento guidato e progressione.
+              L’EMS (Elettro-Mio-Stimolazione) utilizza impulsi controllati per attivare la muscolatura durante esercizi guidati. In PULSE l’EMS è inserita in un contesto professionale: personalizzazione, progressione e massima attenzione al cliente, in base al tuo obiettivo.
             </p>
           </div>
 
-          <!-- HERO TECH BLOCK -->
+          <!-- HERO TECH -->
           <div class="grid lg:grid-cols-12 gap-10 items-center mb-16">
             <div class="lg:col-span-7 reveal reveal--left">
               <div class="relative rounded-2xl overflow-hidden img-frame h-[440px]">
-                <img id="img-emsTech" src="" class="w-full h-full object-cover opacity-90" alt="EMS tecnologia" loading="lazy" />
+                <img id="img-emsTech" src="" class="w-full h-full object-cover opacity-90" alt="EMS in studio" loading="lazy" />
                 <div class="absolute inset-0 bg-gradient-to-t from-pulse-black via-transparent to-transparent"></div>
                 <div class="absolute bottom-5 left-5 right-5 glass-card p-5 rounded-xl">
                   <div class="grid sm:grid-cols-3 gap-3">
                     <div class="bg-white/5 border border-white/10 rounded-lg p-4">
-                      <p class="text-[10px] uppercase tracking-widest text-white/50">Sessione</p>
+                      <p class="text-[10px] uppercase tracking-widest text-white/50">Seduta EMS</p>
                       <p class="text-white font-extrabold">20 minuti</p>
                     </div>
                     <div class="bg-white/5 border border-white/10 rounded-lg p-4">
-                      <p class="text-[10px] uppercase tracking-widest text-white/50">Coaching</p>
-                      <p class="text-white font-extrabold">1:1</p>
+                      <p class="text-[10px] uppercase tracking-widest text-white/50">Sessione</p>
+                      <p class="text-white font-extrabold">Indiv./coppia</p>
                     </div>
                     <div class="bg-white/5 border border-white/10 rounded-lg p-4">
                       <p class="text-[10px] uppercase tracking-widest text-white/50">Metodo</p>
-                      <p class="text-white font-extrabold">Progressione</p>
+                      <p class="text-white font-extrabold">Progressivo</p>
                     </div>
                   </div>
                 </div>
@@ -693,19 +643,29 @@
             </div>
 
             <div class="lg:col-span-5 reveal reveal--right">
-              <h3 class="text-2xl font-bold text-white mb-4">In parole semplici</h3>
+              <h3 class="text-2xl font-bold text-white mb-4">Cos’è l’EMS</h3>
               <p class="text-gray-400 text-sm leading-relaxed">
-                Durante un allenamento normale, il cervello invia segnali elettrici ai muscoli per farli contrarre.
-                L’EMS utilizza impulsi controllati, trasmessi tramite elettrodi su una tuta tecnica, per
-                <span class="text-white/70">aumentare l’attivazione muscolare</span> mentre esegui movimenti guidati.
+                I muscoli si attivano grazie a segnali elettrici naturali. L’EMS affianca questo processo con impulsi controllati, trasmessi tramite elettrodi su una tuta tecnica.
+                Lo stimolo viene modulato per distretto e adattato al tuo livello, per lavorare in modo efficace e gestibile nel tempo, con una seduta breve ma intensa.
               </p>
 
               <div class="mt-6 glass-card p-6 rounded-xl">
-                <h4 class="text-white font-bold mb-3">Cosa senti durante la seduta</h4>
-                <ul class="text-sm text-gray-300 space-y-3">
+                <h4 class="text-white font-bold mb-3">Cosa può supportare, in base al tuo obiettivo</h4>
+                <ul class="text-sm text-gray-300 space-y-2">
+                  <li class="flex gap-3"><i class="fas fa-check text-pulse-neon mt-1"></i> Tonificazione: stimolo progressivo per tono e compattezza.</li>
+                  <li class="flex gap-3"><i class="fas fa-check text-pulse-neon mt-1"></i> Aumento massa muscolare: protocolli orientati a forza/ipertrofia.</li>
+                  <li class="flex gap-3"><i class="fas fa-check text-pulse-neon mt-1"></i> Dimagrimento/ricomposizione: continuità, strategia e parametri adeguati.</li>
+                  <li class="flex gap-3"><i class="fas fa-check text-pulse-neon mt-1"></i> Posturale: stabilità e controllo del movimento con progressione.</li>
+                  <li class="flex gap-3"><i class="fas fa-check text-pulse-neon mt-1"></i> Cellulite: supporto all’aspetto cutaneo con costanza e stile di vita adeguato.</li>
+                </ul>
+              </div>
+
+              <div class="mt-6 glass-card p-6 rounded-xl">
+                <h4 class="text-white font-bold mb-3">Comfort e controllo</h4>
+                <ul class="text-sm text-gray-300 space-y-2">
                   <li class="flex gap-3"><i class="fas fa-check text-pulse-neon mt-1"></i> Contrazione intensa ma controllata</li>
-                  <li class="flex gap-3"><i class="fas fa-check text-pulse-neon mt-1"></i> Intensità regolata per distretto muscolare</li>
-                  <li class="flex gap-3"><i class="fas fa-check text-pulse-neon mt-1"></i> Coach guida postura, respirazione e movimento</li>
+                  <li class="flex gap-3"><i class="fas fa-check text-pulse-neon mt-1"></i> Intensità modulata per distretto</li>
+                  <li class="flex gap-3"><i class="fas fa-check text-pulse-neon mt-1"></i> Progressione graduale</li>
                 </ul>
               </div>
 
@@ -714,145 +674,93 @@
                   Prenota la prima prova
                 </a>
               </div>
-
-              <p class="text-xs text-white/50 mt-3">
-                Nota: la risposta all’allenamento dipende da costanza, recupero e stile di vita. Noi curiamo metodo e progressione.
-              </p>
             </div>
           </div>
 
-          <!-- EMS EXPLAINER BLOCKS (alternati con immagini) -->
+          <!-- EMS blocks -->
           <div class="space-y-14">
 
-            <!-- Block 1: Cos'è -->
+            <!-- Block: Perché funziona -->
             <div class="grid lg:grid-cols-12 gap-10 items-center">
               <div class="lg:col-span-6 reveal reveal--left">
                 <div class="relative rounded-2xl overflow-hidden img-frame h-[380px]">
-                  <img id="img-ems-what" src="" class="w-full h-full object-cover opacity-92" alt="Cos'è l'EMS" loading="lazy" />
+                  <img id="img-ems-what" src="" class="w-full h-full object-cover opacity-92" alt="Metodo EMS" loading="lazy" />
                   <div class="absolute inset-0 bg-gradient-to-t from-pulse-black/85 via-transparent to-transparent"></div>
                   <div class="absolute top-5 left-5 glass-card px-4 py-2 rounded-full">
-                    <span class="text-xs uppercase tracking-widest text-white/80">Cos’è</span>
+                    <span class="text-xs uppercase tracking-widest text-white/80">Metodo</span>
                   </div>
                 </div>
               </div>
 
               <div class="lg:col-span-6 reveal reveal--right">
-                <h3 class="text-2xl font-bold text-white mb-4">Cos’è l’EMS</h3>
+                <h3 class="text-2xl font-bold text-white mb-4">Perché funziona quando è strutturata</h3>
                 <p class="text-gray-400 text-sm leading-relaxed">
-                  L’EMS (Elettro-Mio-Stimolazione) è una tecnologia che stimola la muscolatura scheletrica attraverso impulsi elettrici controllati.
-                  In PULSE l’EMS non è “passiva”: viene integrata con esercizi semplici e guidati, così da mantenere controllo del gesto,
-                  qualità del movimento e progressione.
+                  L’EMS è efficace quando è applicata con criterio: impostazioni corrette, esercizi guidati e progressione nel tempo.
+                  In PULSE l’intensità cresce per step e viene adattata alla tua risposta seduta dopo seduta.
                 </p>
 
                 <div class="mt-6 grid sm:grid-cols-2 gap-4">
                   <div class="glass-card p-5 rounded-xl">
-                    <p class="text-xs uppercase tracking-widest text-white/50 mb-1">Approccio</p>
-                    <p class="text-white font-bold">Attivo, guidato, progressivo</p>
-                    <p class="text-xs text-white/60 mt-2">Non è “attacca e vai”: il coach guida ogni fase.</p>
-                  </div>
-                  <div class="glass-card p-5 rounded-xl">
                     <p class="text-xs uppercase tracking-widest text-white/50 mb-1">Personalizzazione</p>
-                    <p class="text-white font-bold">Distretto per distretto</p>
-                    <p class="text-xs text-white/60 mt-2">Intensità calibrata in base a obiettivo e livello.</p>
+                    <p class="text-white font-bold">Obiettivo → protocollo</p>
+                    <p class="text-xs text-white/60 mt-2">Parametri e priorità adattati al profilo.</p>
+                  </div>
+                  <div class="glass-card p-5 rounded-xl">
+                    <p class="text-xs uppercase tracking-widest text-white/50 mb-1">Progressione</p>
+                    <p class="text-white font-bold">Step, non salti</p>
+                    <p class="text-xs text-white/60 mt-2">Continuità e qualità prima di tutto.</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- Block 2: Benefici -->
-            <div class="grid lg:grid-cols-12 gap-10 items-center">
-              <div class="lg:col-span-6 order-2 lg:order-1 reveal reveal--left">
-                <h3 class="text-2xl font-bold text-white mb-4">Benefici: cosa può aiutarti a ottenere</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">
-                  L’EMS può supportare diversi obiettivi quando viene usata con metodo. Il punto chiave è la continuità:
-                  sessioni brevi ma coerenti nel tempo, con intensità e parametri adeguati al tuo profilo.
-                </p>
-
-                <div class="mt-6 space-y-4">
-                  <div class="glass-card p-5 rounded-xl">
-                    <p class="text-white font-bold">Tono & ricomposizione</p>
-                    <p class="text-sm text-gray-400 leading-relaxed">
-                      Un lavoro completo che può contribuire a tonicità e forza, soprattutto se abbinato a stile di vita e recupero adeguati.
-                    </p>
-                  </div>
-                  <div class="glass-card p-5 rounded-xl">
-                    <p class="text-white font-bold">Postura & stabilità</p>
-                    <p class="text-sm text-gray-400 leading-relaxed">
-                      Lavoro mirato su catene muscolari e controllo del gesto: utile per migliorare stabilità e percezione del movimento.
-                    </p>
-                  </div>
-                  <div class="glass-card p-5 rounded-xl">
-                    <p class="text-white font-bold">Supporto allo sport</p>
-                    <p class="text-sm text-gray-400 leading-relaxed">
-                      Può affiancare preparazione atletica e recupero, integrandosi con il tuo allenamento senza aggiungere “ore” inutili.
-                    </p>
-                  </div>
-                </div>
-
-                <p class="text-xs text-white/50 mt-4">
-                  Nota: non esistono scorciatoie “magiche”. Noi puntiamo su metodo, progressione e aderenza.
-                </p>
-              </div>
-
-              <div class="lg:col-span-6 order-1 lg:order-2 reveal reveal--right">
-                <div class="relative rounded-2xl overflow-hidden img-frame h-[420px]">
-                  <img id="img-ems-benefits" src="" class="w-full h-full object-cover opacity-92" alt="Benefici EMS" loading="lazy" />
-                  <div class="absolute inset-0 bg-gradient-to-t from-pulse-black/85 via-transparent to-transparent"></div>
-                  <div class="absolute top-5 left-5 glass-card px-4 py-2 rounded-full">
-                    <span class="text-xs uppercase tracking-widest text-white/80">Benefici</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Block 3: Come si svolge -->
+            <!-- Block: Come avviene -->
             <div class="grid lg:grid-cols-12 gap-10 items-center">
               <div class="lg:col-span-6 reveal reveal--left">
                 <div class="relative rounded-2xl overflow-hidden img-frame h-[420px]">
-                  <img id="img-ems-how" src="" class="w-full h-full object-cover opacity-92" alt="Come si svolge una seduta EMS" loading="lazy" />
+                  <img id="img-ems-how" src="" class="w-full h-full object-cover opacity-92" alt="Seduta EMS" loading="lazy" />
                   <div class="absolute inset-0 bg-gradient-to-t from-pulse-black/85 via-transparent to-transparent"></div>
                   <div class="absolute top-5 left-5 glass-card px-4 py-2 rounded-full">
-                    <span class="text-xs uppercase tracking-widest text-white/80">Come si svolge</span>
+                    <span class="text-xs uppercase tracking-widest text-white/80">Seduta</span>
                   </div>
                 </div>
               </div>
 
               <div class="lg:col-span-6 reveal reveal--right">
-                <h3 class="text-2xl font-bold text-white mb-4">Come si svolge una seduta in PULSE</h3>
+                <h3 class="text-2xl font-bold text-white mb-4">Come avviene una seduta in PULSE</h3>
                 <p class="text-gray-400 text-sm leading-relaxed">
-                  Ogni seduta è 1:1 e segue una logica semplice: preparazione, lavoro guidato, defaticamento.
-                  L’intensità viene impostata in modo progressivo per evitare eccessi inutili e massimizzare la qualità.
+                  Una seduta EMS è breve ma intensa: per questo la struttura conta. Lavoriamo su appuntamento in un contesto riservato, con impostazioni personalizzate in base al tuo obiettivo. L’intensità cresce per step, così da mantenere comfort, continuità e qualità.
                 </p>
 
                 <div class="mt-6 space-y-4">
                   <div class="glass-card p-5 rounded-xl flex gap-4">
                     <div class="text-pulse-neon text-xl mt-1"><i class="fas fa-1"></i></div>
                     <div>
-                      <p class="text-white font-bold">Setup & calibratura</p>
-                      <p class="text-sm text-gray-400 leading-relaxed">Impostiamo l’intensità per distretto. Ti spieghiamo cosa aspettarti.</p>
+                      <p class="text-white font-bold">Preparazione & settaggi</p>
+                      <p class="text-sm text-gray-400 leading-relaxed">Tuta tecnica, elettrodi e impostazioni per distretto. Ti spieghiamo sensazioni e gestione dell’intensità.</p>
                     </div>
                   </div>
                   <div class="glass-card p-5 rounded-xl flex gap-4">
                     <div class="text-pulse-neon text-xl mt-1"><i class="fas fa-2"></i></div>
                     <div>
                       <p class="text-white font-bold">Lavoro guidato</p>
-                      <p class="text-sm text-gray-400 leading-relaxed">Esercizi semplici e controllati (squat, affondi, core, posture) secondo il tuo livello.</p>
+                      <p class="text-sm text-gray-400 leading-relaxed">Esercizi controllati e mirati, adattati al tuo livello e al tuo obiettivo.</p>
                     </div>
                   </div>
                   <div class="glass-card p-5 rounded-xl flex gap-4">
                     <div class="text-pulse-neon text-xl mt-1"><i class="fas fa-3"></i></div>
                     <div>
-                      <p class="text-white font-bold">Chiusura & indicazioni</p>
-                      <p class="text-sm text-gray-400 leading-relaxed">Defaticamento, recupero e consigli pratici (48–72h tipici tra sedute).</p>
+                      <p class="text-white font-bold">Chiusura & recupero</p>
+                      <p class="text-sm text-gray-400 leading-relaxed">Defaticamento e indicazioni su frequenza e recupero. Tipicamente 48–72 ore tra sedute.</p>
                     </div>
                   </div>
                 </div>
 
                 <div class="mt-8 glass-card p-6 rounded-xl">
-                  <h4 class="text-white font-bold mb-2">Sicurezza e tranquillità</h4>
+                  <h4 class="text-white font-bold mb-2">Privacy e attenzione al cliente</h4>
                   <p class="text-gray-400 text-sm leading-relaxed">
-                    Prima di iniziare facciamo un check iniziale. L’EMS non è indicata in alcuni casi (es. pacemaker, gravidanza, epilessia, condizioni acute).
-                    In caso di dubbi, è necessario il parere medico.
+                    Sedute su appuntamento, ambiente riservato e impostazioni calibrate. Prima di iniziare facciamo un check iniziale.
+                    L’EMS non è indicata in alcuni casi (es. pacemaker, gravidanza, epilessia, condizioni acute). In caso di dubbi, è necessario il parere medico.
                   </p>
                 </div>
               </div>
@@ -871,16 +779,16 @@
                   <img id="img-deviceCloseup" src="" class="w-full h-full object-cover opacity-90" alt="Dettaglio dispositivo" loading="lazy" />
                 </div>
                 <div>
-                  <h3 class="text-2xl font-bold text-white">Hardware premium</h3>
-                  <p class="text-xs text-white/60">Controllo fine dell’impulso</p>
+                  <h3 class="text-2xl font-bold text-white">Controllo dell’impulso</h3>
+                  <p class="text-xs text-white/60">Regolazione per distretto</p>
                 </div>
               </div>
               <p class="text-gray-400 text-sm mb-6 leading-relaxed">
-                Controllo fine dell’intensità per distretto: seduta più confortevole e misurabile nel tempo.
+                La qualità dello stimolo e la regolazione per distretto permettono di mantenere comfort e coerenza nel tempo.
               </p>
               <ul class="text-sm text-gray-300 space-y-2">
-                <li><i class="fas fa-check text-pulse-neon mr-2"></i> Settaggi personalizzati</li>
-                <li><i class="fas fa-check text-pulse-neon mr-2"></i> Progressione tracciata</li>
+                <li><i class="fas fa-check text-pulse-neon mr-2"></i> Intensità calibrata</li>
+                <li><i class="fas fa-check text-pulse-neon mr-2"></i> Progressione graduale</li>
               </ul>
             </div>
 
@@ -894,15 +802,15 @@
                 </div>
                 <div>
                   <h3 class="text-2xl font-bold text-white">Esperienza boutique</h3>
-                  <p class="text-xs text-white/60">Studio riservato • 1:1</p>
+                  <p class="text-xs text-white/60">Ordine • igiene • privacy</p>
                 </div>
               </div>
               <p class="text-gray-400 text-sm mb-6 leading-relaxed">
-                Niente folla e niente caos: sessioni su appuntamento, ambiente curato e supporto durante tutta la seduta.
+                Sessioni su appuntamento in uno spazio curato. Preparazione semplice e supporto durante tutta la seduta.
               </p>
               <ul class="text-sm text-gray-300 space-y-2">
-                <li><i class="fas fa-check text-pulse-neon mr-2"></i> Preparazione guidata</li>
-                <li><i class="fas fa-check text-pulse-neon mr-2"></i> Comfort e privacy</li>
+                <li><i class="fas fa-check text-pulse-neon mr-2"></i> Ambiente riservato</li>
+                <li><i class="fas fa-check text-pulse-neon mr-2"></i> Standard di igiene</li>
               </ul>
             </div>
           </div>
@@ -916,24 +824,30 @@
       </section>
     </div>
 
-    <!-- ================= PAGE: PACCHETTI ================= -->
+    <!-- ================= PAGE: PERCORSI (NO KIT TECNICO, NO PARCHEGGIO) ================= -->
     <div id="packages" class="page-section pt-24 bg-[#080808]">
       <div class="container mx-auto px-6 pb-20 max-w-6xl">
-        <div class="text-center mb-16 reveal">
-          <h2 class="text-sm font-bold text-pulse-neon uppercase tracking-widest mb-2">Membership</h2>
-          <h1 class="text-4xl font-bold text-white">Percorsi chiari, progressione reale</h1>
-          <p class="text-gray-400 mt-4">Scegli in base all’obiettivo. Il resto lo fa la costanza.</p>
+
+        <div class="text-center mb-12 reveal">
+          <h2 class="text-sm font-bold text-pulse-neon uppercase tracking-widest mb-2">Percorsi</h2>
+          <h1 class="text-4xl font-bold text-white">Non è una seduta. È un obiettivo.</h1>
+          <p class="text-gray-400 mt-4 max-w-4xl mx-auto">
+            L’EMS dà il meglio quando diventa un percorso: intensità e parametri cambiano nel tempo, e il corpo risponde con la continuità.
+            I pacchetti servono a darti struttura, progressione e metodo, così ogni seduta è parte di un processo orientato al risultato.
+          </p>
         </div>
 
         <div class="grid md:grid-cols-3 gap-8 items-start">
           <div class="glass-card p-8 rounded-2xl relative group hover:border-white/30 transition reveal">
             <h3 class="text-xl font-bold text-white mb-2">START</h3>
-            <div class="text-sm font-semibold text-pulse-neon mb-2 uppercase tracking-wider">Per iniziare bene</div>
-            <p class="text-xs text-gray-400 mb-6">Outcome: settaggi corretti + base solida.</p>
+            <div class="text-sm font-semibold text-pulse-neon mb-2 uppercase tracking-wider">Impostazione</div>
+            <p class="text-xs text-gray-400 mb-6">
+              Per partire bene: settaggi corretti, prime progressioni e metodo. Ideale per prendere confidenza e costruire basi solide.
+            </p>
             <ul class="space-y-4 mb-8 text-sm text-gray-400">
               <li class="flex items-center gap-3"><i class="fas fa-check text-white"></i> 8 sedute</li>
               <li class="flex items-center gap-3"><i class="fas fa-check text-white"></i> check iniziale</li>
-              <li class="flex items-center gap-3"><i class="fas fa-check text-white"></i> settaggi personalizzati</li>
+              <li class="flex items-center gap-3"><i class="fas fa-check text-white"></i> progressione guidata</li>
             </ul>
             <a href="#" class="btn btn--cta btn-prenota-whatsapp block w-full py-3 border border-white/20 text-white text-center text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition">
               Chiedi disponibilità
@@ -941,15 +855,17 @@
           </div>
 
           <div class="relative bg-[#151515] border border-pulse-neon p-10 rounded-2xl shadow-neon-strong transform md:-translate-y-4 z-10 reveal">
-            <div class="absolute top-0 right-0 bg-pulse-neon text-white text-[10px] font-bold uppercase px-3 py-1 rounded-bl-lg">Best Seller</div>
+            <div class="absolute top-0 right-0 bg-pulse-neon text-white text-[10px] font-bold uppercase px-3 py-1 rounded-bl-lg">Più scelto</div>
             <h3 class="text-2xl font-bold text-white mb-2">PRIME</h3>
-            <div class="text-sm font-semibold text-pulse-neon mb-2 uppercase tracking-wider">Il più scelto</div>
-            <p class="text-xs text-gray-300 mb-8">Outcome: cambiamento visibile con continuità + check.</p>
+            <div class="text-sm font-semibold text-pulse-neon mb-2 uppercase tracking-wider">Progressione</div>
+            <p class="text-xs text-gray-300 mb-8">
+              Per chi vuole risultati concreti: continuità, regolazioni più precise e step di intensità. È il percorso più scelto per vedere cambiamenti reali.
+            </p>
             <ul class="space-y-5 mb-10 text-sm text-gray-300">
               <li class="flex items-center gap-3"><i class="fas fa-check text-pulse-neon"></i> <strong>12 sedute</strong></li>
-              <li class="flex items-center gap-3"><i class="fas fa-check text-pulse-neon"></i> <strong>2 check</strong> (inizio + metà)</li>
-              <li class="flex items-center gap-3"><i class="fas fa-check text-pulse-neon"></i> priority booking</li>
-              <li class="flex items-center gap-3"><i class="fas fa-check text-pulse-neon"></i> kit comfort</li>
+              <li class="flex items-center gap-3"><i class="fas fa-check text-pulse-neon"></i> check iniziale + aggiornamento</li>
+              <li class="flex items-center gap-3"><i class="fas fa-check text-pulse-neon"></i> priorità prenotazioni</li>
+              <li class="flex items-center gap-3"><i class="fas fa-check text-pulse-neon"></i> percorso ottimizzato per obiettivo</li>
             </ul>
             <a href="#" class="btn btn--cta btn-prenota-whatsapp block w-full py-4 bg-pulse-neon text-white text-center text-xs font-bold uppercase tracking-widest hover:bg-pulse-neonHover transition shadow-neon">
               Prenota la prima prova
@@ -958,12 +874,14 @@
 
           <div class="glass-card p-8 rounded-2xl relative group hover:border-white/30 transition reveal">
             <h3 class="text-xl font-bold text-white mb-2">SIGNATURE</h3>
-            <div class="text-sm font-semibold text-pulse-neon mb-2 uppercase tracking-wider">Trasformazione guidata</div>
-            <p class="text-xs text-gray-400 mb-6">Outcome: massimo monitoraggio e continuità.</p>
+            <div class="text-sm font-semibold text-pulse-neon mb-2 uppercase tracking-wider">Trasformazione</div>
+            <p class="text-xs text-gray-400 mb-6">
+              Per chi vuole il massimo: percorso più lungo, più continuità e progressioni più avanzate in base alla risposta del corpo.
+            </p>
             <ul class="space-y-4 mb-8 text-sm text-gray-400">
               <li class="flex items-center gap-3"><i class="fas fa-check text-white"></i> 20 sedute</li>
-              <li class="flex items-center gap-3"><i class="fas fa-check text-white"></i> report progressi</li>
-              <li class="flex items-center gap-3"><i class="fas fa-check text-white"></i> priority booking</li>
+              <li class="flex items-center gap-3"><i class="fas fa-check text-white"></i> follow-up periodici</li>
+              <li class="flex items-center gap-3"><i class="fas fa-check text-white"></i> priorità prenotazioni</li>
             </ul>
             <a href="#" class="btn btn--cta btn-prenota-whatsapp block w-full py-3 border border-white/20 text-white text-center text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition">
               Chiedi info
@@ -971,24 +889,17 @@
           </div>
         </div>
 
+        <!-- Cosa trovi in studio (solo ciò che hai richiesto) -->
         <div class="mt-20 text-center">
-          <h3 class="text-lg font-bold text-white mb-8 reveal">Esperienza boutique, zero frizioni</h3>
+          <h3 class="text-lg font-bold text-white mb-8 reveal">Cosa trovi in studio</h3>
           <div class="flex flex-wrap justify-center gap-8 md:gap-16 reveal">
             <div class="flex flex-col items-center gap-3">
-              <div class="w-12 h-12 rounded-full bg-pulse-card flex items-center justify-center text-pulse-neon"><i class="fas fa-shower"></i></div>
-              <span class="text-xs uppercase tracking-wider text-gray-400">Doccia privata</span>
-            </div>
-            <div class="flex flex-col items-center gap-3">
-              <div class="w-12 h-12 rounded-full bg-pulse-card flex items-center justify-center text-pulse-neon"><i class="fas fa-tshirt"></i></div>
-              <span class="text-xs uppercase tracking-wider text-gray-400">Kit tecnico</span>
-            </div>
-            <div class="flex flex-col items-center gap-3">
               <div class="w-12 h-12 rounded-full bg-pulse-card flex items-center justify-center text-pulse-neon"><i class="fas fa-spray-can-sparkles"></i></div>
-              <span class="text-xs uppercase tracking-wider text-gray-400">Igiene impeccabile</span>
+              <span class="text-xs uppercase tracking-wider text-gray-400">Igiene & cura</span>
             </div>
             <div class="flex flex-col items-center gap-3">
-              <div class="w-12 h-12 rounded-full bg-pulse-card flex items-center justify-center text-pulse-neon"><i class="fas fa-parking"></i></div>
-              <span class="text-xs uppercase tracking-wider text-gray-400">Parcheggio</span>
+              <div class="w-12 h-12 rounded-full bg-pulse-card flex items-center justify-center text-pulse-neon"><i class="fas fa-door-open"></i></div>
+              <span class="text-xs uppercase tracking-wider text-gray-400">Cambio riservato</span>
             </div>
           </div>
 
@@ -1004,7 +915,7 @@
       <div class="container mx-auto px-6 max-w-6xl">
         <div class="grid md:grid-cols-2 gap-0 bg-[#111] rounded-3xl overflow-hidden border border-white/5 shadow-2xl reveal">
           <div class="p-10 md:p-14 flex flex-col justify-center">
-            <h2 class="text-3xl font-bold mb-2">Parliamone.</h2>
+            <h2 class="text-3xl font-bold mb-2">Contattaci.</h2>
             <p class="text-gray-400 mb-8" id="contact-slogan"></p>
 
             <div class="space-y-8">
@@ -1028,18 +939,18 @@
               <div class="flex items-start gap-4">
                 <div class="bg-pulse-card p-3 rounded-lg text-pulse-neon"><i class="fab fa-whatsapp text-xl"></i></div>
                 <div>
-                  <p class="text-xs text-gray-500 uppercase tracking-widest mb-1">Contatto diretto</p>
+                  <p class="text-xs text-gray-500 uppercase tracking-widest mb-1">WhatsApp</p>
                   <a href="#" class="btn btn--cta btn-prenota-whatsapp text-white font-medium hover:text-pulse-neon transition">Chatta su WhatsApp →</a>
-                  <p class="text-xs text-white/50 mt-2">Scrivi: obiettivo + disponibilità → ti proponiamo 2 slot.</p>
+                  <p class="text-xs text-white/50 mt-2">Suggerimento: scrivi obiettivo + disponibilità.</p>
                 </div>
               </div>
 
               <div class="glass-card p-6 rounded-xl">
-                <h3 class="text-white font-bold mb-3">Come funziona dopo che scrivi</h3>
+                <h3 class="text-white font-bold mb-3">Cosa succede dopo</h3>
                 <ol class="text-sm text-gray-300 space-y-2 list-decimal list-inside">
-                  <li>Ti rispondiamo e capiamo obiettivo e livello.</li>
-                  <li>Ti proponiamo 2 disponibilità per la prima prova.</li>
-                  <li>Check iniziale + seduta guidata + piano consigliato.</li>
+                  <li>Capiremo obiettivo e livello.</li>
+                  <li>Ti proporremo 2 disponibilità per la prima prova.</li>
+                  <li>Check iniziale + seduta guidata + percorso più adatto a te.</li>
                 </ol>
               </div>
 
@@ -1091,27 +1002,36 @@
   </div>
 
   <script>
+    // FAQ: 15, solo CTA finale
     const FAQ_DATA = [
-      { q: "La prima prova come funziona?", a: "Check iniziale → seduta guidata → piano consigliato. Scrivici obiettivo + disponibilità e ti proponiamo 2 slot." },
+      { q: "La prima prova come funziona?", a: "Check iniziale → seduta guidata → percorso più adatto a te. Serve a definire obiettivo, intensità, frequenza e metodo." },
       { q: "Quanto dura tutto?", a: "La seduta EMS dura 20 minuti. Considerando check e preparazione, la prima prova richiede circa 40–50 minuti." },
-      { q: "L’EMS fa male?", a: "No. Sentirai una contrazione intensa ma controllata. L’intensità è regolata su di te e cresce progressivamente." },
-      { q: "Quante volte a settimana devo farlo?", a: "In genere 1 seduta a settimana è sufficiente. In base a obiettivi e recupero, alcune persone fanno 2 sedute." },
-      { q: "È adatto anche a chi è fuori forma?", a: "Sì. Si parte da livelli gestibili e si costruisce progressione. La seduta è guidata 1:1." },
-      { q: "Aiuta su tono e postura?", a: "Può aiutare molto se abbinato a movimento guidato e costanza. Definiamo un percorso realistico sul tuo profilo." },
-      { q: "Cosa devo portare?", a: "Puoi venire comodo: in studio trovi kit tecnico e ciò che serve (in base al pacchetto)." },
+      { q: "È una seduta individuale o si può fare in coppia?", a: "Entrambe le opzioni sono possibili: individuale o in coppia (1:2). In ogni caso il lavoro resta guidato e personalizzato sugli obiettivi." },
+      { q: "L’EMS fa male?", a: "No. Sentirai una contrazione intensa ma controllata. L’intensità viene regolata in modo progressivo e in base al tuo livello." },
+      { q: "Quante volte a settimana devo farlo?", a: "In genere 1 seduta a settimana è sufficiente. In base a obiettivo e recupero, alcune persone possono fare 2 sedute." },
+      { q: "È adatto anche a chi è fuori forma?", a: "Sì. Si parte da livelli gestibili e si costruisce una progressione. L’obiettivo è qualità e continuità." },
+      { q: "Quali obiettivi posso perseguire?", a: "Tonificazione, aumento massa muscolare, dimagrimento/ricomposizione, posturale e supporto per cellulite: il protocollo cambia in base all’obiettivo." },
+      { q: "Dopo quanto vedo risultati?", a: "Dipende da costanza e stile di vita. Di solito si percepisce un miglioramento nelle prime settimane; i cambiamenti estetici richiedono continuità." },
+      { q: "Cosa devo portare?", a: "Vieni comodo. In studio ti guidiamo su tutto il necessario e sulle modalità pratiche (cambio/gestione abbigliamento)." },
       { q: "Ci sono controindicazioni?", a: "Sì (es. pacemaker, gravidanza, epilessia, condizioni acute). Prima di iniziare facciamo un check; in caso di dubbi serve parere medico." },
-      { q: "Che differenza c’è con elettrostimolatori casalinghi?", a: "Qui parliamo di sedute full-body guidate 1:1, con parametri calibrati e progressione tracciata nel tempo." },
-      { q: "Quanto costa?", a: "Abbiamo percorsi diversi in base a obiettivi e frequenza. Scrivici: ti proponiamo l’opzione più sensata per il tuo profilo." },
+      { q: "Quanto recupero serve tra una seduta e l’altra?", a: "Tipicamente 48–72 ore. Il recupero dipende dal livello, dall’intensità e dal tuo carico complessivo di allenamento." },
+      { q: "Posso fare EMS se faccio già sport/palestra?", a: "Sì. L’EMS può integrarsi bene. Impostiamo intensità e frequenza in modo compatibile con il tuo programma." },
+      { q: "Che differenza c’è con elettrostimolatori casalinghi?", a: "Qui parliamo di sedute full-body guidate, con parametri calibrati e progressione. È un approccio diverso per controllo e metodo." },
+      { q: "È adatta a obiettivi posturali?", a: "Può essere utile se inserita in un lavoro guidato su stabilità e controllo del gesto. Valutiamo insieme priorità e progressione." },
+      { q: "Quanto costa?", a: "Abbiamo percorsi diversi in base a obiettivi e frequenza. Scrivici su WhatsApp e ti proponiamo l’opzione più sensata per il tuo profilo." },
     ];
 
     window.addEventListener("DOMContentLoaded", () => {
-      // Copy
+      // HOME copy
       document.getElementById("hero-city").innerText = DATI_SITO.citta;
       document.getElementById("hero-badge").innerText = DATI_SITO.badgeTop;
+      document.getElementById("hero-motto").innerText = DATI_SITO.motto;
       document.getElementById("hero-title").innerText = DATI_SITO.titoloPrincipale;
       document.getElementById("hero-subtitle").innerText = DATI_SITO.sottoTitoloColorato;
       document.getElementById("hero-desc").innerText = DATI_SITO.descrizioneBreve;
+      document.getElementById("hero-microriga").innerText = DATI_SITO.microRigaHero;
 
+      // Contacts
       document.getElementById("contact-address").innerText = DATI_SITO.indirizzo;
       document.getElementById("contact-hours-1").innerText = DATI_SITO.orariMattina;
       document.getElementById("contact-hours-2").innerText = DATI_SITO.orariPomeriggio;
@@ -1129,7 +1049,6 @@
       const gr = document.getElementById("google-reviews-link");
       if (gr) gr.href = DATI_SITO.linkRecensioniGoogle;
 
-      // Mobile WA
       const mobileWA = document.getElementById("mobile-wa");
       if (mobileWA) mobileWA.href = waLink;
 
@@ -1148,12 +1067,9 @@
       setImg("img-deviceCloseup", DATI_SITO.images.deviceCloseup);
       setImg("img-suitsCloseup", DATI_SITO.images.suitsCloseup);
 
-      // New EMS images
       setImg("img-ems-what", DATI_SITO.images.emsWhat);
-      setImg("img-ems-benefits", DATI_SITO.images.emsBenefits);
       setImg("img-ems-how", DATI_SITO.images.emsHow);
 
-      // Backgrounds
       const contactsBg = document.getElementById("contacts-bg");
       contactsBg.style.backgroundImage = `url('${DATI_SITO.images.contacts}')`;
 
@@ -1164,9 +1080,9 @@
         emsBg.style.backgroundPosition = "center";
       }
 
-      // FAQ generate + micro-CTA every 3
+      // FAQ generate
       const faqContainer = document.getElementById("faq-container");
-      FAQ_DATA.forEach((item, idx) => {
+      FAQ_DATA.forEach((item) => {
         const html = `
           <div class="faq-item border-b border-white/10 pb-4">
             <button class="flex justify-between w-full text-left font-semibold text-lg text-white hover:text-pulse-neon transition focus:outline-none py-2" onclick="toggleFaq(this)">
@@ -1176,13 +1092,6 @@
               <div class="pt-2">${item.a}</div>
             </div>
           </div>
-          ${((idx + 1) % 3 === 0) ? `
-            <div class="my-5">
-              <a href="#" class="btn btn--cta btn-prenota-whatsapp inline-flex items-center gap-3 px-6 py-3 bg-white/5 border border-white/20 text-white font-bold uppercase text-xs tracking-widest hover:bg-pulse-neon hover:border-pulse-neon transition">
-                Vuoi una risposta su misura? Scrivici su WhatsApp
-              </a>
-            </div>
-          ` : ""}
         `;
         faqContainer.insertAdjacentHTML("beforeend", html);
       });
