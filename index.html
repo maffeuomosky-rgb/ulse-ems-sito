@@ -76,13 +76,21 @@
         firstTrial: "https://images.unsplash.com/photo-1599058917212-d750089bc07e?q=80&w=2400",
         whyMiha: "https://images.unsplash.com/photo-1550345332-09e3ac987658?q=80&w=2400",
         target: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=2400",
+
         galleryA: "https://images.unsplash.com/photo-1521805103424-d8f8430e8933?q=80&w=2400",
         galleryB: "https://images.unsplash.com/photo-1517838277536-f5f99be501ea?q=80&w=2400",
         galleryC: "https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=2400",
         galleryD: "https://images.unsplash.com/photo-1526401281623-6f0d2d3c2a15?q=80&w=2400",
+
         emsTech: "https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?q=80&w=2400",
         deviceCloseup: "https://images.unsplash.com/photo-1558611848-73f7eb4001a1?q=80&w=2400",
         suitsCloseup: "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?q=80&w=2400",
+
+        // Nuove immagini per blocchi esplicativi EMS
+        emsWhat: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=2400",
+        emsBenefits: "https://images.unsplash.com/photo-1599058917212-d750089bc07e?q=80&w=2400",
+        emsHow: "https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?q=80&w=2400",
+
         contacts: "https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=2400",
       },
     };
@@ -337,7 +345,6 @@
                 <img id="img-firstTrial" src="" class="w-full h-[520px] object-cover opacity-90" alt="Prima prova PULSE" loading="lazy" />
                 <div class="absolute inset-0 bg-gradient-to-t from-pulse-black via-transparent to-transparent"></div>
 
-                <!-- Editorial caption -->
                 <div class="absolute top-5 left-5 right-5 flex items-center justify-between gap-4">
                   <div class="glass-card px-4 py-2 rounded-full">
                     <span class="text-xs uppercase tracking-widest text-white/80">Standard PULSE</span>
@@ -348,7 +355,6 @@
                 </div>
               </div>
 
-              <!-- Metrics bar (signature) -->
               <div class="mt-4 grid grid-cols-3 gap-3">
                 <div class="glass-card p-4 rounded-xl text-center">
                   <p class="text-[10px] uppercase tracking-widest text-white/50">Durata totale</p>
@@ -368,7 +374,7 @@
         </div>
       </section>
 
-      <!-- WHY MIHA (layout alternato: IMAGE LEFT, CONTENT RIGHT) -->
+      <!-- WHY MIHA -->
       <section class="py-24 bg-pulse-dark border-t border-white/5" id="why-miha">
         <div class="container mx-auto px-6 max-w-6xl">
           <div class="text-center mb-16 reveal">
@@ -440,7 +446,7 @@
         </div>
       </section>
 
-      <!-- TARGET (layout alternato: CONTENT LEFT, IMAGE RIGHT) -->
+      <!-- TARGET -->
       <section class="py-24 bg-pulse-black border-t border-white/5" id="target">
         <div class="container mx-auto px-6 max-w-6xl">
           <div class="grid lg:grid-cols-12 gap-10 items-center">
@@ -526,9 +532,7 @@
             </p>
           </div>
 
-          <!-- Collage grid -->
           <div class="grid lg:grid-cols-12 gap-6">
-            <!-- BIG -->
             <div class="lg:col-span-7 reveal reveal--left">
               <div class="relative rounded-2xl overflow-hidden img-frame h-[440px]">
                 <img id="img-galleryA" src="" class="w-full h-full object-cover opacity-95" alt="Studio wide" loading="lazy" />
@@ -539,12 +543,9 @@
                   <span class="px-3 py-2 rounded-full bg-white/5 border border-white/10 text-xs text-white/80">Neon soft</span>
                 </div>
               </div>
-              <p class="text-xs text-white/45 mt-3">
-                Caption: “Entri, ti alleni, esci. Senza frizioni. Senza caos.”
-              </p>
+              <p class="text-xs text-white/45 mt-3">Caption: “Entri, ti alleni, esci. Senza frizioni. Senza caos.”</p>
             </div>
 
-            <!-- RIGHT STACK -->
             <div class="lg:col-span-5 grid grid-cols-2 gap-6 reveal reveal--right">
               <div class="relative rounded-2xl overflow-hidden img-frame h-[210px]">
                 <img id="img-galleryB" src="" class="w-full h-full object-cover opacity-95" alt="Reception" loading="lazy" />
@@ -555,7 +556,7 @@
                 <div class="absolute inset-0 bg-gradient-to-t from-pulse-black/70 via-transparent to-transparent"></div>
               </div>
               <div class="relative rounded-2xl overflow-hidden img-frame h-[210px] col-span-2">
-                <img id="img-galleryD" src="" class="w-full h-full object-cover opacity-95" alt="Suits / equipment wall" loading="lazy" />
+                <img id="img-galleryD" src="" class="w-full h-full object-cover opacity-95" alt="Equipment wall" loading="lazy" />
                 <div class="absolute inset-0 bg-gradient-to-t from-pulse-black/70 via-transparent to-transparent"></div>
                 <div class="absolute top-5 left-5 glass-card px-4 py-2 rounded-full">
                   <span class="text-xs uppercase tracking-widest text-white/80">Dettagli che contano</span>
@@ -572,7 +573,7 @@
         </div>
       </section>
 
-      <!-- SOCIAL PROOF (link only + placeholders) -->
+      <!-- SOCIAL PROOF -->
       <section class="py-24 bg-pulse-black border-t border-white/5" id="social-proof">
         <div class="container mx-auto px-6 max-w-6xl">
           <div class="text-center mb-14 reveal">
@@ -644,10 +645,10 @@
       </section>
     </div>
 
-    <!-- ================= PAGE: TECNOLOGIA EMS ================= -->
+    <!-- ================= PAGE: TECNOLOGIA EMS (INTEGRATA) ================= -->
     <div id="ems" class="page-section pt-24 bg-pulse-black">
-      <!-- Split background: left dark, right image -->
       <section class="relative">
+        <!-- Split background -->
         <div class="absolute inset-0 hidden lg:block">
           <div class="absolute inset-y-0 left-0 w-1/2 bg-pulse-black"></div>
           <div class="absolute inset-y-0 right-0 w-1/2">
@@ -659,13 +660,15 @@
         <div class="container mx-auto px-6 pb-20 max-w-6xl relative">
           <div class="text-center mb-16 reveal">
             <h2 class="text-sm font-bold text-pulse-neon uppercase tracking-widest mb-2">Deep Science</h2>
-            <h1 class="text-4xl md:text-5xl font-bold text-white">Come funziona l’EMS?</h1>
+            <h1 class="text-4xl md:text-5xl font-bold text-white">Cos’è l’EMS e come funziona in PULSE</h1>
             <p class="text-gray-400 mt-4 max-w-3xl mx-auto">
-              L’EMS affianca il segnale naturale del corpo con impulsi controllati. In PULSE conta il metodo: parametri calibrati, movimento guidato e progressione.
+              L’EMS (Elettro-Mio-Stimolazione) affianca il segnale naturale del corpo con impulsi controllati.
+              In PULSE la differenza la fa il metodo: parametri calibrati, movimento guidato e progressione.
             </p>
           </div>
 
-          <div class="grid lg:grid-cols-12 gap-10 items-center mb-14">
+          <!-- HERO TECH BLOCK -->
+          <div class="grid lg:grid-cols-12 gap-10 items-center mb-16">
             <div class="lg:col-span-7 reveal reveal--left">
               <div class="relative rounded-2xl overflow-hidden img-frame h-[440px]">
                 <img id="img-emsTech" src="" class="w-full h-full object-cover opacity-90" alt="EMS tecnologia" loading="lazy" />
@@ -673,12 +676,12 @@
                 <div class="absolute bottom-5 left-5 right-5 glass-card p-5 rounded-xl">
                   <div class="grid sm:grid-cols-3 gap-3">
                     <div class="bg-white/5 border border-white/10 rounded-lg p-4">
-                      <p class="text-[10px] uppercase tracking-widest text-white/50">Coach</p>
-                      <p class="text-white font-extrabold">1:1</p>
+                      <p class="text-[10px] uppercase tracking-widest text-white/50">Sessione</p>
+                      <p class="text-white font-extrabold">20 minuti</p>
                     </div>
                     <div class="bg-white/5 border border-white/10 rounded-lg p-4">
-                      <p class="text-[10px] uppercase tracking-widest text-white/50">Seduta</p>
-                      <p class="text-white font-extrabold">20 minuti</p>
+                      <p class="text-[10px] uppercase tracking-widest text-white/50">Coaching</p>
+                      <p class="text-white font-extrabold">1:1</p>
                     </div>
                     <div class="bg-white/5 border border-white/10 rounded-lg p-4">
                       <p class="text-[10px] uppercase tracking-widest text-white/50">Metodo</p>
@@ -690,21 +693,20 @@
             </div>
 
             <div class="lg:col-span-5 reveal reveal--right">
-              <h3 class="text-2xl font-bold text-white mb-4">Cosa senti durante la seduta</h3>
-              <ul class="text-sm text-gray-300 space-y-3">
-                <li class="flex gap-3"><i class="fas fa-check text-pulse-neon mt-1"></i> Contrazione intensa ma controllata</li>
-                <li class="flex gap-3"><i class="fas fa-check text-pulse-neon mt-1"></i> Coach guida postura, respirazione e movimento</li>
-                <li class="flex gap-3"><i class="fas fa-check text-pulse-neon mt-1"></i> Intensità calibrata e incrementata gradualmente</li>
-              </ul>
+              <h3 class="text-2xl font-bold text-white mb-4">In parole semplici</h3>
+              <p class="text-gray-400 text-sm leading-relaxed">
+                Durante un allenamento normale, il cervello invia segnali elettrici ai muscoli per farli contrarre.
+                L’EMS utilizza impulsi controllati, trasmessi tramite elettrodi su una tuta tecnica, per
+                <span class="text-white/70">aumentare l’attivazione muscolare</span> mentre esegui movimenti guidati.
+              </p>
 
-              <div class="mt-8 glass-card p-6 rounded-xl">
-                <h4 class="text-white font-bold mb-2">Obiettivo → Frequenza consigliata</h4>
-                <div class="text-sm text-gray-300 space-y-2">
-                  <div class="flex justify-between gap-4"><span>Tono / postura</span><span class="text-white/70">1x settimana</span></div>
-                  <div class="flex justify-between gap-4"><span>Performance sportiva</span><span class="text-white/70">1–2x settimana*</span></div>
-                  <div class="flex justify-between gap-4"><span>Ripartenza</span><span class="text-white/70">1x settimana</span></div>
-                </div>
-                <p class="text-xs text-white/50 mt-3">*In base al recupero. Lo definiamo nel check iniziale.</p>
+              <div class="mt-6 glass-card p-6 rounded-xl">
+                <h4 class="text-white font-bold mb-3">Cosa senti durante la seduta</h4>
+                <ul class="text-sm text-gray-300 space-y-3">
+                  <li class="flex gap-3"><i class="fas fa-check text-pulse-neon mt-1"></i> Contrazione intensa ma controllata</li>
+                  <li class="flex gap-3"><i class="fas fa-check text-pulse-neon mt-1"></i> Intensità regolata per distretto muscolare</li>
+                  <li class="flex gap-3"><i class="fas fa-check text-pulse-neon mt-1"></i> Coach guida postura, respirazione e movimento</li>
+                </ul>
               </div>
 
               <div class="mt-8">
@@ -712,17 +714,161 @@
                   Prenota la prima prova
                 </a>
               </div>
+
+              <p class="text-xs text-white/50 mt-3">
+                Nota: la risposta all’allenamento dipende da costanza, recupero e stile di vita. Noi curiamo metodo e progressione.
+              </p>
             </div>
           </div>
 
-          <div class="grid md:grid-cols-2 gap-8">
+          <!-- EMS EXPLAINER BLOCKS (alternati con immagini) -->
+          <div class="space-y-14">
+
+            <!-- Block 1: Cos'è -->
+            <div class="grid lg:grid-cols-12 gap-10 items-center">
+              <div class="lg:col-span-6 reveal reveal--left">
+                <div class="relative rounded-2xl overflow-hidden img-frame h-[380px]">
+                  <img id="img-ems-what" src="" class="w-full h-full object-cover opacity-92" alt="Cos'è l'EMS" loading="lazy" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-pulse-black/85 via-transparent to-transparent"></div>
+                  <div class="absolute top-5 left-5 glass-card px-4 py-2 rounded-full">
+                    <span class="text-xs uppercase tracking-widest text-white/80">Cos’è</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="lg:col-span-6 reveal reveal--right">
+                <h3 class="text-2xl font-bold text-white mb-4">Cos’è l’EMS</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                  L’EMS (Elettro-Mio-Stimolazione) è una tecnologia che stimola la muscolatura scheletrica attraverso impulsi elettrici controllati.
+                  In PULSE l’EMS non è “passiva”: viene integrata con esercizi semplici e guidati, così da mantenere controllo del gesto,
+                  qualità del movimento e progressione.
+                </p>
+
+                <div class="mt-6 grid sm:grid-cols-2 gap-4">
+                  <div class="glass-card p-5 rounded-xl">
+                    <p class="text-xs uppercase tracking-widest text-white/50 mb-1">Approccio</p>
+                    <p class="text-white font-bold">Attivo, guidato, progressivo</p>
+                    <p class="text-xs text-white/60 mt-2">Non è “attacca e vai”: il coach guida ogni fase.</p>
+                  </div>
+                  <div class="glass-card p-5 rounded-xl">
+                    <p class="text-xs uppercase tracking-widest text-white/50 mb-1">Personalizzazione</p>
+                    <p class="text-white font-bold">Distretto per distretto</p>
+                    <p class="text-xs text-white/60 mt-2">Intensità calibrata in base a obiettivo e livello.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Block 2: Benefici -->
+            <div class="grid lg:grid-cols-12 gap-10 items-center">
+              <div class="lg:col-span-6 order-2 lg:order-1 reveal reveal--left">
+                <h3 class="text-2xl font-bold text-white mb-4">Benefici: cosa può aiutarti a ottenere</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                  L’EMS può supportare diversi obiettivi quando viene usata con metodo. Il punto chiave è la continuità:
+                  sessioni brevi ma coerenti nel tempo, con intensità e parametri adeguati al tuo profilo.
+                </p>
+
+                <div class="mt-6 space-y-4">
+                  <div class="glass-card p-5 rounded-xl">
+                    <p class="text-white font-bold">Tono & ricomposizione</p>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                      Un lavoro completo che può contribuire a tonicità e forza, soprattutto se abbinato a stile di vita e recupero adeguati.
+                    </p>
+                  </div>
+                  <div class="glass-card p-5 rounded-xl">
+                    <p class="text-white font-bold">Postura & stabilità</p>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                      Lavoro mirato su catene muscolari e controllo del gesto: utile per migliorare stabilità e percezione del movimento.
+                    </p>
+                  </div>
+                  <div class="glass-card p-5 rounded-xl">
+                    <p class="text-white font-bold">Supporto allo sport</p>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                      Può affiancare preparazione atletica e recupero, integrandosi con il tuo allenamento senza aggiungere “ore” inutili.
+                    </p>
+                  </div>
+                </div>
+
+                <p class="text-xs text-white/50 mt-4">
+                  Nota: non esistono scorciatoie “magiche”. Noi puntiamo su metodo, progressione e aderenza.
+                </p>
+              </div>
+
+              <div class="lg:col-span-6 order-1 lg:order-2 reveal reveal--right">
+                <div class="relative rounded-2xl overflow-hidden img-frame h-[420px]">
+                  <img id="img-ems-benefits" src="" class="w-full h-full object-cover opacity-92" alt="Benefici EMS" loading="lazy" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-pulse-black/85 via-transparent to-transparent"></div>
+                  <div class="absolute top-5 left-5 glass-card px-4 py-2 rounded-full">
+                    <span class="text-xs uppercase tracking-widest text-white/80">Benefici</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Block 3: Come si svolge -->
+            <div class="grid lg:grid-cols-12 gap-10 items-center">
+              <div class="lg:col-span-6 reveal reveal--left">
+                <div class="relative rounded-2xl overflow-hidden img-frame h-[420px]">
+                  <img id="img-ems-how" src="" class="w-full h-full object-cover opacity-92" alt="Come si svolge una seduta EMS" loading="lazy" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-pulse-black/85 via-transparent to-transparent"></div>
+                  <div class="absolute top-5 left-5 glass-card px-4 py-2 rounded-full">
+                    <span class="text-xs uppercase tracking-widest text-white/80">Come si svolge</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="lg:col-span-6 reveal reveal--right">
+                <h3 class="text-2xl font-bold text-white mb-4">Come si svolge una seduta in PULSE</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                  Ogni seduta è 1:1 e segue una logica semplice: preparazione, lavoro guidato, defaticamento.
+                  L’intensità viene impostata in modo progressivo per evitare eccessi inutili e massimizzare la qualità.
+                </p>
+
+                <div class="mt-6 space-y-4">
+                  <div class="glass-card p-5 rounded-xl flex gap-4">
+                    <div class="text-pulse-neon text-xl mt-1"><i class="fas fa-1"></i></div>
+                    <div>
+                      <p class="text-white font-bold">Setup & calibratura</p>
+                      <p class="text-sm text-gray-400 leading-relaxed">Impostiamo l’intensità per distretto. Ti spieghiamo cosa aspettarti.</p>
+                    </div>
+                  </div>
+                  <div class="glass-card p-5 rounded-xl flex gap-4">
+                    <div class="text-pulse-neon text-xl mt-1"><i class="fas fa-2"></i></div>
+                    <div>
+                      <p class="text-white font-bold">Lavoro guidato</p>
+                      <p class="text-sm text-gray-400 leading-relaxed">Esercizi semplici e controllati (squat, affondi, core, posture) secondo il tuo livello.</p>
+                    </div>
+                  </div>
+                  <div class="glass-card p-5 rounded-xl flex gap-4">
+                    <div class="text-pulse-neon text-xl mt-1"><i class="fas fa-3"></i></div>
+                    <div>
+                      <p class="text-white font-bold">Chiusura & indicazioni</p>
+                      <p class="text-sm text-gray-400 leading-relaxed">Defaticamento, recupero e consigli pratici (48–72h tipici tra sedute).</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-8 glass-card p-6 rounded-xl">
+                  <h4 class="text-white font-bold mb-2">Sicurezza e tranquillità</h4>
+                  <p class="text-gray-400 text-sm leading-relaxed">
+                    Prima di iniziare facciamo un check iniziale. L’EMS non è indicata in alcuni casi (es. pacemaker, gravidanza, epilessia, condizioni acute).
+                    In caso di dubbi, è necessario il parere medico.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Details blocks -->
+          <div class="grid md:grid-cols-2 gap-8 mt-16">
             <div class="glass-card p-10 rounded-2xl relative overflow-hidden group reveal">
               <div class="absolute top-0 right-0 bg-white/10 p-4 rounded-bl-2xl">
                 <i class="fas fa-microchip text-2xl text-white"></i>
               </div>
               <div class="flex items-center gap-4 mb-6">
                 <div class="w-14 h-14 rounded-xl overflow-hidden img-frame">
-                  <img id="img-deviceCloseup" src="" class="w-full h-full object-cover opacity-90" alt="Device closeup" loading="lazy" />
+                  <img id="img-deviceCloseup" src="" class="w-full h-full object-cover opacity-90" alt="Dettaglio dispositivo" loading="lazy" />
                 </div>
                 <div>
                   <h3 class="text-2xl font-bold text-white">Hardware premium</h3>
@@ -744,7 +890,7 @@
               </div>
               <div class="flex items-center gap-4 mb-6">
                 <div class="w-14 h-14 rounded-xl overflow-hidden img-frame">
-                  <img id="img-suitsCloseup" src="" class="w-full h-full object-cover opacity-90" alt="Suits closeup" loading="lazy" />
+                  <img id="img-suitsCloseup" src="" class="w-full h-full object-cover opacity-90" alt="Dettaglio tute" loading="lazy" />
                 </div>
                 <div>
                   <h3 class="text-2xl font-bold text-white">Esperienza boutique</h3>
@@ -761,6 +907,11 @@
             </div>
           </div>
 
+          <div class="text-center mt-12 reveal">
+            <a href="#" class="btn btn--cta btn-prenota-whatsapp inline-flex items-center gap-3 px-8 py-4 bg-pulse-neon text-white font-bold uppercase text-xs tracking-widest hover:bg-pulse-neonHover transition shadow-neon">
+              Prenota la prima prova
+            </a>
+          </div>
         </div>
       </section>
     </div>
@@ -920,14 +1071,14 @@
     </div>
   </main>
 
-  <!-- Floating WhatsApp -->
+  <!-- Floating WhatsApp (desktop) -->
   <div class="fixed bottom-6 right-6 z-40 hidden md:block">
     <a href="#" id="float-whatsapp" target="_blank" class="float-soft-pulse w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center text-white text-2xl shadow-lg hover:scale-110 transition-transform" aria-label="Chatta su WhatsApp">
       <i class="fab fa-whatsapp"></i>
     </a>
   </div>
 
-  <!-- MOBILE STICKY CTA BAR (signature UX) -->
+  <!-- MOBILE STICKY CTA BAR -->
   <div class="md:hidden fixed bottom-0 left-0 right-0 z-50 border-t border-white/10 bg-black/80 backdrop-blur-xl">
     <div class="max-w-6xl mx-auto px-4 py-3 flex gap-3">
       <a href="#" class="btn btn--cta btn-prenota-whatsapp flex-1 py-3 bg-pulse-neon text-white font-extrabold uppercase tracking-widest text-xs rounded-lg text-center shadow-neon">
@@ -978,7 +1129,7 @@
       const gr = document.getElementById("google-reviews-link");
       if (gr) gr.href = DATI_SITO.linkRecensioniGoogle;
 
-      // Mobile WA icon in sticky bar
+      // Mobile WA
       const mobileWA = document.getElementById("mobile-wa");
       if (mobileWA) mobileWA.href = waLink;
 
@@ -987,21 +1138,31 @@
       setImg("img-firstTrial", DATI_SITO.images.firstTrial);
       setImg("img-whyMiha", DATI_SITO.images.whyMiha);
       setImg("img-target", DATI_SITO.images.target);
+
       setImg("img-galleryA", DATI_SITO.images.galleryA);
       setImg("img-galleryB", DATI_SITO.images.galleryB);
       setImg("img-galleryC", DATI_SITO.images.galleryC);
       setImg("img-galleryD", DATI_SITO.images.galleryD);
+
       setImg("img-emsTech", DATI_SITO.images.emsTech);
       setImg("img-deviceCloseup", DATI_SITO.images.deviceCloseup);
       setImg("img-suitsCloseup", DATI_SITO.images.suitsCloseup);
 
+      // New EMS images
+      setImg("img-ems-what", DATI_SITO.images.emsWhat);
+      setImg("img-ems-benefits", DATI_SITO.images.emsBenefits);
+      setImg("img-ems-how", DATI_SITO.images.emsHow);
+
+      // Backgrounds
       const contactsBg = document.getElementById("contacts-bg");
       contactsBg.style.backgroundImage = `url('${DATI_SITO.images.contacts}')`;
 
       const emsBg = document.getElementById("ems-split-bg");
-      if (emsBg) emsBg.style.backgroundImage = `url('${DATI_SITO.images.emsTech}')`;
-      if (emsBg) emsBg.style.backgroundSize = "cover";
-      if (emsBg) emsBg.style.backgroundPosition = "center";
+      if (emsBg) {
+        emsBg.style.backgroundImage = `url('${DATI_SITO.images.emsTech}')`;
+        emsBg.style.backgroundSize = "cover";
+        emsBg.style.backgroundPosition = "center";
+      }
 
       // FAQ generate + micro-CTA every 3
       const faqContainer = document.getElementById("faq-container");
