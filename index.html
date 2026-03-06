@@ -326,6 +326,13 @@
       width: auto;
       opacity: .9;
     }
+        .section-footer-link {
+      transition: color 180ms ease;
+    }
+
+    .section-footer-link:hover {
+      color: #ff007f;
+    }
     @media (prefers-reduced-motion: reduce) {
       html {
         scroll-behavior: auto;
@@ -442,6 +449,64 @@
               <span class="px-3 py-2 rounded-full bg-white/5 border border-white/10">Individuale o in coppia</span>
               <span class="px-3 py-2 rounded-full bg-white/5 border border-white/10">Allenamento guidato</span>
             </div>
+          </div>
+        </div>
+      </section>
+            <section class="section-footer py-8">
+        <div class="container mx-auto px-6 max-w-6xl">
+          <div class="grid md:grid-cols-3 gap-8 text-xs text-white/50">
+            
+            <div>
+              <p class="text-white/80 font-semibold uppercase tracking-widest text-[10px] mb-3">Navigazione</p>
+              <div class="space-y-2">
+                <p><a href="#" onclick="showPage('home')" class="section-footer-link">Home</a></p>
+                <p><a href="#" onclick="showPage('ems')" class="section-footer-link">EMS</a></p>
+                <p><a href="#" onclick="showPage('technology')" class="section-footer-link">Tecnologia</a></p>
+                <p><a href="#" onclick="showPage('packages')" class="section-footer-link">Percorsi</a></p>
+                <p><a href="#" onclick="showPage('contacts')" class="section-footer-link">Contatti</a></p>
+                <p><a href="#" onclick="scrollToId('faq')" class="section-footer-link">FAQ</a></p>
+              </div>
+            </div>
+
+            <div>
+              <p class="text-white/80 font-semibold uppercase tracking-widest text-[10px] mb-3">Contatti</p>
+              <div class="space-y-2">
+                <p class="footer-address"></p>
+                <p><span class="footer-phone"></span></p>
+                <p><a href="#" class="section-footer-link footer-email-link"><span class="footer-email"></span></a></p>
+                <p><a href="#" class="section-footer-link footer-pec-link"><span class="footer-pec-text"></span></a></p>
+                <p>P. IVA: <span class="footer-piva-text"></span></p>
+                <p><span class="footer-hours"></span></p>
+              </div>
+            </div>
+
+            <div>
+              <p class="text-white/80 font-semibold uppercase tracking-widest text-[10px] mb-3">Social</p>
+              <div class="flex items-center gap-4 text-base mb-3">
+                <a href="#" target="_blank" class="section-footer-link footer-wa-link" aria-label="WhatsApp">
+                  <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="#" target="_blank" class="section-footer-link footer-ig-link" aria-label="Instagram">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" target="_blank" class="section-footer-link footer-fb-link" aria-label="Facebook">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" target="_blank" class="section-footer-link footer-tt-link" aria-label="TikTok">
+                  <i class="fab fa-tiktok"></i>
+                </a>
+              </div>
+              <p class="text-white/35 leading-relaxed">
+                Su appuntamento • individuale o in coppia
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-8 pt-5 border-t border-white/5 flex flex-col items-center justify-center gap-3">
+            <img id="footer-logo-small-home" src="" alt="PULSE EMS Studio" class="footer-logo-small" />
+            <p class="text-[11px] text-white/30 text-center">
+              © <span class="footer-year"></span> <span class="footer-studio-name"></span> — Tutti i diritti riservati
+            </p>
           </div>
         </div>
       </section>
@@ -1117,6 +1182,64 @@
           </div>
         </div>
       </section>
+            <section class="section-footer py-8">
+        <div class="container mx-auto px-6 max-w-6xl">
+          <div class="grid md:grid-cols-3 gap-8 text-xs text-white/50">
+            
+            <div>
+              <p class="text-white/80 font-semibold uppercase tracking-widest text-[10px] mb-3">Navigazione</p>
+              <div class="space-y-2">
+                <p><a href="#" onclick="showPage('home')" class="section-footer-link">Home</a></p>
+                <p><a href="#" onclick="showPage('ems')" class="section-footer-link">EMS</a></p>
+                <p><a href="#" onclick="showPage('technology')" class="section-footer-link">Tecnologia</a></p>
+                <p><a href="#" onclick="showPage('packages')" class="section-footer-link">Percorsi</a></p>
+                <p><a href="#" onclick="showPage('contacts')" class="section-footer-link">Contatti</a></p>
+                <p><a href="#" onclick="scrollToId('faq')" class="section-footer-link">FAQ</a></p>
+              </div>
+            </div>
+
+            <div>
+              <p class="text-white/80 font-semibold uppercase tracking-widest text-[10px] mb-3">Contatti</p>
+              <div class="space-y-2">
+                <p class="footer-address"></p>
+                <p><span class="footer-phone"></span></p>
+                <p><a href="#" class="section-footer-link footer-email-link"><span class="footer-email"></span></a></p>
+                <p><a href="#" class="section-footer-link footer-pec-link"><span class="footer-pec-text"></span></a></p>
+                <p>P. IVA: <span class="footer-piva-text"></span></p>
+                <p><span class="footer-hours"></span></p>
+              </div>
+            </div>
+
+            <div>
+              <p class="text-white/80 font-semibold uppercase tracking-widest text-[10px] mb-3">Social</p>
+              <div class="flex items-center gap-4 text-base mb-3">
+                <a href="#" target="_blank" class="section-footer-link footer-wa-link" aria-label="WhatsApp">
+                  <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="#" target="_blank" class="section-footer-link footer-ig-link" aria-label="Instagram">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" target="_blank" class="section-footer-link footer-fb-link" aria-label="Facebook">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" target="_blank" class="section-footer-link footer-tt-link" aria-label="TikTok">
+                  <i class="fab fa-tiktok"></i>
+                </a>
+              </div>
+              <p class="text-white/35 leading-relaxed">
+                Su appuntamento • individuale o in coppia
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-8 pt-5 border-t border-white/5 flex flex-col items-center justify-center gap-3">
+            <img id="footer-logo-small-ems" src="" alt="PULSE EMS Studio" class="footer-logo-small" />
+            <p class="text-[11px] text-white/30 text-center">
+              © <span class="footer-year"></span> <span class="footer-studio-name"></span> — Tutti i diritti riservati
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
     
     <!-- ================= TECNOLOGIA ================= -->
@@ -1228,6 +1351,64 @@
           </div>
         </div>
       </section>
+            <section class="section-footer py-8">
+        <div class="container mx-auto px-6 max-w-6xl">
+          <div class="grid md:grid-cols-3 gap-8 text-xs text-white/50">
+            
+            <div>
+              <p class="text-white/80 font-semibold uppercase tracking-widest text-[10px] mb-3">Navigazione</p>
+              <div class="space-y-2">
+                <p><a href="#" onclick="showPage('home')" class="section-footer-link">Home</a></p>
+                <p><a href="#" onclick="showPage('ems')" class="section-footer-link">EMS</a></p>
+                <p><a href="#" onclick="showPage('technology')" class="section-footer-link">Tecnologia</a></p>
+                <p><a href="#" onclick="showPage('packages')" class="section-footer-link">Percorsi</a></p>
+                <p><a href="#" onclick="showPage('contacts')" class="section-footer-link">Contatti</a></p>
+                <p><a href="#" onclick="scrollToId('faq')" class="section-footer-link">FAQ</a></p>
+              </div>
+            </div>
+
+            <div>
+              <p class="text-white/80 font-semibold uppercase tracking-widest text-[10px] mb-3">Contatti</p>
+              <div class="space-y-2">
+                <p class="footer-address"></p>
+                <p><span class="footer-phone"></span></p>
+                <p><a href="#" class="section-footer-link footer-email-link"><span class="footer-email"></span></a></p>
+                <p><a href="#" class="section-footer-link footer-pec-link"><span class="footer-pec-text"></span></a></p>
+                <p>P. IVA: <span class="footer-piva-text"></span></p>
+                <p><span class="footer-hours"></span></p>
+              </div>
+            </div>
+
+            <div>
+              <p class="text-white/80 font-semibold uppercase tracking-widest text-[10px] mb-3">Social</p>
+              <div class="flex items-center gap-4 text-base mb-3">
+                <a href="#" target="_blank" class="section-footer-link footer-wa-link" aria-label="WhatsApp">
+                  <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="#" target="_blank" class="section-footer-link footer-ig-link" aria-label="Instagram">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" target="_blank" class="section-footer-link footer-fb-link" aria-label="Facebook">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" target="_blank" class="section-footer-link footer-tt-link" aria-label="TikTok">
+                  <i class="fab fa-tiktok"></i>
+                </a>
+              </div>
+              <p class="text-white/35 leading-relaxed">
+                Su appuntamento • individuale o in coppia
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-8 pt-5 border-t border-white/5 flex flex-col items-center justify-center gap-3">
+            <img id="footer-logo-small-technology" src="" alt="PULSE EMS Studio" class="footer-logo-small" />
+            <p class="text-[11px] text-white/30 text-center">
+              © <span class="footer-year"></span> <span class="footer-studio-name"></span> — Tutti i diritti riservati
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
 
     <!-- ================= PERCORSI ================= -->
@@ -1323,6 +1504,64 @@
           <p class="text-xs text-white/35 mt-4">Seduta EMS: 20 minuti</p>
         </div>
       </div>
+            <section class="section-footer py-8">
+        <div class="container mx-auto px-6 max-w-6xl">
+          <div class="grid md:grid-cols-3 gap-8 text-xs text-white/50">
+            
+            <div>
+              <p class="text-white/80 font-semibold uppercase tracking-widest text-[10px] mb-3">Navigazione</p>
+              <div class="space-y-2">
+                <p><a href="#" onclick="showPage('home')" class="section-footer-link">Home</a></p>
+                <p><a href="#" onclick="showPage('ems')" class="section-footer-link">EMS</a></p>
+                <p><a href="#" onclick="showPage('technology')" class="section-footer-link">Tecnologia</a></p>
+                <p><a href="#" onclick="showPage('packages')" class="section-footer-link">Percorsi</a></p>
+                <p><a href="#" onclick="showPage('contacts')" class="section-footer-link">Contatti</a></p>
+                <p><a href="#" onclick="scrollToId('faq')" class="section-footer-link">FAQ</a></p>
+              </div>
+            </div>
+
+            <div>
+              <p class="text-white/80 font-semibold uppercase tracking-widest text-[10px] mb-3">Contatti</p>
+              <div class="space-y-2">
+                <p class="footer-address"></p>
+                <p><span class="footer-phone"></span></p>
+                <p><a href="#" class="section-footer-link footer-email-link"><span class="footer-email"></span></a></p>
+                <p><a href="#" class="section-footer-link footer-pec-link"><span class="footer-pec-text"></span></a></p>
+                <p>P. IVA: <span class="footer-piva-text"></span></p>
+                <p><span class="footer-hours"></span></p>
+              </div>
+            </div>
+
+            <div>
+              <p class="text-white/80 font-semibold uppercase tracking-widest text-[10px] mb-3">Social</p>
+              <div class="flex items-center gap-4 text-base mb-3">
+                <a href="#" target="_blank" class="section-footer-link footer-wa-link" aria-label="WhatsApp">
+                  <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="#" target="_blank" class="section-footer-link footer-ig-link" aria-label="Instagram">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" target="_blank" class="section-footer-link footer-fb-link" aria-label="Facebook">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" target="_blank" class="section-footer-link footer-tt-link" aria-label="TikTok">
+                  <i class="fab fa-tiktok"></i>
+                </a>
+              </div>
+              <p class="text-white/35 leading-relaxed">
+                Su appuntamento • individuale o in coppia
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-8 pt-5 border-t border-white/5 flex flex-col items-center justify-center gap-3">
+            <img id="footer-logo-small-packages" src="" alt="PULSE EMS Studio" class="footer-logo-small" />
+            <p class="text-[11px] text-white/30 text-center">
+              © <span class="footer-year"></span> <span class="footer-studio-name"></span> — Tutti i diritti riservati
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
 
     <!-- ================= CONTATTI ================= -->
@@ -1484,6 +1723,63 @@
       pecLink.innerText = DATI_SITO.pec;
       pecLink.href = `mailto:${DATI_SITO.pec}`;
       document.getElementById("footer-ig").href = DATI_SITO.instagramUrl;
+            // SECTION FOOTERS
+      document.querySelectorAll(".footer-address").forEach(el => {
+        el.innerText = DATI_SITO.indirizzo;
+      });
+
+      document.querySelectorAll(".footer-phone").forEach(el => {
+        el.innerText = DATI_SITO.telefono;
+      });
+
+      document.querySelectorAll(".footer-email").forEach(el => {
+        el.innerText = DATI_SITO.email;
+      });
+
+      document.querySelectorAll(".footer-pec-text").forEach(el => {
+        el.innerText = DATI_SITO.pec;
+      });
+
+      document.querySelectorAll(".footer-piva-text").forEach(el => {
+        el.innerText = DATI_SITO.piva;
+      });
+
+      document.querySelectorAll(".footer-hours").forEach(el => {
+        el.innerText = `${DATI_SITO.orariMattina} • ${DATI_SITO.orariPomeriggio}`;
+      });
+
+      document.querySelectorAll(".footer-year").forEach(el => {
+        el.innerText = new Date().getFullYear();
+      });
+
+      document.querySelectorAll(".footer-studio-name").forEach(el => {
+        el.innerText = DATI_SITO.nomeStudio;
+      });
+
+      document.querySelectorAll(".footer-email-link").forEach(el => {
+        el.href = `mailto:${DATI_SITO.email}`;
+      });
+
+      document.querySelectorAll(".footer-pec-link").forEach(el => {
+        el.href = `mailto:${DATI_SITO.pec}`;
+      });
+
+      document.querySelectorAll(".footer-ig-link").forEach(el => {
+        el.href = DATI_SITO.instagramUrl;
+      });
+
+      document.querySelectorAll(".footer-fb-link").forEach(el => {
+        el.href = DATI_SITO.facebookUrl;
+      });
+
+      document.querySelectorAll(".footer-tt-link").forEach(el => {
+        el.href = DATI_SITO.tiktokUrl;
+      });
+
+      const footerWaLink = `https://wa.me/${DATI_SITO.numeroWhatsApp}?text=${encodeURIComponent(DATI_SITO.waPrefill)}`;
+      document.querySelectorAll(".footer-wa-link").forEach(el => {
+        el.href = footerWaLink;
+      });
 
       // FOOTER PAGE
       document.getElementById("year-page").innerText = new Date().getFullYear();
@@ -1506,6 +1802,10 @@
 
       // IMAGES
       setImg("logo-pulse", DATI_SITO.images.pulseLogo);
+      setImg("footer-logo-small-home", DATI_SITO.images.pulseLogo);
+      setImg("footer-logo-small-ems", DATI_SITO.images.pulseLogo);
+      setImg("footer-logo-small-technology", DATI_SITO.images.pulseLogo);
+      setImg("footer-logo-small-packages", DATI_SITO.images.pulseLogo);
       setImg("img-hero", DATI_SITO.images.hero);
       setImg("img-ems-home", DATI_SITO.images.emsHome);
       setImg("img-seduta-home", DATI_SITO.images.sedutaHome);
