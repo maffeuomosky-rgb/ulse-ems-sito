@@ -344,6 +344,106 @@
     .section-footer-link:hover {
       color: #ff007f;
     }
+    .nav-link{
+  position:relative;
+  color:#ffffff;
+  opacity:.82;
+}
+
+.nav-link:hover{
+  color:#ff007f;
+  opacity:1;
+}
+
+.nav-link::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-8px;
+  width:100%;
+  height:2px;
+  background:#ff007f;
+  transform:scaleX(0);
+  transform-origin:center;
+  transition:transform .28s ease, opacity .28s ease;
+  opacity:.9;
+}
+
+.nav-link:hover::after{
+  transform:scaleX(1);
+}
+
+.nav-link.active{
+  color:#ff007f;
+  opacity:1;
+}
+
+.nav-link.active::after{
+  transform:scaleX(1);
+}
+
+.mobile-nav-link{
+  color:rgba(255,255,255,.88);
+  transition:color .22s ease, opacity .22s ease;
+}
+
+.mobile-nav-link:hover{
+  color:#ff007f;
+}
+
+.mobile-nav-link.active{
+  color:#ff007f;
+  font-weight:700;
+}
+    .nav-link{
+  position:relative;
+  color:rgba(255,255,255,0.85);
+  transition:color .25s ease, opacity .25s ease;
+}
+
+.nav-link:hover{
+  color:#ff007f;
+}
+
+.nav-link::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-8px;
+  width:100%;
+  height:2px;
+  background:#ff007f;
+  transform:scaleX(0);
+  transform-origin:center;
+  transition:transform .3s ease;
+}
+
+.nav-link:hover::after{
+  transform:scaleX(1);
+}
+
+.nav-link.active{
+  color:#ff007f;
+  opacity:1;
+}
+
+.nav-link.active::after{
+  transform:scaleX(1);
+}
+
+.mobile-nav-link{
+  color:rgba(255,255,255,0.9);
+  transition:color .22s ease, opacity .22s ease;
+}
+
+.mobile-nav-link:hover{
+  color:#ff007f;
+}
+
+.mobile-nav-link.active{
+  color:#ff007f;
+  font-weight:700;
+}
     @media (prefers-reduced-motion: reduce) {
       html {
         scroll-behavior: auto;
@@ -374,12 +474,12 @@
       </a>
 
       <nav class="hidden md:flex items-center gap-8 reveal reveal--right">
-        <a href="#" onclick="showPage('home')" class="text-xs uppercase tracking-widest hover:text-pulse-neon transition">Home</a>
-        <a href="#" onclick="showPage('ems')" class="text-xs uppercase tracking-widest hover:text-pulse-neon transition">EMS</a>
-        <a href="#" onclick="showPage('technology')" class="text-xs uppercase tracking-widest hover:text-pulse-neon transition">Tecnologia</a>
-        <a href="#" onclick="showPage('packages')" class="text-xs uppercase tracking-widest hover:text-pulse-neon transition">Percorsi</a>
-        <a href="#" onclick="showPage('contacts')" class="text-xs uppercase tracking-widest hover:text-pulse-neon transition">Contatti</a>
-        <a href="#" onclick="scrollToId('faq')" class="text-xs uppercase tracking-widest hover:text-pulse-neon transition">FAQ</a>
+        <a href="#" onclick="showPage('home')" class="nav-link active text-xs uppercase tracking-widest transition" data-page="home">Home</a>
+<a href="#" onclick="showPage('ems')" class="nav-link text-xs uppercase tracking-widest transition" data-page="ems">EMS</a>
+<a href="#" onclick="showPage('technology')" class="nav-link text-xs uppercase tracking-widest transition" data-page="technology">Tecnologia</a>
+<a href="#" onclick="showPage('packages')" class="nav-link text-xs uppercase tracking-widest transition" data-page="packages">Percorsi</a>
+<a href="#" onclick="showPage('contacts')" class="nav-link text-xs uppercase tracking-widest transition" data-page="contacts">Contatti</a>
+<a href="#" onclick="scrollToId('faq')" class="nav-link text-xs uppercase tracking-widest transition" data-page="faq">FAQ</a>
 
         <a
           href="#"
@@ -397,11 +497,11 @@
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden md:hidden absolute w-full bg-black/95 backdrop-blur-xl border-b border-white/10 text-center py-8 space-y-6">
       <a href="#" onclick="showPage('home');toggleMobileMenu()" class="block text-white text-sm uppercase tracking-widest">Home</a>
-      <a href="#" onclick="showPage('ems');toggleMobileMenu()" class="block text-white text-sm uppercase tracking-widest">EMS</a>
-      <a href="#" onclick="showPage('technology');toggleMobileMenu()" class="block text-white text-sm uppercase tracking-widest">Tecnologia</a>
-      <a href="#" onclick="showPage('packages');toggleMobileMenu()" class="block text-white text-sm uppercase tracking-widest">Percorsi</a>
-      <a href="#" onclick="showPage('contacts');toggleMobileMenu()" class="block text-white text-sm uppercase tracking-widest">Contatti</a>
-      <a href="#" onclick="scrollToId('faq');toggleMobileMenu()" class="block text-white text-sm uppercase tracking-widest">FAQ</a>
+<a href="#" onclick="showPage('ems');toggleMobileMenu()" class="block text-white text-sm uppercase tracking-widest">EMS</a>
+<a href="#" onclick="showPage('technology');toggleMobileMenu()" class="block text-white text-sm uppercase tracking-widest">Tecnologia</a>
+<a href="#" onclick="showPage('packages');toggleMobileMenu()" class="block text-white text-sm uppercase tracking-widest">Percorsi</a>
+<a href="#" onclick="showPage('contacts');toggleMobileMenu()" class="block text-white text-sm uppercase tracking-widest">Contatti</a>
+<a href="#" onclick="scrollToId('faq');toggleMobileMenu()" class="block text-white text-sm uppercase tracking-widest">FAQ</a>
 
       <a href="#" class="btn btn--cta btn-prenota-whatsapp inline-block px-8 py-4 bg-pulse-neon text-white font-bold uppercase tracking-widest text-sm shadow-neon hover:bg-pulse-neonHover transition">
         Prenota la prima prova
@@ -1862,40 +1962,59 @@ const FAQ_DATA = [
       document.querySelectorAll(".faq-item").forEach((el) => el.classList.remove("active"));
       if (!isActive) item.classList.add("active");
     }
-
-    function showPage(pageId) {
-      document.querySelectorAll(".page-section").forEach((p) => {
-        p.classList.remove("active");
-        setTimeout(() => {
-          if (!p.classList.contains("active")) p.style.display = "none";
-        }, 400);
-      });
-
-      const selected = document.getElementById(pageId);
-      if (selected) {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-        selected.style.display = "block";
-        setTimeout(() => {
-          selected.classList.add("active");
-          initReveal();
-        }, 50);
-      }
+function setActiveNav(pageId){
+  document.querySelectorAll(".nav-link").forEach(link=>{
+    link.classList.remove("active");
+    if(link.dataset.page === pageId){
+      link.classList.add("active");
     }
+  });
 
-    function scrollToId(id) {
-      const homeActive = document.getElementById("home").classList.contains("active");
-      if (!homeActive) {
-        showPage("home");
-        setTimeout(() => {
-          const el = document.getElementById(id);
-          if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-        }, 520);
-      } else {
-        const el = document.getElementById(id);
-        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
+  document.querySelectorAll(".mobile-nav-link").forEach(link=>{
+    link.classList.remove("active");
+    if(link.dataset.page === pageId){
+      link.classList.add("active");
     }
+  });
+}
+   function showPage(pageId) {
+  document.querySelectorAll(".page-section").forEach((p) => {
+    p.classList.remove("active");
+    setTimeout(() => {
+      if (!p.classList.contains("active")) p.style.display = "none";
+    }, 400);
+  });
 
+  const selected = document.getElementById(pageId);
+  if (selected) {
+    setActiveNav(pageId);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    selected.style.display = "block";
+    setTimeout(() => {
+      selected.classList.add("active");
+      initReveal();
+    }, 50);
+  }
+}
+
+   function scrollToId(id) {
+  if(id === "faq"){
+    setActiveNav("faq");
+  }
+
+  const homeActive = document.getElementById("home").classList.contains("active");
+
+  if (!homeActive) {
+    showPage("home");
+    setTimeout(() => {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 520);
+  } else {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
     document.getElementById("mobile-menu-btn").addEventListener("click", () => {
       document.getElementById("mobile-menu").classList.toggle("hidden");
     });
