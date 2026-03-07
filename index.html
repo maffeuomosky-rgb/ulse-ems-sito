@@ -167,20 +167,24 @@
       transform: translateY(-6px) scale(1.01);
     }
 
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.35s ease;
-    }
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
 
-    .faq-item.active .faq-answer {
-      max-height: 1200px;
-    }
+.faq-item.active .faq-answer {
+  max-height: 260px;
+}
 
-    .faq-item.active .faq-icon {
-      transform: rotate(180deg);
-      color: #ff007f;
-    }
+.faq-icon {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(180deg);
+  color: #ff007f;
+}
 
     ::-webkit-scrollbar {
       width: 6px;
